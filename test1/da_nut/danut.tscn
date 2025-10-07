@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://cigvheyeo6vno"]
+
+[ext_resource type="Texture2D" uid="uid://dudrrfogp5q4a" path="res://assets/circ.png" id="1_2hpws"]
+[ext_resource type="Script" uid="uid://1cmhdq8oj1e2" path="res://test1/da_nut/danut.gd" id="1_mxcv5"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2hpws"]
+bounce = 0.66
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mxcv5"]
+size = Vector2(400, 400)
+
+[node name="RigidBody2D" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_2hpws")
+script = ExtResource("1_mxcv5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_2hpws")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -11.0
+offset_right = 20.0
+offset_bottom = 12.0
+theme_override_colors/font_color = Color(0.00011382803, 0.00011382803, 0.00011382803, 1)
+text = "Test"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(0.2, 0.2)
+shape = SubResource("RectangleShape2D_mxcv5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.2, 0.2)
+shape = SubResource("RectangleShape2D_mxcv5")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

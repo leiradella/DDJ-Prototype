@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8wbjmht0asg0"]
+
+[ext_resource type="Script" uid="uid://dfh4s6bhote0e" path="res://test1/test.gd" id="1_t3bia"]
+[ext_resource type="PackedScene" uid="uid://cigvheyeo6vno" path="res://test1/da_nut/danut.tscn" id="1_ulsip"]
+
+[sub_resource type="Theme" id="Theme_t3bia"]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_t3bia")
+
+[node name="RigidBody2D2" parent="." instance=ExtResource("1_ulsip")]
+position = Vector2(141, -111.99999)
+reacts_to_button = true
+
+[node name="RigidBody2D" parent="." instance=ExtResource("1_ulsip")]
+position = Vector2(392, 545.00006)
+scale = Vector2(10, 10)
+freeze = true
+bounces = 20
+
+[node name="dalabel" type="Label" parent="."]
+offset_right = 89.0
+offset_bottom = 23.0
+text = "Yeahhhhhh"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 838.0
+offset_top = 58.0
+offset_right = 1122.0
+offset_bottom = 329.0
+theme = SubResource("Theme_t3bia")
+text = "+"
