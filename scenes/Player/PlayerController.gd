@@ -4,6 +4,10 @@ extends CharacterBody2D
 
 @onready var gun: Node = $Gun
 
+func _ready() -> void:
+	#needed so the enemy can have a reference for the player
+	add_to_group("Player")
+
 func handle_movement_input() -> void:
 	var direction: Vector2 = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	
