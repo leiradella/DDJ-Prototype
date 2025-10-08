@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://t5gavf3vfani"]
+
+[ext_resource type="Script" uid="uid://bew0udfqh8gdd" path="res://inventory/inventory_test.gd" id="1_d0qjs"]
+[ext_resource type="PackedScene" uid="uid://bkka6tr0151rd" path="res://inventory/inventory.tscn" id="1_oybnv"]
+
+[node name="InventoryTest" type="Node"]
+script = ExtResource("1_d0qjs")
+
+[node name="Inventory" parent="." instance=ExtResource("1_oybnv")]
+
+[node name="ButtonAdd" type="Button" parent="."]
+anchors_preset = -1
+anchor_right = 0.032
+anchor_bottom = 0.033
+offset_right = -0.44000244
+offset_bottom = 0.3600006
+
+[node name="ButtonRemove" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.053000003
+anchor_right = 0.085
+anchor_bottom = 0.033
+offset_left = 0.23999023
+offset_right = 0.80000305
+offset_bottom = 0.3600006
+
+[node name="Label" type="Label" parent="."]
+offset_left = 61.0
+offset_top = 273.0
+offset_right = 504.0
+offset_bottom = 392.0
+theme_override_font_sizes/font_size = 40
+text = "Hover item for info"
