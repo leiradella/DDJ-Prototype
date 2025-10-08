@@ -38,9 +38,7 @@ func reload() -> void:
 		mag = MAG_SIZE
 		return
 	
-	reload_interrupted = false
 	is_reloading = true
-	
 	mag += 1
 	
 	print(mag)
@@ -48,6 +46,7 @@ func reload() -> void:
 	
 	if reload_interrupted:
 		is_reloading = false
+		reload_interrupted = false
 		return
 	
 	reload()

@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var moveSpeed: float = 100.0
+@export var moveSpeed: float = 400.0
 
 @onready var gun: Node = $Gun
 
@@ -27,7 +27,11 @@ func handle_mouse_button(event: InputEvent) -> void:
 		if event.pressed:
 			#shoot the gun
 			if gun != null:
-				gun.shoot()
+				if not gun.is_reloading:
+					gun.shoot()
+				else:
+					gun.reload_interrupted = true
+			
 
 func _input(event: InputEvent) -> void:
 	#check mouse input
@@ -36,5 +40,5 @@ func _input(event: InputEvent) -> void:
 	
 	#check keyboard
 	if Input.is_action_just_pressed("reload"):
-		if gun != null:
+		if gun != null and not gun.is_reloading:
 			gun.reload()
