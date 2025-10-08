@@ -2,21 +2,25 @@ extends Node2D
 
 const BULLET: PackedScene = preload("res://scenes/Gun/Bullet.tscn")
 
+#weapon stats and flags
 var MAG_SIZE: int = 6 # mag size
 var mag: int = 6 # bullets in mag
+var deviation: float = 0.0
 var is_reloading: bool = false
 var reload_interrupted: bool = false
-var deviation: float = 5.0
 
 func shoot() -> void:
 	if is_reloading or mag <= 0:
 		return
 	mag -= 1
 	
-	#step 1: get bullet direction
 	## step 1: get the bullet direction
-	var cursor_pos: Vector2 = get_local_mouse_position()
-	var bullet_dir: Vector2 = position.direction_to(cursor_pos)
+	var cursor_pos: Vector2 = get_global_mouse_position()
+	var bullet_dir: Vector2 = global_position.direction_to(cursor_pos)
+	print(cursor_pos)
+	print(global_position)
+	print(bullet_dir)
+	print()
 	
 	## step 2: update the direction based on the guns deviation
 	var random_deviation = randf_range(-deviation, deviation)
