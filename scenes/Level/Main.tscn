@@ -14,8 +14,8 @@ position = Vector2(661, 158.00003)
 [node name="BasicEnemy" parent="." instance=ExtResource("3_f0xsc")]
 position = Vector2(1698.9999, 145)
 
-[node name="Necromancer" parent="." instance=ExtResource("4_wrmb8")]
-position = Vector2(905, 288)
-
 [node name="BasicEnemy2" parent="." instance=ExtResource("3_f0xsc")]
 position = Vector2(358.99997, 898.99994)
+
+[node name="Necromancer" parent="." instance=ExtResource("4_wrmb8")]
+position = Vector2(905, 288)

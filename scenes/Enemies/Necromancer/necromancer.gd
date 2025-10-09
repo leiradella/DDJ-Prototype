@@ -33,6 +33,8 @@ func _ready() -> void:
 	floor_stop_on_slope = false
 	
 	enemies = get_tree().get_nodes_in_group("EnemyBasic")
+	print(enemies)
+	
 	
 	var players: Array[Node] = get_tree().get_nodes_in_group("Player")
 	if players.size() > 0:
@@ -89,6 +91,7 @@ func _revive_update(_delta: float) -> void:
 		velocity = Vector2.ZERO
 		await get_tree().create_timer(reviveTime).timeout
 		target.revive()
+		target == null
 		state = State.IDLE
 		return
 	
@@ -114,12 +117,12 @@ func TakeDamage(dmg: float) -> void:
 
 func DetectDead() -> void:
 	var enemyDistance: float = -1.0
-	
 	#loop throught the enemies and find the dead ones, then choose the nearest dead enemy
 	for enemy in enemies:
 		if enemy.IsDead():
 			var new_distance: float = global_position.distance_to(enemy.global_position)
 			if new_distance < enemyDistance or enemyDistance < 0.0:
+				print("RAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
 				enemyDistance = new_distance
 				target = enemy
 	
