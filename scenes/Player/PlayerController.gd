@@ -7,6 +7,9 @@ extends CharacterBody2D
 func _ready() -> void:
 	#needed so the enemy can have a reference for the player
 	add_to_group("Player")
+	motion_mode = CharacterBody2D.MOTION_MODE_FLOATING
+	up_direction = Vector2.ZERO            # disables floor/ceiling logic
+	floor_stop_on_slope = false
 
 func handle_movement_input() -> void:
 	var direction: Vector2 = Input.get_vector("move_left", "move_right", "move_up", "move_down")

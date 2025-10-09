@@ -1,6 +1,9 @@
 extends CharacterBody2D
 
+@onready var sprite = $Sprite2D
+
 #enemy stats
+var health: float = 3.0
 var moveSpeed: float = 120.0
 var detectionRadius: float = 500.0
 var sightRadius: float = 1000.0
@@ -14,7 +17,8 @@ var damage: int = 1
 enum State {
 	IDLE,
 	CHASE,
-	ATTACK
+	ATTACK, 
+	DEAD
 }
 var state: State = State.IDLE
 
@@ -28,9 +32,14 @@ var attackPhase: AttackPhase = AttackPhase.WINDUP
 var attackTimer: float = 0.0
 
 #player reference
-var player
+var player: Node2D
 
 func _ready() -> void:
+	add_to_group("Enemies")
+	motion_mode = CharacterBody2D.MOTION_MODE_FLOATING
+	up_direction = Vector2.ZERO
+	floor_stop_on_slope = false
+	
 	var players = get_tree().get_nodes_in_group("Player")
 	if players.size() > 0:
 		player = players[0]
@@ -46,6 +55,8 @@ func _physics_process(delta: float) -> void:
 			_chase_update(delta)
 		State.ATTACK:
 			_attack_update(delta)
+		State.DEAD: #we can't just do queue_free() on enemies because they can get ressurrected
+			_dead_update(delta)
 		_:
 			pass
 	
@@ -93,4 +104,13 @@ func _attack_update(delta: float) -> void:
 			state = State.CHASE
 		_:
 			pass
-	
+
+func _dead_update(_delta: float) -> void:
+	velocity = Vector2.ZERO
+	sprite.rotation = deg_to_rad(180)
+
+
+func takeDamage(dmg: int) -> void:
+	health -= dmg
+	if (health <= 0.0):
+		state = State.DEAD

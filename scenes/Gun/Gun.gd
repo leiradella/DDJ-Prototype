@@ -17,10 +17,6 @@ func shoot() -> void:
 	## step 1: get the bullet direction
 	var cursor_pos: Vector2 = get_global_mouse_position()
 	var bullet_dir: Vector2 = global_position.direction_to(cursor_pos)
-	print(cursor_pos)
-	print(global_position)
-	print(bullet_dir)
-	print()
 	
 	## step 2: update the direction based on the guns deviation
 	var random_deviation = randf_range(-deviation, deviation)
