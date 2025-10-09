@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://d0qjxcpq7lt2k"]
+[gd_scene load_steps=5 format=3 uid="uid://d0qjxcpq7lt2k"]
 
 [ext_resource type="Script" uid="uid://bfoo3ci44bnwk" path="res://scenes/Level/LevelRoot.gd" id="1_ga6q8"]
 [ext_resource type="PackedScene" uid="uid://vocw65nwi5x5" path="res://scenes/Player/Player.tscn" id="2_8mevb"]
 [ext_resource type="PackedScene" uid="uid://bwnxnr73iqqf2" path="res://scenes/Enemies/Basic/BasicEnemy.tscn" id="3_f0xsc"]
+[ext_resource type="PackedScene" uid="uid://rhcp23adiw5l" path="res://scenes/Enemies/Necromancer/Necromancer.tscn" id="4_wrmb8"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_ga6q8")
@@ -12,3 +13,6 @@ position = Vector2(661, 158.00003)
 
 [node name="BasicEnemy" parent="." instance=ExtResource("3_f0xsc")]
 position = Vector2(1716.9999, 176)
+
+[node name="Necromancer" parent="." instance=ExtResource("4_wrmb8")]
+position = Vector2(905, 288)

@@ -21,6 +21,7 @@ enum State {
 	DEAD
 }
 var state: State = State.IDLE
+var player: Node2D #player reference
 
 #attack states
 enum AttackPhase {
@@ -31,11 +32,10 @@ enum AttackPhase {
 var attackPhase: AttackPhase = AttackPhase.WINDUP
 var attackTimer: float = 0.0
 
-#player reference
-var player: Node2D
 
 func _ready() -> void:
 	add_to_group("Enemies")
+	add_to_group("EnemyBasic")
 	motion_mode = CharacterBody2D.MOTION_MODE_FLOATING
 	up_direction = Vector2.ZERO
 	floor_stop_on_slope = false
@@ -110,7 +110,11 @@ func _dead_update(_delta: float) -> void:
 	sprite.rotation = deg_to_rad(180)
 
 
-func takeDamage(dmg: int) -> void:
+func TakeDamage(dmg: int) -> void:
 	health -= dmg
 	if (health <= 0.0):
 		state = State.DEAD
+		set_collision_layer_value(2, false)
+
+func IsDead() -> bool:
+	return state == State.DEAD

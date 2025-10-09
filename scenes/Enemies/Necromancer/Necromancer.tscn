@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://rhcp23adiw5l"]
+
+[ext_resource type="Texture2D" uid="uid://dcxh33w213vvg" path="res://assets/doriros.png" id="1_h0umx"]
+[ext_resource type="Script" uid="uid://budfl80u2wvu8" path="res://scenes/Enemies/Necromancer/necromancer.gd" id="1_mlwvs"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h0umx"]
+radius = 50.0
+height = 160.0
+
+[node name="Necromancer" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 7
+script = ExtResource("1_mlwvs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_h0umx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(11.999996, 10.999992)
+rotation = -1.0471976
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("1_h0umx")

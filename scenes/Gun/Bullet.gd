@@ -13,7 +13,7 @@ func _ready() -> void:
 
 func _on_body_entered(body) -> void:
 	if body.is_in_group("Enemies"):
-		body.takeDamage(damage)
+		body.TakeDamage(damage)
 	queue_free()
 	return
 
