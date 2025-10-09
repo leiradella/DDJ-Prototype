@@ -1,10 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://bkka6tr0151rd"]
+[gd_scene load_steps=3 format=3 uid="uid://dwr38bb7irj6x"]
 
-[ext_resource type="Script" uid="uid://cseg44esw0elr" path="res://inventory/inventory.gd" id="1_qse2j"]
-[ext_resource type="PackedScene" uid="uid://cdchew44xe80g" path="res://inventory/slot.tscn" id="2_f8i2h"]
+[ext_resource type="Script" uid="uid://0exp08ix41t8" path="res://scenes/Inventory/inventory.gd" id="1_830dj"]
+[ext_resource type="PackedScene" uid="uid://ddctcqarv086v" path="res://scenes/Inventory/slot.tscn" id="2_2a4mo"]
 
 [node name="Inventory" type="Node"]
-script = ExtResource("1_qse2j")
+script = ExtResource("1_830dj")
 
 [node name="Window" type="Panel" parent="."]
 z_index = 1
@@ -40,10 +40,10 @@ theme_override_constants/h_separation = 40
 theme_override_constants/v_separation = 40
 columns = 4
 
-[node name="Slot" parent="Window/SlotGridContainer" instance=ExtResource("2_f8i2h")]
+[node name="Slot" parent="Window/SlotGridContainer" instance=ExtResource("2_2a4mo")]
 layout_mode = 2
 
-[node name="Slot2" parent="Window/SlotGridContainer" instance=ExtResource("2_f8i2h")]
+[node name="Slot2" parent="Window/SlotGridContainer" instance=ExtResource("2_2a4mo")]
 layout_mode = 2
 
 [node name="Info" type="Label" parent="Window"]

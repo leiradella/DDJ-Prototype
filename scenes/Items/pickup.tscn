@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://db6nti7m0hbk"]
+
+[ext_resource type="Texture2D" uid="uid://dudrrfogp5q4a" path="res://assets/circ.png" id="1_g7u3j"]
+[ext_resource type="Script" uid="uid://bnjcpvnfgvfnj" path="res://scenes/Items/pickup.gd" id="1_rxpo2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rxpo2"]
+size = Vector2(400, 400)
+
+[node name="Pickup" type="Node"]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(1920, 1080)
+gravity_scale = 0.0
+script = ExtResource("1_rxpo2")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_g7u3j")
+
+[node name="Label" type="Label" parent="RigidBody2D"]
+offset_left = -20.0
+offset_top = -11.0
+offset_right = 20.0
+offset_bottom = 12.0
+theme_override_colors/font_color = Color(0.00011382803, 0.00011382803, 0.00011382803, 1)
+text = "Test"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Area2D" type="Area2D" parent="RigidBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/Area2D"]
+scale = Vector2(0.2, 0.2)
+shape = SubResource("RectangleShape2D_rxpo2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+scale = Vector2(0.2, 0.2)
+shape = SubResource("RectangleShape2D_rxpo2")

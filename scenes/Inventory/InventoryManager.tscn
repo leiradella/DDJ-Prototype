@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://trm68eg1mgq2"]
+
+[ext_resource type="Script" uid="uid://fyxisoj7lw1q" path="res://scenes/Inventory/inventory_manager.gd" id="1_wipi3"]
+[ext_resource type="PackedScene" uid="uid://dwr38bb7irj6x" path="res://scenes/Inventory/inventory.tscn" id="2_dmd88"]
+
+[node name="InventoryManager" type="Node"]
+script = ExtResource("1_wipi3")
+
+[node name="Inventory" parent="." instance=ExtResource("2_dmd88")]

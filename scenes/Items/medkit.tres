@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://coebktgco8doi"]
+
+[ext_resource type="Script" uid="uid://b0gtyi1wofs07" path="res://scenes/Items/medkit.gd" id="1_810he"]
+
+[resource]
+script = ExtResource("1_810he")
+name = "medkit"
+description = "heals user"
+max_stack_size = 10
+consumable = true
+metadata/_custom_type_script = "uid://vytj5cyx4rq5"

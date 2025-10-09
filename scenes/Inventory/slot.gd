@@ -41,7 +41,6 @@ func update_quantity_text ():
 		quantity_text.text = str(quantity)
 
 func _on_pressed():
-	print("yo")
 	if item == null:
 		return
 	var remove_after_use = item._on_use(inventory.get_parent())
