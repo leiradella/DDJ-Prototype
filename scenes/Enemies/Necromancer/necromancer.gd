@@ -33,8 +33,6 @@ func _ready() -> void:
 	floor_stop_on_slope = false
 	
 	enemies = get_tree().get_nodes_in_group("EnemyBasic")
-	print(enemies)
-	
 	
 	var players: Array[Node] = get_tree().get_nodes_in_group("Player")
 	if players.size() > 0:
@@ -122,7 +120,6 @@ func DetectDead() -> void:
 		if enemy.IsDead():
 			var new_distance: float = global_position.distance_to(enemy.global_position)
 			if new_distance < enemyDistance or enemyDistance < 0.0:
-				print("RAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
 				enemyDistance = new_distance
 				target = enemy
 	
