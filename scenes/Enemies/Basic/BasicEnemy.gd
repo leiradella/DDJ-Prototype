@@ -113,8 +113,6 @@ func _dead_update(_delta: float) -> void:
 
 func TakeDamage(dmg: int) -> void:
 	health -= dmg - (dmg * DDR)
-	print(health)
-	print("DDR =" ,DDR)
 	if DDR == 0.0:
 		DDR = 0.1
 	else:
