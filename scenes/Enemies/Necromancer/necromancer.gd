@@ -9,8 +9,8 @@ var detectionRadius: float = 350.0
 var sightRadius: float = 1000.0
 var reviveRange: float = 200.0
 var reviveTime: float = 2.0
-var DDR: float = 0.0 #repeatedDamageReducion, part of the EATS system
-var DDRGrowthRate: float = 1.1
+var RDR: float = 0.0 #repeatedDamageReducion, part of the EATS system
+var RDRGrowthRate: float = 1.1
 
 #ressurrection target
 var target: Node2D = null
@@ -89,7 +89,6 @@ func _revive_update(_delta: float) -> void:
 		velocity = Vector2.ZERO
 		await get_tree().create_timer(reviveTime).timeout
 		target.revive()
-		target == null
 		state = State.IDLE
 		return
 	
@@ -100,11 +99,11 @@ func _dead_update(_delta: float) -> void:
 	pass
 
 func TakeDamage(dmg: float) -> void:
-	health -= dmg - (dmg * DDR)
-	if DDR == 0.0:
-		DDR = 0.1
+	health -= dmg - (dmg * RDR)
+	if RDR == 0.0:
+		RDR = 0.1
 	else:
-		DDR *= DDRGrowthRate
+		RDR *= RDRGrowthRate
 	
 	if health <= 0:
 		state = State.DEAD
