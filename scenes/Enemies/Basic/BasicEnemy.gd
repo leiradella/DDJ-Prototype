@@ -12,6 +12,8 @@ var attackWindup: float = 0.3
 var attackActive: float = 0.10
 var attackCooldown: float = 0.8
 var damage: int = 1
+var DDR: float = 0.0 #repeatedDamageReducion, part of the EATS system
+var DDRGrowthRate: float = 1.3
 
 #enemy states
 enum State {
@@ -106,15 +108,31 @@ func _attack_update(delta: float) -> void:
 			pass
 
 func _dead_update(_delta: float) -> void:
-	velocity = Vector2.ZERO
-	sprite.rotation = deg_to_rad(180)
+	pass
 
 
 func TakeDamage(dmg: int) -> void:
-	health -= dmg
+	health -= dmg - (dmg * DDR)
+	print(health)
+	print("DDR =" ,DDR)
+	if DDR == 0.0:
+		DDR = 0.1
+	else:
+		DDR *= DDRGrowthRate
+		if DDR > 0.8:
+			DDR = 0.8
+	
 	if (health <= 0.0):
 		state = State.DEAD
+		velocity = Vector2.ZERO
 		set_collision_layer_value(2, false)
+		sprite.rotation = deg_to_rad(180)
 
 func IsDead() -> bool:
 	return state == State.DEAD
+
+func revive() -> void:
+	state = State.IDLE
+	sprite.rotation = deg_to_rad(0)
+	set_collision_layer_value(2, true)
+	health = 3.0
