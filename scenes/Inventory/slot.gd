@@ -43,7 +43,7 @@ func update_quantity_text ():
 func _on_pressed():
 	if item == null:
 		return
-	var remove_after_use = item._on_use(inventory.get_parent())
+	var remove_after_use = item._on_use()
 	if remove_after_use:
 		remove_item()
 

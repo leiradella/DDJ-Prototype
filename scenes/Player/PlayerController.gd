@@ -1,7 +1,8 @@
+class_name Player
 extends CharacterBody2D
 
 var moveSpeed: float = 400.0
-var health: float = 3.0
+var health: float = 40.0
 
 @onready var gun: Node = $Gun
 
@@ -55,3 +56,9 @@ func takeDamage(damage: float) -> void:
 	health -= damage
 	print(health)
 	#TODO: die
+
+func heal(amount: float):
+	print(health)
+	health += amount
+	print(health)
+	#TODO: add clamp or something
