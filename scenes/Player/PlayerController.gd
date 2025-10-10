@@ -1,8 +1,16 @@
 extends CharacterBody2D
 
-@export var moveSpeed: float = 400.0
+var moveSpeed: float = 400.0
+var health: float = 3.0
 
 @onready var gun: Node = $Gun
+
+func _ready() -> void:
+	#needed so the enemy can have a reference for the player
+	add_to_group("Player")
+	motion_mode = CharacterBody2D.MOTION_MODE_FLOATING
+	up_direction = Vector2.ZERO            # disables floor/ceiling logic
+	floor_stop_on_slope = false
 
 func handle_movement_input() -> void:
 	var direction: Vector2 = Input.get_vector("move_left", "move_right", "move_up", "move_down")
@@ -42,3 +50,8 @@ func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("reload"):
 		if gun != null and not gun.is_reloading:
 			gun.reload()
+
+func takeDamage(damage: float) -> void:
+	health -= damage
+	print(health)
+	#TODO: die

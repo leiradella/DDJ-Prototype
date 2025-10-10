@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://db6nti7m0hbk"]
+
+[ext_resource type="Texture2D" uid="uid://dudrrfogp5q4a" path="res://assets/circ.png" id="1_g7u3j"]
+[ext_resource type="Script" uid="uid://bnjcpvnfgvfnj" path="res://scenes/Items/pickup.gd" id="1_rxpo2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rxpo2"]
+size = Vector2(400, 400)
+
+[node name="Pickup" type="Node"]
+script = ExtResource("1_rxpo2")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="Node2D"]
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Area2D"]
+scale = Vector2(0.2, 0.2)
+shape = SubResource("RectangleShape2D_rxpo2")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_g7u3j")
+
+[node name="Label" type="Label" parent="Node2D"]
+offset_left = -19.0
+offset_top = -11.0
+offset_right = 21.0
+offset_bottom = 12.0
+theme_override_colors/font_color = Color(0.00011382803, 0.00011382803, 0.00011382803, 1)
+theme_override_font_sizes/font_size = 14
+text = "Test"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="Node2D/Area2D" to="." method="_on_area_2d_body_entered"]

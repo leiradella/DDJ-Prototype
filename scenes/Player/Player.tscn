@@ -1,12 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://vocw65nwi5x5"]
+[gd_scene load_steps=6 format=3 uid="uid://vocw65nwi5x5"]
 
 [ext_resource type="Script" uid="uid://bxy1voi6dg1ch" path="res://scenes/Player/PlayerController.gd" id="1_v6fml"]
 [ext_resource type="Texture2D" uid="uid://dudrrfogp5q4a" path="res://assets/circ.png" id="2_3li8b"]
 [ext_resource type="PackedScene" uid="uid://dni2hlbgbqkxm" path="res://scenes/Gun/Gun.tscn" id="3_bvqhm"]
+[ext_resource type="PackedScene" uid="uid://trm68eg1mgq2" path="res://scenes/Inventory/InventoryManager.tscn" id="4_ved6o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mdl7e"]
 
 [node name="Player" type="CharacterBody2D"]
+scale = Vector2(5, 5)
 collision_mask = 7
 script = ExtResource("1_v6fml")
 
@@ -18,4 +20,7 @@ texture = ExtResource("2_3li8b")
 shape = SubResource("RectangleShape2D_mdl7e")
 
 [node name="Gun" parent="." instance=ExtResource("3_bvqhm")]
-position = Vector2(30, 0)
+position = Vector2(10, 0)
+scale = Vector2(0.5, 0.5)
+
+[node name="InventoryManager" parent="." instance=ExtResource("4_ved6o")]
