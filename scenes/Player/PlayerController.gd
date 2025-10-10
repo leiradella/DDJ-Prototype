@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
-@export var moveSpeed: float = 400.0
+var moveSpeed: float = 400.0
+var health: float = 3.0
 
 @onready var gun: Node = $Gun
 
@@ -49,3 +50,8 @@ func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("reload"):
 		if gun != null and not gun.is_reloading:
 			gun.reload()
+
+func takeDamage(damage: float) -> void:
+	health -= damage
+	print(health)
+	#TODO: die

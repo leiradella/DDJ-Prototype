@@ -1,6 +1,8 @@
 extends CharacterBody2D
 
-@onready var sprite = $Sprite2D
+@onready var sprite: Sprite2D = $Sprite2D
+@onready var attackArea: Area2D = $AttackArea
+@onready var attackShape: CollisionShape2D = $AttackArea/CollisionShape2D
 
 #enemy stats
 var health: float = 3.0
@@ -11,7 +13,7 @@ var attackRange: float = 200.0
 var attackWindup: float = 0.3
 var attackActive: float = 0.10
 var attackCooldown: float = 0.8
-var damage: int = 1
+var damage: float = 1.0
 var RDR: float = 0.0 #repeatedDamageReducion, part of the EATS system
 var RDRGrowthRate: float = 1.3
 
@@ -33,7 +35,7 @@ enum AttackPhase {
 }
 var attackPhase: AttackPhase = AttackPhase.WINDUP
 var attackTimer: float = 0.0
-
+var alreadyHit: bool = false
 
 func _ready() -> void:
 	add_to_group("Enemies")
@@ -76,6 +78,7 @@ func _chase_update(_delta: float) -> void:
 		state = State.ATTACK
 		attackPhase = AttackPhase.WINDUP
 		attackTimer = attackWindup
+		aimAttack()
 		return
 	
 	if direction.length() > sightRadius:
@@ -93,12 +96,12 @@ func _attack_update(delta: float) -> void:
 	
 	match attackPhase:
 		AttackPhase.WINDUP: #windup ended (timer ran out)
-			print("windup")
+			alreadyHit = false
 			attackPhase = AttackPhase.ATTACK
 			attackTimer = attackActive
 		AttackPhase.ATTACK: #Attack ended (timer ran out)
 			#insert enemy attack function
-			print("attack")
+			attack()
 			attackPhase = AttackPhase.COOLDOWN
 			attackTimer = attackCooldown
 		AttackPhase.COOLDOWN: #cooldown ended
@@ -109,7 +112,6 @@ func _attack_update(delta: float) -> void:
 
 func _dead_update(_delta: float) -> void:
 	pass
-
 
 func TakeDamage(dmg: int) -> void:
 	health -= dmg - (dmg * RDR)
@@ -134,3 +136,13 @@ func revive() -> void:
 	sprite.rotation = deg_to_rad(0)
 	set_collision_layer_value(2, true)
 	health = 3.0
+
+func aimAttack() -> void:
+	var direction: Vector2 = player.global_position - global_position
+	
+	attackArea.global_position = global_position + direction
+	attackArea.rotation = direction.angle()
+
+func attack() -> void:
+	if player in attackArea.get_overlapping_bodies():
+		player.takeDamage(damage)

@@ -22,6 +22,7 @@ scale = Vector2(0.05, 0.05)
 texture = ExtResource("1_upe28")
 
 [node name="AttackArea" type="Area2D" parent="."]
+collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
 position = Vector2(-15, 0)
