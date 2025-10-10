@@ -1,8 +1,10 @@
-extends RigidBody2D
+extends Node
+
+@onready var label = $Node2D/Label
+@onready var area = $Node2D/Area2D
 
 @export var type: ItemType
 @export var quantity: int
-@onready var label = $Label
 @onready var item: Item
 
 enum ItemType {MEDKIT, BULLET}
@@ -15,11 +17,8 @@ const ITEM_RESOURCES := {
 func _ready():
 	item = ITEM_RESOURCES.get(type)
 	label.text = str(item.name)
-	global_position = Vector2(randi() % 1920, randi() % 1080)
+	$Node2D.position = Vector2(randi() % 1920, randi() % 1080)
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	print("test")
+func _on_area_2d_body_entered(_body: Node2D) -> void:
 	EventManager.trigger_item_pickedup(item, quantity)
 	queue_free()
-	
-	
