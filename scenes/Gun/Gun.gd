@@ -32,7 +32,11 @@ func shoot() -> void:
 	
 	return
 
-func reload() -> void:
+func reload(amount) -> void:
+	if amount == 0: 
+		is_reloading = false
+		return
+		
 	if mag >= MAG_SIZE:
 		is_reloading = false
 		mag = MAG_SIZE
@@ -49,5 +53,5 @@ func reload() -> void:
 		reload_interrupted = false
 		return
 	
-	reload()
+	reload(amount - 1)
 	return

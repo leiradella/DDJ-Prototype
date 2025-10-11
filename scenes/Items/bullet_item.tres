@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://c5i0xevsjgwf4"]
+
+[ext_resource type="Script" uid="uid://hl1b8hb0jm7o" path="res://scenes/Items/item.gd" id="1_2igd0"]
+
+[resource]
+script = ExtResource("1_2igd0")
+name = "Bullet"
+description = "for shooting"
+max_stack_size = 80
+metadata/_custom_type_script = "uid://hl1b8hb0jm7o"

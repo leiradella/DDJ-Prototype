@@ -14,7 +14,10 @@ func _ready ():
 		child.inventory = self
 		
 	for item in starter_items:
-		add_item(item)
+		if item.name == "Bullet":
+			on_give_player_item(item, 10)
+		else:
+			add_item(item)
 	
 func _process (_delta):
 	if Input.is_action_just_pressed("inventory"):
@@ -27,9 +30,15 @@ func toggle_window (open : bool):
 #	else:
 #		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
+#TODO: change this lol
 func on_give_player_item (item : Item, amount : int):
 	for i in range(amount):
 		add_item(item)
+
+#TODO: change this lol
+func on_remove_player_item(item: Item, amount: int):
+	for i in range(amount):
+		remove_item(item)
 
 func add_item (item : Item):
 	var slot = get_slot_to_add(item)

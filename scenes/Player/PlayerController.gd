@@ -5,6 +5,7 @@ var moveSpeed: float = 400.0
 var health: float = 40.0
 
 @onready var gun: Node = $Gun
+@onready var inventoryManager = $InventoryManager
 
 func _ready() -> void:
 	#needed so the enemy can have a reference for the player
@@ -50,7 +51,8 @@ func _input(event: InputEvent) -> void:
 	#check keyboard
 	if Input.is_action_just_pressed("reload"):
 		if gun != null and not gun.is_reloading:
-			gun.reload()
+			if gun.MAG_SIZE - gun.mag != 0:
+				gun.reload(inventoryManager.reload_gun(gun.MAG_SIZE - gun.mag))
 
 func takeDamage(damage: float) -> void:
 	health -= damage
