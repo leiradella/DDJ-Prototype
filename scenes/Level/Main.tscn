@@ -23,3 +23,7 @@ position = Vector2(905, 288)
 
 [node name="Pickup" parent="." instance=ExtResource("5_7tjmy")]
 quantity = 1
+
+[node name="Pickup2" parent="." instance=ExtResource("5_7tjmy")]
+type = 1
+quantity = 1

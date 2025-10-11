@@ -11,7 +11,7 @@ enum ItemType {MEDKIT, BULLET}
 
 const ITEM_RESOURCES := {
 	ItemType.MEDKIT: preload("res://scenes/Items/medkit.tres"),
-	#ItemType.BULLET: preload("res://inventory/bullet.tres")
+	ItemType.BULLET: preload("res://scenes/Items/bullet_item.tres")
 }
 
 func _ready():
