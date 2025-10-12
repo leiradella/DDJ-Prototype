@@ -1,6 +1,8 @@
 class_name Player
 extends CharacterBody2D
 
+signal interact(entity)
+
 var moveSpeed: float = 400.0
 var health: float = 40.0
 
@@ -41,7 +43,6 @@ func handle_mouse_button(event: InputEvent) -> void:
 					gun.shoot()
 				else:
 					gun.reload_interrupted = true
-			
 
 func _input(event: InputEvent) -> void:
 	#check mouse input
@@ -53,6 +54,8 @@ func _input(event: InputEvent) -> void:
 		if gun != null and not gun.is_reloading:
 			if gun.MAG_SIZE - gun.mag != 0:
 				gun.reload(inventoryManager.reload_gun(gun.MAG_SIZE - gun.mag))
+	if Input.is_action_just_pressed("interact"):
+		emit_signal("interact", self)
 
 func takeDamage(damage: float) -> void:
 	health -= damage

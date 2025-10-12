@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://d0qjxcpq7lt2k"]
+[gd_scene load_steps=7 format=3 uid="uid://d0qjxcpq7lt2k"]
 
 [ext_resource type="Script" uid="uid://bfoo3ci44bnwk" path="res://scenes/Level/LevelRoot.gd" id="1_ga6q8"]
 [ext_resource type="PackedScene" uid="uid://vocw65nwi5x5" path="res://scenes/Player/Player.tscn" id="2_8mevb"]
 [ext_resource type="PackedScene" uid="uid://bwnxnr73iqqf2" path="res://scenes/Enemies/Basic/BasicEnemy.tscn" id="3_f0xsc"]
 [ext_resource type="PackedScene" uid="uid://rhcp23adiw5l" path="res://scenes/Enemies/Necromancer/Necromancer.tscn" id="4_wrmb8"]
 [ext_resource type="PackedScene" uid="uid://db6nti7m0hbk" path="res://scenes/Items/pickup.tscn" id="5_7tjmy"]
+[ext_resource type="PackedScene" uid="uid://dpqcl8mac4umq" path="res://scenes/Interactibles/computer.tscn" id="6_u7171"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_ga6q8")
@@ -27,3 +28,6 @@ quantity = 1
 [node name="Pickup2" parent="." instance=ExtResource("5_7tjmy")]
 type = 1
 quantity = 1
+
+[node name="Computer" parent="." instance=ExtResource("6_u7171")]
+position = Vector2(208, 111)
