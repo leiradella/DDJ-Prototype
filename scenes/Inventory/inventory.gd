@@ -20,8 +20,9 @@ func _ready ():
 			add_item(item)
 	
 func _process (_delta):
-	if Input.is_action_just_pressed("inventory"):
-		toggle_window(!window.visible)
+	if InputManager.is_mode_gameplay():
+		if Input.is_action_just_pressed("inventory"):
+			toggle_window(!window.visible)
 
 func toggle_window (open : bool):
 	window.visible = open
