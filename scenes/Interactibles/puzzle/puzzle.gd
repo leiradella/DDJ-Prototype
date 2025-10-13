@@ -25,3 +25,4 @@ func _on_text_edited(_new_text: String) -> void:
 		print("solved!!!!")
 		rich_text_label.text = "[color=green]PASSWORD:[/color]"
 		line_edit.editable = false
+		EventManager.trigger_puzzle_solved()

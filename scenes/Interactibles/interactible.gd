@@ -34,9 +34,7 @@ func _on_stop_interact(_entity) -> void:
 func focus(entity: Node) -> void:
 	entity.interact.connect(_on_interact)
 	entity.stop_interact.connect(_on_stop_interact)
-	print("focused")
 
 func unfocus(entity: Node) -> void:
 	entity.interact.disconnect(_on_interact)
 	entity.stop_interact.disconnect(_on_stop_interact)
-	print("unfocused")
