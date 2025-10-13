@@ -1,35 +1,23 @@
-[gd_scene load_steps=7 format=3 uid="uid://m3stjwtfe3rd"]
+[gd_scene load_steps=5 format=3 uid="uid://m3stjwtfe3rd"]
 
 [ext_resource type="PackedScene" uid="uid://hmx6o472ropw" path="res://addons/maaacks_game_template/base/scenes/menus/options_menu/master_options_menu_with_tabs.tscn" id="1_fqpxk"]
-[ext_resource type="PackedScene" uid="uid://dqp2jtg8ilidb" path="res://scenes/menus/options_menu/input/input_options_menu.tscn" id="2_w1dvr"]
-[ext_resource type="PackedScene" uid="uid://5qgeyy1ewksk" path="res://scenes/menus/options_menu/input/input_extras_menu.tscn" id="3_bn2s3"]
 [ext_resource type="PackedScene" uid="uid://ca8b4n88a7sms" path="res://scenes/menus/options_menu/audio/audio_options_menu.tscn" id="4_6wkjv"]
 [ext_resource type="PackedScene" uid="uid://diuuhptbcq0sp" path="res://scenes/menus/options_menu/video/video_options_menu_with_extras.tscn" id="5_kr6xa"]
 [ext_resource type="PackedScene" uid="uid://cnlm3adut6htx" path="res://scenes/menus/options_menu/game/game_options_menu.tscn" id="6_n2uhm"]
 
 [node name="MasterOptionsMenu" instance=ExtResource("1_fqpxk")]
-current_tab = 2
+current_tab = 0
 
-[node name="Controls" parent="." index="1" instance=ExtResource("2_w1dvr")]
-visible = false
+[node name="Audio" parent="." index="1" instance=ExtResource("4_6wkjv")]
 layout_mode = 2
 metadata/_tab_index = 0
 
-[node name="Inputs" parent="." index="2" instance=ExtResource("3_bn2s3")]
+[node name="Video" parent="." index="2" instance=ExtResource("5_kr6xa")]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
-[node name="Audio" parent="." index="3" instance=ExtResource("4_6wkjv")]
+[node name="Game" parent="." index="3" instance=ExtResource("6_n2uhm")]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 2
-
-[node name="Video" parent="." index="4" instance=ExtResource("5_kr6xa")]
-visible = false
-layout_mode = 2
-metadata/_tab_index = 3
-
-[node name="Game" parent="." index="5" instance=ExtResource("6_n2uhm")]
-visible = false
-layout_mode = 2
-metadata/_tab_index = 4
