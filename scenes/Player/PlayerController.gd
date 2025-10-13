@@ -2,6 +2,7 @@ class_name Player
 extends CharacterBody2D
 
 signal interact(entity)
+signal stop_interact(entity)
 
 var moveSpeed: float = 400.0
 var health: float = 40.0
@@ -45,6 +46,11 @@ func handle_mouse_button(event: InputEvent) -> void:
 					gun.reload_interrupted = true
 
 func _input(event: InputEvent) -> void:
+	if InputManager.currentMode == InputManager.ControlMode.INTERACTING:
+		if Input.is_action_just_pressed("escape"):
+			emit_signal("stop_interact", self)
+		return
+	
 	#check mouse input
 	if event is InputEventMouseButton:
 		handle_mouse_button(event)
