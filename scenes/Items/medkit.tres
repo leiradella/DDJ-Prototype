@@ -8,3 +8,4 @@ name = "medkit"
 description = "heals user"
 max_stack_size = 10
 consumable = true
+metadata/_custom_type_script = "uid://vytj5cyx4rq5"
