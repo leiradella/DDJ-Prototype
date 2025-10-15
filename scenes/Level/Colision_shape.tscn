@@ -11,7 +11,7 @@ collision_layer = 0
 monitorable = false
 script = ExtResource("1_jyiku")
 size = 1
-snap_to_grid = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-16, 0)
 shape = SubResource("RectangleShape2D_gf1fj")

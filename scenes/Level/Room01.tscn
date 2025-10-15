@@ -8,10 +8,10 @@
 script = ExtResource("1_8xcqc")
 
 [node name="Room01" parent="." instance=ExtResource("1_rf42j")]
+position = Vector2(-272, -81)
 
 [node name="LevelTransition" parent="." instance=ExtResource("3_eh2bs")]
-position = Vector2(208, -91)
+position = Vector2(-64, -172)
 level = "uid://dhgoofyg7i60x"
 target_transition_area = "LevelTransition2"
 side = 2
-snap_to_grid = false

@@ -33,6 +33,12 @@ func _ready() -> void:
 	body_entered.connect(_player_entered)
 
 func _update_area() -> void:
+	if not collision_shape:
+		if has_node("CollisionShape2D"):
+			collision_shape = $CollisionShape2D
+		else:
+			return
+	
 	var new_rect : Vector2 = Vector2( 32,32)
 	var new_position : Vector2 = Vector2.ZERO
 	
@@ -50,19 +56,24 @@ func _update_area() -> void:
 		new_position.x += 16
 	
 	if collision_shape == null:
-		collision_shape =get_node("CollisionShape2D")
+		collision_shape = get_node("CollisionShape2D")
 		
 	collision_shape.shape.size = new_rect
 	collision_shape.position = new_position
 
 
 func _player_entered(_p : Node2D) -> void:
-	EventManager.load_new_level( level, target_transition_area, Vector2.ZERO)
+	set_deferred("monitoring", false)
+	EventManager.load_new_level( level, target_transition_area, get_offset())
+	
+	await EventManager.level_loaded
+	set_deferred("monitoring", true)
+	pass
 
 func _place_player() -> void:
 	if name != EventManager.target_transition:
 		return
-	GlobalPlayerManager.set_player_position(Vector2.ZERO)	
+	GlobalPlayerManager.set_player_position(global_position + EventManager.position_offset)	
 
 func get_offset() -> Vector2:
 	var offset : Vector2 = Vector2.ZERO
@@ -76,7 +87,7 @@ func get_offset() -> Vector2:
 	else:
 		offset.x = player_pos.x - global_position.x
 		offset.y = 16
-		if side == SIDE.LEFT:
+		if side == SIDE.TOP:
 			offset.y *= -1
 	
 	return offset

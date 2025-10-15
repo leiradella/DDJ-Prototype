@@ -14,7 +14,6 @@ func _ready() -> void:
 	#needed so the enemy can have a reference for the player
 	add_to_group("Player")
 	motion_mode = CharacterBody2D.MOTION_MODE_FLOATING
-	up_direction = Vector2.ZERO            # disables floor/ceiling logic
 	floor_stop_on_slope = false
 
 func handle_movement_input() -> void:
@@ -73,9 +72,3 @@ func heal(amount: float):
 	health += amount
 	print(health)
 	#TODO: add clamp or something
-
-func unparent_player( _p :Node2D)->void:
-	_p.remove_child(player)
-
-func set_player_position(_new_pos : Vector2)-> void:
-	player.global_position = _new_pos
