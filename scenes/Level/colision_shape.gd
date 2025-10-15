@@ -1,21 +1,23 @@
 @tool
-extends Area2D
+class_name LevelTransition extends Area2D
 
 enum SIDE { LEFT, RIGHT, TOP, BOTTOM }
 
 @export_file("*.tscn") var level
 @export var target_transition_area : String = "LevelTransition"
 
-@export_category("Colision Area Settings")
+@export_category("Collision Area Settings")
 
-@export_range(1, 12, 1, "or_greater") var size : int = 1 :
+@export_range(1, 12, 1, "or_greater") var size : int = 2 :
 	set( value ):
 		size = value
 		_update_area()
 
 @export var side: SIDE = SIDE.LEFT
 
-@onready var colision_shape: CollisionShape2D = $CollisionShape2D
+@export var snap_to_grid : bool = false
+
+@onready var collision_shape: CollisionShape2D = $CollisionShape2D
 
 
 func _ready() -> void:
@@ -47,11 +49,11 @@ func _update_area() -> void:
 		new_rect.y *= size
 		new_position.x += 16
 	
-	if colision_shape == null:
-		colision_shape =get_node("CollisionShape2D")
+	if collision_shape == null:
+		collision_shape =get_node("CollisionShape2D")
 		
-	colision_shape.shape.size = new_rect
-	colision_shape.position = new_position
+	collision_shape.shape.size = new_rect
+	collision_shape.position = new_position
 
 
 func _player_entered(_p : Node2D) -> void:
