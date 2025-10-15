@@ -7,8 +7,11 @@ var player:Player
 var moveSpeed: float = 60.0
 var health: float = 40.0
 
-@onready var gun: Node = $Gun
+@onready var gun: Node = $Sprite2D/Gun
 @onready var inventoryManager = $InventoryManager
+var can_update :int = 1
+@onready var animation_player : AnimationPlayer = $AnimationPlayer
+@onready var sprite : Sprite2D = $Sprite2D 
 
 func _ready() -> void:
 	#needed so the enemy can have a reference for the player
@@ -22,8 +25,19 @@ func handle_movement_input() -> void:
 	if direction != Vector2.ZERO:
 		direction = direction.normalized()
 		velocity = direction * moveSpeed
+		if direction.x > 0 && can_update != 1:
+			update_animation(1)
+			can_update=1
+			sprite.scale.x =0.2
+		elif direction.x < 0 && can_update != 2:
+			update_animation(2)
+			can_update = 2
+			sprite.scale.x =-0.2
 	else:
 		velocity = Vector2.ZERO
+		if can_update != 0:
+			update_animation(0)
+			can_update = 0
 
 func _physics_process(_delta: float) -> void:
 	if not InputManager.is_mode_gameplay():
@@ -72,3 +86,10 @@ func heal(amount: float):
 	health += amount
 	print(health)
 	#TODO: add clamp or something
+
+func update_animation(_dir : int) -> void :
+	if _dir ==0:
+		animation_player.play("idle_down")
+	elif _dir == 1 or _dir ==2:
+		animation_player.play("idle_walk")
+	pass
