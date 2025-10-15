@@ -3,8 +3,8 @@ extends CharacterBody2D
 
 signal interact(entity)
 signal stop_interact(entity)
-
-var moveSpeed: float = 400.0
+var player:Player
+var moveSpeed: float = 60.0
 var health: float = 40.0
 
 @onready var gun: Node = $Gun
@@ -73,3 +73,9 @@ func heal(amount: float):
 	health += amount
 	print(health)
 	#TODO: add clamp or something
+
+func unparent_player( _p :Node2D)->void:
+	_p.remove_child(player)
+
+func set_player_position(_new_pos : Vector2)-> void:
+	player.global_position = _new_pos

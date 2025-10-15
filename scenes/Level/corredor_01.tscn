@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dveotnylnyxiu"]
+[gd_scene load_steps=7 format=3 uid="uid://dveotnylnyxiu"]
 
 [ext_resource type="Texture2D" uid="uid://cddhqrsr4qemj" path="res://assets/tileset x1 edited.png" id="1_m0ko4"]
+[ext_resource type="Script" uid="uid://bu7jastocf04w" path="res://scenes/Level/corredor_01.gd" id="1_riv24"]
 [ext_resource type="Texture2D" uid="uid://dyl157dut0abj" path="res://assets/Dead Tileset V2.png" id="2_hwj51"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hwj51"]
@@ -230,6 +231,7 @@ sources/0 = SubResource("TileSetAtlasSource_hwj51")
 sources/1 = SubResource("TileSetAtlasSource_riv24")
 
 [node name="Corredor01" type="Node2D"]
+script = ExtResource("1_riv24")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_riv24")

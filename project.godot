@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 InputManager="*res://scripts/InputManager.gd"
 EventManager="*res://scripts/EventManager.gd"
+GlobalPlayerManager="*res://scripts/global_Player_Manager.gd"
 
 [display]
 

@@ -6,22 +6,28 @@
 [ext_resource type="PackedScene" uid="uid://trm68eg1mgq2" path="res://scenes/Inventory/InventoryManager.tscn" id="4_ved6o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mdl7e"]
+size = Vector2(5.799999, 5.2)
 
 [node name="Player" type="CharacterBody2D"]
 visibility_layer = 8
 scale = Vector2(5, 5)
-collision_mask = 7
+collision_mask = 23
 script = ExtResource("1_v6fml")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.08, 0.08)
+scale = Vector2(0.02, 0.02)
 texture = ExtResource("2_3li8b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.10000037, 0)
+scale = Vector2(0.9999998, 0.9999998)
 shape = SubResource("RectangleShape2D_mdl7e")
 
 [node name="Gun" parent="." instance=ExtResource("3_bvqhm")]
-position = Vector2(10, 0)
-scale = Vector2(0.5, 0.5)
+position = Vector2(2.6, -0.4)
+scale = Vector2(0.1, 0.1)
 
 [node name="InventoryManager" parent="." instance=ExtResource("4_ved6o")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(8, 8)
