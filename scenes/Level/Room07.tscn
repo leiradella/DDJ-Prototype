@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cg8mb5cjbtmb3"]
+[gd_scene load_steps=8 format=3 uid="uid://cg8mb5cjbtmb3"]
 
 [ext_resource type="Script" uid="uid://dmyy4jx0drpws" path="res://scenes/Level/room_07.gd" id="1_ajyqx"]
 [ext_resource type="Texture2D" uid="uid://cddhqrsr4qemj" path="res://assets/tileset x1 edited.png" id="2_uwas3"]
 [ext_resource type="Texture2D" uid="uid://dyl157dut0abj" path="res://assets/Dead Tileset V2.png" id="3_qercf"]
+[ext_resource type="PackedScene" uid="uid://cdnbrjfxms0gs" path="res://scenes/Level/Colision_shape.tscn" id="4_qercf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4x7b0"]
 texture = ExtResource("2_uwas3")
@@ -238,7 +239,22 @@ layer_1/name = "Layer1"
 layer_1/z_index = -2
 layer_2/name = "Layer2"
 layer_2/z_index = -1
-layer_2/tile_data = PackedInt32Array(-196604, 327680, 0, -196603, 327680, 0, 131073, 327680, 0, 131072, 327680, 0, 196607, 327680, 0, 131069, 327680, 0, -131073, 327680, 0, -131074, 327680, 0, -262142, 327680, 0, -262143, 327680, 0, 262148, 327680, 0, 262147, 327680, 0, -65541, 524288, 9, -131075, 524288, 9, -262144, 524288, 9, -196608, 524288, 10, -65539, 524288, 10, -65540, 327680, 0, 131070, 524288, 0, 65532, 524288, 0, 131074, 524288, 0, 131068, 524288, 1, 196606, 524288, 1, 262146, 524288, 1, 65531, 524288, 1, 131077, 131072, 0, -196602, 131072, 9, -262141, 131072, 9, 196610, 589824, 2, -5, 589824, 2, -196605, 131072, 10, -131066, 65536, 2, -65530, 65536, 2, 6, 65536, 2, 65542, 65536, 2, 131078, 131072, 1, 262149, 131072, 1, 196613, 65536, 2, -4, 1114112, 3)
+layer_2/tile_data = PackedInt32Array(-196604, 327680, 0, -196603, 327680, 0, 131073, 327680, 0, 131072, 327680, 0, 196607, 327680, 0, 131069, 327680, 0, -131073, 327680, 0, -131074, 327680, 0, -262142, 327680, 0, -262143, 327680, 0, 262148, 327680, 0, 262147, 327680, 0, -65541, 524288, 9, -131075, 524288, 9, -262144, 524288, 9, -196608, 524288, 10, -65539, 524288, 10, -65540, 327680, 0, 131070, 524288, 0, 65532, 524288, 0, 131074, 524288, 0, 131068, 524288, 1, 196606, 524288, 1, 262146, 524288, 1, 65531, 524288, 1, 131077, 131072, 0, -196602, 131072, 9, -262141, 131072, 9, 196610, 589824, 2, -196605, 131072, 10, -131066, 65536, 2, -65530, 65536, 2, 6, 65536, 2, 65542, 65536, 2, 131078, 131072, 1, 262149, 131072, 1, 196613, 65536, 2, -4, 1114112, 3, -5, 1048576, 3)
 layer_3/name = "Layer3"
 layer_3/y_sort_enabled = true
 layer_3/tile_data = PackedInt32Array(262148, 327681, 7, -262142, 327681, 7)
+
+[node name="LevelTransition" parent="." instance=ExtResource("4_qercf")]
+position = Vector2(144, 124)
+level = "uid://dveotnylnyxiu"
+target_transition_area = "LevelTransition6"
+side = 3
+
+[node name="LevelTransition2" parent="." instance=ExtResource("4_qercf")]
+position = Vector2(-123, -16)
+level = "uid://4erecncyk36h"
+target_transition_area = "LevelTransition5"
+
+[node name="LevelTransition3" parent="." instance=ExtResource("4_qercf")]
+position = Vector2(80, -91)
+side = 2

@@ -458,6 +458,6 @@ layer_3/y_sort_enabled = true
 layer_3/tile_data = PackedInt32Array(-327672, 327681, 7, 589832, 327681, 7)
 
 [node name="LevelTransition" parent="." instance=ExtResource("5_5pvkd")]
-position = Vector2(117, 322)
+position = Vector2(117, 290)
 level = "uid://4erecncyk36h"
-side = 2
+side = 3

@@ -1,9 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://dnp4k2w11maqf"]
+[gd_scene load_steps=4 format=3 uid="uid://dnp4k2w11maqf"]
 
 [ext_resource type="PackedScene" uid="uid://d01ldrf7jtk5r" path="res://scenes/Level/Room02.tscn" id="1_ouxha"]
 [ext_resource type="Script" uid="uid://bs6r41o3i8qfb" path="res://scenes/Level/room_02.gd" id="2_ku1wf"]
+[ext_resource type="PackedScene" uid="uid://cdnbrjfxms0gs" path="res://scenes/Level/Colision_shape.tscn" id="3_ku1wf"]
 
 [node name="Room2" type="Node2D"]
+position = Vector2(-1, 0)
 
 [node name="Room02" parent="." instance=ExtResource("1_ouxha")]
+layer_2/tile_data = PackedInt32Array(196620, 65536, 1, 196621, 131072, 1, 131085, 65536, 1, 131086, 131072, 1, -65525, 327680, 0, 12, 262144, 2, -65524, 131072, 9, 14, 131072, 9, 13, 327680, 0, 262155, 327680, 0, 262154, 327680, 0, 262153, 327680, 0, 262152, 524288, 1, 131080, 589824, 2, 196617, 1114112, 3, 65549, 1048576, 2, -65528, 524288, 9, 8, 589824, 2, -65527, 327680, 0, 9, 1114112, 3, -65526, 327680, 0, 65544, 589824, 2, 196616, 1048576, 3, 262156, 131072, 1, 65550, 1114112, 2)
 script = ExtResource("2_ku1wf")
+
+[node name="LevelTransition" parent="." instance=ExtResource("3_ku1wf")]
+position = Vector2(292, 112)
+level = "uid://dveotnylnyxiu"
+target_transition_area = "LevelTransition3"
+
+[node name="LevelTransition2" parent="." instance=ExtResource("3_ku1wf")]
+position = Vector2(444, 48)
+level = "uid://18gxvhmvuucx"
+target_transition_area = "LevelTransition2"
+side = 1

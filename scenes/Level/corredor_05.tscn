@@ -245,6 +245,29 @@ layer_3/name = "Layer3"
 layer_3/tile_data = PackedInt32Array(-524289, 327681, 7, 65527, 327681, 7, 8, 327681, 7)
 
 [node name="LevelTransition" parent="." instance=ExtResource("4_w6gdk")]
-position = Vector2(1, -263)
+position = Vector2(-16, -251)
 level = "Room09.tscn"
 side = 2
+
+[node name="LevelTransition2" parent="." instance=ExtResource("4_w6gdk")]
+position = Vector2(188, 240)
+level = "uid://cg8mb5cjbtmb3"
+target_transition_area = "LevelTransition2"
+side = 1
+
+[node name="LevelTransition3" parent="." instance=ExtResource("4_w6gdk")]
+position = Vector2(-187, 240)
+level = "uid://c1ifv8tylxtfi"
+target_transition_area = "LevelTransition3"
+
+[node name="LevelTransition4" parent="." instance=ExtResource("4_w6gdk")]
+position = Vector2(-272, -4)
+level = "uid://c1ifv8tylxtfi"
+target_transition_area = "LevelTransition2"
+side = 3
+
+[node name="LevelTransition5" parent="." instance=ExtResource("4_w6gdk")]
+position = Vector2(272, -4)
+level = "uid://cg8mb5cjbtmb3"
+target_transition_area = "LevelTransition3"
+side = 3

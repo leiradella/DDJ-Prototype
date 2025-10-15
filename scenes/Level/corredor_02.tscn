@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://18gxvhmvuucx"]
+[gd_scene load_steps=6 format=3 uid="uid://18gxvhmvuucx"]
 
 [ext_resource type="Texture2D" uid="uid://cddhqrsr4qemj" path="res://assets/tileset x1 edited.png" id="1_en6dv"]
 [ext_resource type="Script" uid="uid://bsnmwdk4n7e7u" path="res://scenes/Level/corredor_02.gd" id="1_wr2em"]
+[ext_resource type="PackedScene" uid="uid://cdnbrjfxms0gs" path="res://scenes/Level/Colision_shape.tscn" id="3_6jo7j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_en6dv"]
 texture = ExtResource("1_en6dv")
@@ -171,3 +172,18 @@ layer_2/name = "Layer2"
 layer_2/z_index = -1
 layer_2/tile_data = PackedInt32Array(131070, 0, 7, 131071, 0, 7, 65536, 0, 7, 65537, 0, 7, 65538, 131072, 1, 2, 65536, 2, -65534, 65536, 2, -131070, 65536, 2, -196606, 65536, 1, -196605, 327680, 0, -196604, 131072, 1, -262140, 131072, 0, -327675, 1114112, 2, -262139, 131072, 1, -327676, 1048576, 2, -393211, 131072, 9, -393212, 327680, 0, -393213, 327680, 0, -655359, 327680, 0, -655360, 327680, 0, -589825, 327680, 0, -589826, 327680, 0, -589827, 327680, 0, -589828, 327680, 0, -589829, 327680, 0, -589830, 524288, 9, -655358, 131072, 9, -589822, 65536, 2, -524286, 65536, 2, -458750, 65536, 2, -393214, 65536, 9, -524294, 589824, 9, -524295, 524288, 9, -458759, 1048576, 3, -458758, 1114112, 3, -393223, 524288, 1, -393222, 327680, 0, -393221, 327680, 0, -393220, 327680, 0, -393219, 327680, 0, -393218, 327680, 0, -393217, 524288, 0, -327681, 589824, 2, -262145, 589824, 2, -196609, 589824, 2, -131073, 589824, 2, -65537, 589824, 9, -65538, 327680, 10, -65539, 327680, 10, -65540, 524288, 9, -4, 1048576, 3, -3, 1114112, 3, 65532, 524288, 1, 65533, 524288, 0, 131069, 524288, 1)
 layer_3/name = "Layer3"
+
+[node name="LevelTransition" parent="." instance=ExtResource("3_6jo7j")]
+position = Vector2(-187, -240)
+level = "uid://bhm64tmhfb41j"
+target_transition_area = "LevelTransition2"
+
+[node name="LevelTransition2" parent="." instance=ExtResource("3_6jo7j")]
+position = Vector2(-91, -16)
+level = "uid://dnp4k2w11maqf"
+target_transition_area = "LevelTransition2"
+
+[node name="LevelTransition3" parent="." instance=ExtResource("3_6jo7j")]
+position = Vector2(156, -144)
+level = "uid://vyxl4kiny3co"
+side = 1

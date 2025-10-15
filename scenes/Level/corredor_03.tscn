@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://fg2072buxssh"]
+[gd_scene load_steps=8 format=3 uid="uid://fg2072buxssh"]
 
 [ext_resource type="Script" uid="uid://biwgkl5kxjwif" path="res://scenes/Level/corredor_03.gd" id="1_cav7b"]
 [ext_resource type="Texture2D" uid="uid://cddhqrsr4qemj" path="res://assets/tileset x1 edited.png" id="1_divxn"]
 [ext_resource type="Texture2D" uid="uid://dyl157dut0abj" path="res://assets/Dead Tileset V2.png" id="2_ndxx1"]
+[ext_resource type="PackedScene" uid="uid://cdnbrjfxms0gs" path="res://scenes/Level/Colision_shape.tscn" id="4_26p24"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ndxx1"]
 texture = ExtResource("1_divxn")
@@ -242,3 +243,15 @@ layer_2/z_index = -1
 layer_2/tile_data = PackedInt32Array(-262145, 327680, 0, -327680, 327680, 0, 0, 327680, 0, 65535, 327680, 0, -2, 589824, 2, -65538, 589824, 2, -131074, 589824, 2, -196610, 589824, 2, -262143, 65536, 2, -196607, 65536, 2, -131071, 65536, 2, -65535, 65536, 2, 1, 131072, 1, 65534, 524288, 1, -262146, 524288, 9, -327679, 131072, 9)
 layer_3/name = "Layer3"
 layer_3/tile_data = PackedInt32Array(-262145, 327681, 7, 65535, 327681, 7)
+
+[node name="LevelTransition" parent="." instance=ExtResource("4_26p24")]
+position = Vector2(-16, -4)
+level = "uid://danrpakqrlep5"
+target_transition_area = "LevelTransition3"
+side = 3
+
+[node name="LevelTransition2" parent="." instance=ExtResource("4_26p24")]
+position = Vector2(-16, -123)
+level = "uid://kfvecp4wrdgs"
+target_transition_area = "LevelTransition2"
+side = 2
