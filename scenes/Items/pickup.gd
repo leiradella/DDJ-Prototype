@@ -19,6 +19,7 @@ func _ready():
 	label.text = str(item.name)
 	$Node2D.position = Vector2(randi() % 1920, randi() % 1080)
 
-func _on_area_2d_body_entered(_body: Node2D) -> void:
-	EventManager.trigger_item_pickedup(item, quantity)
-	queue_free()
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.name == "Player":
+		EventManager.trigger_item_pickedup(item, quantity)
+		queue_free()
