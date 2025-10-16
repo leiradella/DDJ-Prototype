@@ -1,6 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://kkxlun36iqp4"]
 
-[ext_resource type="PackedScene" uid="uid://ca8b4n88a7sms" path="res://scenes/menus/options_menu/audio/audio_options_menu.tscn" id="1_4mg5b"]
+[ext_resource type="PackedScene" uid="uid://ca8b4n88a7sms" path="res://scenes/addons/menus/options_menu/audio/audio_options_menu.tscn" id="1_4mg5b"]
+
 
 [node name="Control" type="Control"]
 layout_mode = 3
