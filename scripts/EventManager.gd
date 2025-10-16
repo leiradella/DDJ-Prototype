@@ -2,7 +2,8 @@ extends Node
 
 signal item_pickedup(item, quantity)
 signal puzzle_solved
-
+signal pressure_on
+signal pressure_off
 signal level_load_started
 signal level_loaded
 var target_transition : String
@@ -17,6 +18,12 @@ func trigger_item_pickedup(item, quantity):
 
 func trigger_puzzle_solved() -> void:
 	emit_signal("puzzle_solved")
+	
+func trigger_pressure_on():
+	emit_signal("pressure_on")
+	
+func trigger_pressure_off():
+	emit_signal("pressure_off")
 
 func load_new_level(level_path : String, _target_transition : String, _position_offset : Vector2) -> void:
 	get_tree().paused = true
