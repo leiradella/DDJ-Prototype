@@ -4,14 +4,12 @@ extends CharacterBody2D
 
 #enemy stats
 var health: float = 3.0
-var moveSpeed: float = 120.0
-var detectionRadius: float = 350.0
-var sightRadius: float = 1000.0
-var reviveRange: float = 200.0
+var moveSpeed: float = 20.0
+var detectionRadius: float = 100.0
+var sightRadius: float = 200.0
+var reviveRange: float = 30.0
 var reviveTime: float = 2.0
 var timer: float = 0.0
-var RDR: float = 0.0 #repeatedDamageReducion, part of the EATS system
-var RDRGrowthRate: float = 1.1
 var last_facing: Vector2 = Vector2.DOWN
 var facing_deadzone: float = 0.1
 
@@ -105,19 +103,31 @@ func _revive_update(delta: float) -> void:
 func _dead_update(_delta: float) -> void:
 	pass
 
-func TakeDamage(dmg: float) -> void:
-	health -= dmg - (dmg * RDR)
-	if RDR == 0.0:
-		RDR = 0.1
-	else:
-		RDR *= RDRGrowthRate
+func take_damage(bodypart: Bodypart, dmg: float) -> void:
 	
+	bodypart.take_damage(dmg)
+	if bodypart.health <= 0.0:
+		die()
+		return
+	
+	health -= dmg
 	if health <= 0:
-		state = State.DEAD
-		set_collision_layer_value(2, false)
-		velocity = Vector2.ZERO
-		set_collision_layer_value(2, false)
-		sprite.rotation = deg_to_rad(180-rotation)
+		die()
+		return
+
+func die() -> void:
+	
+	#kill bodyparts
+	for node in get_children():
+		if node is Bodypart:
+			node.die()
+	
+	#kill self
+	health = 0.0
+	state = State.DEAD
+	set_collision_layer_value(2, false)
+	velocity = Vector2.ZERO
+	sprite.rotation = deg_to_rad(180-rotation)
 
 func DetectDead() -> void:
 	var enemyDistance: float = -1.0
@@ -147,7 +157,7 @@ func update_animation() -> void:
 	var suffix: String = get_facing_suffix()
 	var animation: String = prefix + suffix
 	
-	print(animation)
+	#print(animation)
 	#sprite.play(animation)
 
 func update_facing() -> void:

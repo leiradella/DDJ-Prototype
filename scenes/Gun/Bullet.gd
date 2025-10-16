@@ -12,8 +12,9 @@ func _ready() -> void:
 	return
 
 func _on_body_entered(body) -> void:
-	if body.is_in_group("Enemies"):
-		body.TakeDamage(damage)
+	var main_body = body.main_body
+	if main_body.is_in_group("Enemies"):
+		main_body.take_damage(body, damage)
 	queue_free()
 	return
 

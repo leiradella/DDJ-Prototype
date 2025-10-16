@@ -118,25 +118,39 @@ func _attack_update(delta: float) -> void:
 func _dead_update(_delta: float) -> void:
 	pass
 
-func TakeDamage(dmg: int) -> void:
-	health -= dmg - (dmg * RDR)
-	if RDR == 0.0:
-		RDR = 0.1
-	else:
-		RDR *= RDRGrowthRate
-		if RDR > 0.8:
-			RDR = 0.8
+func take_damage(bodypart: Bodypart, dmg: float) -> void:
 	
-	if (health <= 0.0):
-		state = State.DEAD
-		velocity = Vector2.ZERO
-		set_collision_layer_value(2, false)
-		sprite.rotation = deg_to_rad(180)
+	bodypart.take_damage(dmg)
+	if bodypart.health <= 0.0:
+		die()
+		return
+	
+	health -= dmg
+	if health <= 0:
+		die()
+		return
+
+func die() -> void:
+	
+	#kill bodyparts
+	for node in get_children():
+		if node is Bodypart:
+			node.die()
+	
+	#kill self
+	health = 0.0
+	state = State.DEAD
+	set_collision_layer_value(2, false)
+	velocity = Vector2.ZERO
+	sprite.rotation = deg_to_rad(180-rotation)
 
 func IsDead() -> bool:
 	return state == State.DEAD
 
 func revive() -> void:
+	for node in get_children():
+		if node is Bodypart:
+			node.revive()
 	state = State.IDLE
 	sprite.rotation = deg_to_rad(0)
 	set_collision_layer_value(2, true)
@@ -162,7 +176,7 @@ func update_animation() -> void:
 	var suffix: String = get_facing_suffix()
 	var animation: String = prefix + suffix
 	
-	print(animation)
+	#print(animation)
 	#sprite.play(animation)
 
 func update_facing() -> void:

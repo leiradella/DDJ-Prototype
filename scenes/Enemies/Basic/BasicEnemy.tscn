@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://bwnxnr73iqqf2"]
+[gd_scene load_steps=14 format=3 uid="uid://bwnxnr73iqqf2"]
 
 [ext_resource type="Script" uid="uid://dufyq1jau70ux" path="res://scenes/Enemies/Basic/BasicEnemy.gd" id="1_yk3e8"]
 [ext_resource type="Texture2D" uid="uid://cjlaon87cqyh1" path="res://assets/enemy.png" id="2_yk3e8"]
+[ext_resource type="PackedScene" uid="uid://c8uoc3r1d4p7t" path="res://scenes/Enemies/bodypart.tscn" id="3_ogxxn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mtbx7"]
 size = Vector2(10, 14.8)
@@ -51,6 +52,15 @@ animations = [{
 "speed": 0.5
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2q6f0"]
+size = Vector2(6.000001, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ogxxn"]
+size = Vector2(10, 5.0000005)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_itc2g"]
+size = Vector2(6, 6.000001)
+
 [node name="BasicEnemy" type="CharacterBody2D"]
 scale = Vector2(5, 5)
 collision_layer = 2
@@ -58,6 +68,7 @@ collision_mask = 7
 script = ExtResource("1_yk3e8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, 0.60000074)
 scale = Vector2(0.99999976, 0.99999976)
 shape = SubResource("RectangleShape2D_mtbx7")
@@ -72,3 +83,34 @@ shape = SubResource("CapsuleShape2D_yk3e8")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_itc2g")
 animation = &"idle_up"
+
+[node name="Head" parent="." node_paths=PackedStringArray("main_body") instance=ExtResource("3_ogxxn")]
+position = Vector2(0, -5)
+main_body = NodePath("..")
+max_health = 0.5
+
+[node name="hitbox" parent="Head" index="0"]
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_2q6f0")
+
+[node name="Torso" parent="." node_paths=PackedStringArray("main_body") instance=ExtResource("3_ogxxn")]
+position = Vector2(0, -0.5)
+main_body = NodePath("..")
+max_health = 1.0
+
+[node name="hitbox" parent="Torso" index="0"]
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_ogxxn")
+
+[node name="Legs" parent="." node_paths=PackedStringArray("main_body") instance=ExtResource("3_ogxxn")]
+position = Vector2(0, 5)
+main_body = NodePath("..")
+max_health = 2.0
+
+[node name="hitbox" parent="Legs" index="0"]
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_itc2g")
+
+[editable path="Head"]
+[editable path="Torso"]
+[editable path="Legs"]

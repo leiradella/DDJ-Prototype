@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://rhcp23adiw5l"]
+[gd_scene load_steps=11 format=3 uid="uid://rhcp23adiw5l"]
 
 [ext_resource type="Script" uid="uid://budfl80u2wvu8" path="res://scenes/Enemies/Necromancer/necromancer.gd" id="1_mlwvs"]
 [ext_resource type="Texture2D" uid="uid://dpmv0sreluib2" path="res://assets/enemynecrom.png" id="2_mlwvs"]
+[ext_resource type="PackedScene" uid="uid://c8uoc3r1d4p7t" path="res://scenes/Enemies/bodypart.tscn" id="3_gro1j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mlwvs"]
 size = Vector2(14, 16)
@@ -28,14 +29,52 @@ animations = [{
 "speed": 0.5
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gro1j"]
+size = Vector2(6, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ikht5"]
+size = Vector2(14, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mc17y"]
+size = Vector2(8, 5)
+
 [node name="Necromancer" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 7
 script = ExtResource("1_mlwvs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("RectangleShape2D_mlwvs")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_mc17y")
 animation = &"idle_down"
+
+[node name="Head" parent="." node_paths=PackedStringArray("main_body") instance=ExtResource("3_gro1j")]
+position = Vector2(0, -6)
+main_body = NodePath("..")
+max_health = 0.5
+
+[node name="hitbox" parent="Head" index="0"]
+shape = SubResource("RectangleShape2D_gro1j")
+
+[node name="Torso" parent="." node_paths=PackedStringArray("main_body") instance=ExtResource("3_gro1j")]
+position = Vector2(0, -0.5)
+main_body = NodePath("..")
+max_health = 1.0
+
+[node name="hitbox" parent="Torso" index="0"]
+shape = SubResource("RectangleShape2D_ikht5")
+
+[node name="Legs" parent="." node_paths=PackedStringArray("main_body") instance=ExtResource("3_gro1j")]
+position = Vector2(0, 5.5)
+main_body = NodePath("..")
+max_health = 2.0
+
+[node name="hitbox" parent="Legs" index="0"]
+shape = SubResource("RectangleShape2D_mc17y")
+
+[editable path="Head"]
+[editable path="Torso"]
+[editable path="Legs"]
