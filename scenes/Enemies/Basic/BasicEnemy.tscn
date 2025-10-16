@@ -1,12 +1,55 @@
-[gd_scene load_steps=5 format=3 uid="uid://bwnxnr73iqqf2"]
+[gd_scene load_steps=10 format=3 uid="uid://bwnxnr73iqqf2"]
 
-[ext_resource type="Texture2D" uid="uid://c75b0vb6dwkke" path="res://assets/cobson.png" id="1_upe28"]
 [ext_resource type="Script" uid="uid://dufyq1jau70ux" path="res://scenes/Enemies/Basic/BasicEnemy.gd" id="1_yk3e8"]
+[ext_resource type="Texture2D" uid="uid://cjlaon87cqyh1" path="res://assets/enemy.png" id="2_yk3e8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mtbx7"]
-size = Vector2(32, 32)
+size = Vector2(10, 14.8)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yk3e8"]
+radius = 5.0
+height = 20.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ogxxn"]
+atlas = ExtResource("2_yk3e8")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2q6f0"]
+atlas = ExtResource("2_yk3e8")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yk3e8"]
+atlas = ExtResource("2_yk3e8")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_itc2g"]
+atlas = ExtResource("2_yk3e8")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_itc2g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ogxxn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2q6f0")
+}],
+"loop": true,
+"name": &"idle_down",
+"speed": 0.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yk3e8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_itc2g")
+}],
+"loop": true,
+"name": &"idle_up",
+"speed": 0.5
+}]
 
 [node name="BasicEnemy" type="CharacterBody2D"]
 scale = Vector2(5, 5)
@@ -15,15 +58,17 @@ collision_mask = 7
 script = ExtResource("1_yk3e8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.60000074)
+scale = Vector2(0.99999976, 0.99999976)
 shape = SubResource("RectangleShape2D_mtbx7")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.05, 0.05)
-texture = ExtResource("1_upe28")
 
 [node name="AttackArea" type="Area2D" parent="."]
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
-position = Vector2(-15, 0)
+position = Vector2(-10, 0)
 shape = SubResource("CapsuleShape2D_yk3e8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_itc2g")
+animation = &"idle_up"

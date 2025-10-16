@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@onready var sprite: Sprite2D = $Sprite2D
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var attackArea: Area2D = $AttackArea
 @onready var attackShape: CollisionShape2D = $AttackArea/CollisionShape2D
 
@@ -16,6 +16,8 @@ var attackCooldown: float = 0.8
 var damage: float = 1.0
 var RDR: float = 0.0 #repeatedDamageReducion, part of the EATS system
 var RDRGrowthRate: float = 1.3
+var last_facing: Vector2 = Vector2.DOWN
+var facing_deadzone: float = 0.1
 
 #enemy states
 enum State {
@@ -40,6 +42,7 @@ var alreadyHit: bool = false
 func _ready() -> void:
 	add_to_group("Enemies")
 	add_to_group("EnemyBasic")
+	sprite.play("idle_down")
 	motion_mode = CharacterBody2D.MOTION_MODE_FLOATING
 	up_direction = Vector2.ZERO
 	floor_stop_on_slope = false
@@ -63,6 +66,8 @@ func _physics_process(delta: float) -> void:
 			_dead_update(delta)
 		_:
 			pass
+	
+	update_animation()
 	
 	move_and_slide()
 
@@ -146,3 +151,43 @@ func aimAttack() -> void:
 func attack() -> void:
 	if player in attackArea.get_overlapping_bodies():
 		player.takeDamage(damage)
+
+func update_animation() -> void:
+	update_facing()
+	
+	var horizontal: bool = abs(last_facing.x) >= abs(last_facing.y)
+	sprite.flip_h = horizontal and last_facing.x < 0
+	
+	var prefix: String = get_state_prefix()
+	var suffix: String = get_facing_suffix()
+	var animation: String = prefix + suffix
+	
+	print(animation)
+	#sprite.play(animation)
+
+func update_facing() -> void:
+	if velocity.length() > facing_deadzone:
+		if abs(velocity.x) >= abs(velocity.y):
+			last_facing = Vector2(sign(velocity.x), 0)
+		else:
+			last_facing = Vector2(0, sign(velocity.y))
+
+func get_state_prefix() -> String:
+	match state:
+		State.IDLE:
+			return "idle_"
+		State.CHASE:
+			return "chase_"
+		State.ATTACK:
+			return "attack_"
+		State.DEAD:
+			return "dead_"
+		_:
+			return "idle_"
+
+func get_facing_suffix() -> String:
+	if last_facing.y < 0:
+		return "up"
+	if last_facing.y > 0:
+		return "down"
+	return "right"
