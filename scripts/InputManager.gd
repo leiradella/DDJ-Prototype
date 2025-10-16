@@ -1,5 +1,4 @@
 extends Node
-
 #Control modes
 enum ControlMode {
 	GAMEPLAY,

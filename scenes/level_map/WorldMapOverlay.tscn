@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://wh7718c5lr4o"]
+
+[ext_resource type="Script" uid="uid://cf10e40siukiu" path="res://scenes/level_map/world_map_overlay.gd" id="1_ii248"]
+[ext_resource type="Texture2D" uid="uid://uhld815cu70b" path="res://assets/map.jpg" id="2_ofbmd"]
+
+[node name="WorldMapOverlay" type="CanvasLayer"]
+script = ExtResource("1_ii248")
+
+[node name="MapImage" type="TextureRect" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.64705884)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -510.0
+offset_top = 3.0
+offset_right = 514.0
+offset_bottom = 1027.0
+grow_horizontal = 0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_ofbmd")
