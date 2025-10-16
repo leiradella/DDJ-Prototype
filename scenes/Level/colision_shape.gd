@@ -28,7 +28,6 @@ func _ready() -> void:
 	monitoring = false
 	_place_player()
 	
-	#await EventManager.level_loaded
 	monitoring = true
 	body_entered.connect(_player_entered)
 
