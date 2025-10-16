@@ -246,7 +246,7 @@ layer_3/tile_data = PackedInt32Array(-524289, 327681, 7, 65527, 327681, 7, 8, 32
 
 [node name="LevelTransition" parent="." instance=ExtResource("4_w6gdk")]
 position = Vector2(-16, -251)
-level = "Room09.tscn"
+level = "uid://vudoq54aiai3"
 side = 2
 
 [node name="LevelTransition2" parent="." instance=ExtResource("4_w6gdk")]

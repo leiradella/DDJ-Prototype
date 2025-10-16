@@ -253,8 +253,10 @@ side = 3
 [node name="LevelTransition2" parent="." instance=ExtResource("4_qercf")]
 position = Vector2(-123, -16)
 level = "uid://4erecncyk36h"
-target_transition_area = "LevelTransition5"
+target_transition_area = "LevelTransition2"
 
 [node name="LevelTransition3" parent="." instance=ExtResource("4_qercf")]
 position = Vector2(80, -91)
+level = "uid://4erecncyk36h"
+target_transition_area = "LevelTransition5"
 side = 2
