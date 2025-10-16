@@ -11,7 +11,7 @@ theme = ExtResource("2_x31ro")
 script = ExtResource("2_ub2bi")
 level_select_packed_scene = null
 confirm_new_game = true
-game_scene_path = "uid://d0qjxcpq7lt2k"
+game_scene_path = "uid://cianjpankhym"
 options_packed_scene = ExtResource("3_peecx")
 credits_packed_scene = ExtResource("4_0jpat")
 
