@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://d0qjxcpq7lt2k"]
+[gd_scene load_steps=11 format=3 uid="uid://d0qjxcpq7lt2k"]
 
 [ext_resource type="Script" uid="uid://bfoo3ci44bnwk" path="res://scenes/Level/LevelRoot.gd" id="1_ga6q8"]
 [ext_resource type="PackedScene" uid="uid://bwnxnr73iqqf2" path="res://scenes/Enemies/Basic/BasicEnemy.tscn" id="3_f0xsc"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://c2rlk6edlojq2" path="res://scenes/Level/room_01.tscn" id="7_ca72q"]
 [ext_resource type="PackedScene" uid="uid://dveotnylnyxiu" path="res://scenes/Level/corredor_01.tscn" id="8_3t2oh"]
 [ext_resource type="PackedScene" uid="uid://d01ldrf7jtk5r" path="res://scenes/Level/Room02.tscn" id="9_7tmcs"]
+[ext_resource type="Theme" uid="uid://dhu35dhth6efp" path="res://theme_menu.tres" id="9_l55me"]
+[ext_resource type="Script" uid="uid://h2lddoemmogd" path="res://scenes/Level/corruption_bar.gd" id="10_l55me"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_ga6q8")
@@ -46,3 +48,24 @@ layer_3/tile_data = PackedInt32Array(262179, 393217, 3, 524325, 2, 7, 262183, 52
 [node name="Room02" parent="." instance=ExtResource("9_7tmcs")]
 layer_0/tile_data = PackedInt32Array(60, 2097152, 2, -196547, 2097152, 1, -131011, 2162688, 1, -65475, 2162688, 1, 61, 2162688, 1, -131010, 2162688, 1, -65474, 2162688, 1, -131009, 2228224, 1, -131008, 2097152, 2, -196546, 2162688, 1, 62, 2097152, 1, -196545, 2162688, 1, -65473, 2162688, 1, 63, 2162688, 1, -65472, 2097152, 2, -131007, 2097152, 2, -131006, 2097152, 2)
 layer_2/tile_data = PackedInt32Array(-262084, 524288, 9, -196548, 589824, 2, -131012, 589824, 2, -65476, 589824, 2, 60, 589824, 2, 65596, 524288, 1, -262083, 327680, 0, -196547, 1114112, 3, 61, 1114112, 3, 65597, 327680, 0, -262082, 327680, 0, 65598, 327680, 0, -262081, 327680, 0, 65599, 327680, 0, -262080, 131072, 9, -196544, 262144, 2, 64, 65536, 1, -196543, 327680, 0, -131007, 1048576, 2, -65471, 65536, 1, 65, 131072, 1, -196542, 131072, 9, -131006, 65536, 2, -65470, 131072, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CorruptionBar" type="ProgressBar" parent="CanvasLayer"]
+offset_left = 270.0
+offset_top = 20.0
+offset_right = 570.0
+offset_bottom = 90.0
+scale = Vector2(0.8, 0.8)
+theme = ExtResource("9_l55me")
+value = 50.0
+script = ExtResource("10_l55me")
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 25.0
+offset_top = 5.0
+offset_right = 260.0
+offset_bottom = 75.0
+theme = ExtResource("9_l55me")
+theme_override_colors/font_color = Color(0.8235294, 0.18431373, 0.58431375, 1)
+text = "corruption"
