@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://yp4a7vyufgq5"
-path="res://.godot/imported/logo.png-114f5d870b679bebeed6d3614c55837d.ctex"
+uid="uid://debnexxrt07xa"
+path="res://.godot/imported/light.png-c6975fb32227f695e99aa404d3cb0032.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/maaacks_game_template/examples/assets/plugin_logo/logo.png"
-dest_files=["res://.godot/imported/logo.png-114f5d870b679bebeed6d3614c55837d.ctex"]
+source_file="res://scenes/light/light.png"
+dest_files=["res://.godot/imported/light.png-c6975fb32227f695e99aa404d3cb0032.ctex"]
 
 [params]
 

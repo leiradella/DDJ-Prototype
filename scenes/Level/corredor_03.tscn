@@ -234,7 +234,7 @@ script = ExtResource("1_cav7b")
 tile_set = SubResource("TileSet_o3hio")
 format = 2
 layer_0/z_index = -3
-layer_0/tile_data = PackedInt32Array(-196609, 2097152, 2, -131073, 2097152, 2, -131072, 2097152, 2, -65537, 2097152, 2, -65536, 2097152, 2, -1, 2097152, 2, 131071, 2097152, 2, -196608, 2097152, 2, -262144, 2097152, 2, -327681, 2097152, 2, -262145, 2097152, 2, 65535, 2097152, 2, 196607, 2097152, 2, -393217, 2097152, 2)
+layer_0/tile_data = PackedInt32Array(-196609, 2097152, 2, -131073, 2097152, 2, -131072, 2097152, 2, -65537, 2097152, 2, -65536, 2097152, 2, -1, 2097152, 2, 131071, 2097152, 2, -196608, 2097152, 2, -262144, 2097152, 2, -327681, 2097152, 2, -262145, 2097152, 2, 65535, 2097152, 2, 196607, 2097152, 2, -393217, 2097152, 2, -327680, 2097152, 2, 0, 2097152, 2)
 layer_1/name = "Layer1"
 layer_1/y_sort_enabled = true
 layer_1/z_index = -2
@@ -255,3 +255,7 @@ position = Vector2(-16, -155)
 level = "uid://kfvecp4wrdgs"
 target_transition_area = "LevelTransition2"
 side = 2
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+energy = 0.95
+blend_mode = 1

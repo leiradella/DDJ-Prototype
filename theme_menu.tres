@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=7 format=3 uid="uid://dhu35dhth6efp"]
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://dhu35dhth6efp"]
 
 [ext_resource type="FontFile" uid="uid://coi4ydn2qa5uo" path="res://assets/Pixeled.ttf" id="1_d011e"]
 
@@ -78,6 +78,18 @@ expand_margin_top = 2.0
 expand_margin_right = 2.0
 expand_margin_bottom = 2.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_72i57"]
+bg_color = Color(0.21439856, 0.3343002, 0.7511529, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3iisd"]
+bg_color = Color(0.44996238, 0.5805406, 0.94038486, 1)
+corner_radius_top_left = 5
+corner_radius_bottom_left = 5
+
 [resource]
 default_font = ExtResource("1_d011e")
 default_font_size = 25
@@ -91,3 +103,5 @@ Button/styles/focus = SubResource("StyleBoxFlat_72mo5")
 Button/styles/hover = SubResource("StyleBoxFlat_n0d47")
 Button/styles/normal = SubResource("StyleBoxFlat_dur3p")
 Button/styles/pressed = SubResource("StyleBoxFlat_5x1yx")
+ProgressBar/styles/background = SubResource("StyleBoxFlat_72i57")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_3iisd")
