@@ -6,4 +6,6 @@
 [node name="InventoryManager" type="Node"]
 script = ExtResource("1_wipi3")
 
-[node name="Inventory" parent="." instance=ExtResource("2_dmd88")]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Inventory" parent="CanvasLayer" instance=ExtResource("2_dmd88")]
