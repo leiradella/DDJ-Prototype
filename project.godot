@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="DDJ-Prototype"
-run/main_scene="uid://d0qjxcpq7lt2k"
+run/main_scene="res://scenes/opening/opening_with_logo.tscn"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 InputManager="*res://scripts/InputManager.gd"
 EventManager="*res://scripts/EventManager.gd"
+AppConfig="*res://addons/maaacks_game_template/base/scenes/autoloads/app_config.tscn"
+SceneLoader="*res://addons/maaacks_game_template/base/scenes/autoloads/scene_loader.tscn"
+ProjectMusicController="*res://addons/maaacks_game_template/base/scenes/autoloads/project_music_controller.tscn"
+ProjectUISoundController="*res://addons/maaacks_game_template/base/scenes/autoloads/project_ui_sound_controller.tscn"
 GlobalPlayerManager="*res://scripts/global_Player_Manager.gd"
 
 [display]
@@ -26,6 +30,10 @@ GlobalPlayerManager="*res://scripts/global_Player_Manager.gd"
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/stretch/mode="viewport"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/maaacks_game_template/plugin.cfg")
 
 [input]
 
@@ -70,6 +78,10 @@ escape={
 ]
 }
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://addons/maaacks_game_template/base/translations/menus_translations.en.translation", "res://addons/maaacks_game_template/base/translations/menus_translations.fr.translation")
+
 [layer_names]
 
 2d_physics/layer_1="Player"
@@ -77,6 +89,14 @@ escape={
 2d_physics/layer_3="Walls"
 2d_physics/layer_4="steppables"
 
+[maaacks_game_template]
+
+disable_install_audio_busses=true
+disable_update_check=false
+disable_install_wizard=true
+copy_path="res://"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+environment/defaults/default_clear_color=Color(0.12591082, 0.12591085, 0.12591079, 1)
