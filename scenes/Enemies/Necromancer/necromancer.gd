@@ -9,6 +9,7 @@ var detectionRadius: float = 350.0
 var sightRadius: float = 1000.0
 var reviveRange: float = 200.0
 var reviveTime: float = 2.0
+var timer: float = 0.0
 var RDR: float = 0.0 #repeatedDamageReducion, part of the EATS system
 var RDRGrowthRate: float = 1.1
 
@@ -77,7 +78,7 @@ func _flight_update(_delta: float) -> void:
 	direction = direction.normalized()
 	velocity = -direction * moveSpeed
 
-func _revive_update(_delta: float) -> void:
+func _revive_update(delta: float) -> void:
 	var targetDirection: Vector2 = target.global_position - global_position
 	var playerDistance: float = global_position.distance_to(player.global_position)
 	
@@ -87,9 +88,11 @@ func _revive_update(_delta: float) -> void:
 	
 	if targetDirection.length() < reviveRange:
 		velocity = Vector2.ZERO
-		await get_tree().create_timer(reviveTime).timeout
-		target.revive()
-		state = State.IDLE
+		
+		timer -= delta
+		if timer <= 0.0:
+			target.revive()
+			state = State.IDLE
 		return
 	
 	targetDirection = targetDirection.normalized()
@@ -124,4 +127,9 @@ func DetectDead() -> void:
 	
 	#if an enemy was found then begin ressurection
 	if enemyDistance != -1.0 and target != null:
+		print("state = revive")
+		print("distance = ", enemyDistance)
+		print("target = ", target)
+		timer = reviveTime
 		state = State.REVIVE
+		

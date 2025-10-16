@@ -1,6 +1,6 @@
 extends Node
 
-@onready var inventory = $Inventory
+@onready var inventory = $CanvasLayer/Inventory
 
 var bullet_item = preload("res://scenes/Items/bullet_item.tres")
 var player: Player

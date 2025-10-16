@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhgoofyg7i60x"]
+
+[ext_resource type="PackedScene" uid="uid://dveotnylnyxiu" path="res://scenes/Level/corredor_01.tscn" id="1_a3nlj"]
+
+[node name="Corredor01" type="Node2D"]
+
+[node name="Corredor01" parent="." instance=ExtResource("1_a3nlj")]

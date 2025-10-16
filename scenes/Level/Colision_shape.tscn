@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdnbrjfxms0gs"]
+
+[ext_resource type="Script" uid="uid://cs3tx6lj8sr4u" path="res://scenes/Level/colision_shape.gd" id="1_jyiku"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gf1fj"]
+resource_local_to_scene = true
+size = Vector2(32, 32)
+
+[node name="LevelTransition" type="Area2D"]
+collision_layer = 0
+monitorable = false
+script = ExtResource("1_jyiku")
+size = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-16, 0)
+shape = SubResource("RectangleShape2D_gf1fj")

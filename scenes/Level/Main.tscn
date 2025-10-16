@@ -1,22 +1,26 @@
-[gd_scene load_steps=6 format=3 uid="uid://d0qjxcpq7lt2k"]
+[gd_scene load_steps=9 format=3 uid="uid://d0qjxcpq7lt2k"]
 
 [ext_resource type="Script" uid="uid://bfoo3ci44bnwk" path="res://scenes/Level/LevelRoot.gd" id="1_ga6q8"]
-[ext_resource type="PackedScene" uid="uid://vocw65nwi5x5" path="res://scenes/Player/Player.tscn" id="2_8mevb"]
 [ext_resource type="PackedScene" uid="uid://bwnxnr73iqqf2" path="res://scenes/Enemies/Basic/BasicEnemy.tscn" id="3_f0xsc"]
 [ext_resource type="PackedScene" uid="uid://rhcp23adiw5l" path="res://scenes/Enemies/Necromancer/Necromancer.tscn" id="4_wrmb8"]
 [ext_resource type="PackedScene" uid="uid://db6nti7m0hbk" path="res://scenes/Items/pickup.tscn" id="5_7tjmy"]
+[ext_resource type="PackedScene" uid="uid://dpqcl8mac4umq" path="res://scenes/Interactibles/computer.tscn" id="6_u7171"]
+[ext_resource type="PackedScene" uid="uid://c2rlk6edlojq2" path="res://scenes/Level/room_01.tscn" id="7_ca72q"]
+[ext_resource type="PackedScene" uid="uid://dveotnylnyxiu" path="res://scenes/Level/corredor_01.tscn" id="8_3t2oh"]
+[ext_resource type="PackedScene" uid="uid://d01ldrf7jtk5r" path="res://scenes/Level/Room02.tscn" id="9_7tmcs"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_ga6q8")
 
-[node name="Player" parent="." instance=ExtResource("2_8mevb")]
-position = Vector2(661, 158.00003)
-
 [node name="BasicEnemy" parent="." instance=ExtResource("3_f0xsc")]
-position = Vector2(1698.9999, 145)
+position = Vector2(1662, 38)
+scale = Vector2(1, 1)
+collision_mask = 23
 
 [node name="BasicEnemy2" parent="." instance=ExtResource("3_f0xsc")]
-position = Vector2(358.99997, 898.99994)
+position = Vector2(1463.9999, -158.99994)
+scale = Vector2(1, 1)
+collision_mask = 23
 
 [node name="Necromancer" parent="." instance=ExtResource("4_wrmb8")]
 position = Vector2(905, 288)
@@ -27,3 +31,18 @@ quantity = 1
 [node name="Pickup2" parent="." instance=ExtResource("5_7tjmy")]
 type = 1
 quantity = 1
+
+[node name="Computer" parent="." instance=ExtResource("6_u7171")]
+position = Vector2(98, 269)
+
+[node name="Room01" parent="." instance=ExtResource("7_ca72q")]
+layer_0/tile_data = PackedInt32Array(327714, 2228225, 1, 393250, 2228225, 1, 458786, 2228225, 1, 327715, 2228225, 1, 393251, 2097153, 1, 458787, 2228225, 1, 196644, 2097153, 2, 262180, 2097153, 2, 327716, 2097153, 2, 393252, 2228225, 1, 458788, 2228225, 1, 262181, 2097153, 2, 327717, 2228225, 1, 393253, 2228225, 1, 458789, 2228225, 1, 524325, 2228225, 1, 589861, 2162689, 1, 655397, 2162689, 1, 327718, 2228225, 1, 393254, 2228225, 1, 458790, 2228225, 1, 524326, 2228225, 1, 589862, 2162689, 1, 655398, 2162689, 1, 327719, 2228225, 1, 393255, 2228225, 1, 458791, 2228225, 1, 524327, 2228225, 1, 589863, 2162689, 1, 655399, 2162689, 1, 327720, 2228225, 1, 393256, 2097153, 2, 458792, 2097153, 1, 393257, 2097153, 2, 393258, 2097153, 2)
+layer_1/tile_data = PackedInt32Array(262180, 327681, 10)
+layer_2/tile_data = PackedInt32Array(262177, 524289, 9, 327713, 589825, 2, 393249, 589825, 2, 458785, 589825, 2, 524321, 524289, 1, 262178, 327681, 10, 524322, 327681, 0, 196643, 458753, 9, 262179, 458753, 10, 524323, 327681, 0, 262180, 327682, 7, 524324, 524289, 0, 589860, 589825, 2, 655396, 589825, 2, 720932, 524289, 1, 196645, 196609, 9, 262181, 262145, 10, 720933, 327681, 0, 262182, 327681, 10, 720934, 327681, 0, 262183, 327681, 10, 720935, 327681, 0, 262184, 327681, 10, 393256, 1048577, 2, 524328, 131073, 0, 589864, 65537, 2, 655400, 65537, 2, 720936, 131073, 1, 262185, 131073, 9, 327721, 917505, 2, 393257, 65537, 2, 458793, 917505, 2, 524329, 131073, 1)
+layer_3/tile_data = PackedInt32Array(262179, 393217, 3, 524325, 2, 7, 262183, 524289, 3, 524327, 65538, 7)
+
+[node name="Corredor01" parent="." instance=ExtResource("8_3t2oh")]
+
+[node name="Room02" parent="." instance=ExtResource("9_7tmcs")]
+layer_0/tile_data = PackedInt32Array(60, 2097152, 2, -196547, 2097152, 1, -131011, 2162688, 1, -65475, 2162688, 1, 61, 2162688, 1, -131010, 2162688, 1, -65474, 2162688, 1, -131009, 2228224, 1, -131008, 2097152, 2, -196546, 2162688, 1, 62, 2097152, 1, -196545, 2162688, 1, -65473, 2162688, 1, 63, 2162688, 1, -65472, 2097152, 2, -131007, 2097152, 2, -131006, 2097152, 2)
+layer_2/tile_data = PackedInt32Array(-262084, 524288, 9, -196548, 589824, 2, -131012, 589824, 2, -65476, 589824, 2, 60, 589824, 2, 65596, 524288, 1, -262083, 327680, 0, -196547, 1114112, 3, 61, 1114112, 3, 65597, 327680, 0, -262082, 327680, 0, 65598, 327680, 0, -262081, 327680, 0, 65599, 327680, 0, -262080, 131072, 9, -196544, 262144, 2, 64, 65536, 1, -196543, 327680, 0, -131007, 1048576, 2, -65471, 65536, 1, 65, 131072, 1, -196542, 131072, 9, -131006, 65536, 2, -65470, 131072, 1)

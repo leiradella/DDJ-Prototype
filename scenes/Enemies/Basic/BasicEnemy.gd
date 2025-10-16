@@ -6,10 +6,10 @@ extends CharacterBody2D
 
 #enemy stats
 var health: float = 3.0
-var moveSpeed: float = 120.0
-var detectionRadius: float = 500.0
-var sightRadius: float = 1000.0
-var attackRange: float = 200.0
+var moveSpeed: float = 30.0
+var detectionRadius: float = 100.0
+var sightRadius: float = 200.0
+var attackRange: float = 40.0
 var attackWindup: float = 0.3
 var attackActive: float = 0.10
 var attackCooldown: float = 0.8
