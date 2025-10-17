@@ -279,7 +279,7 @@ scale = Vector2(0.2, 0.2)
 position = Vector2(208, -46)
 
 [node name="Light2" parent="." instance=ExtResource("7_sxtoj")]
-position = Vector2(32, -52)
+position = Vector2(32, -71)
 
 [node name="Light3" parent="." instance=ExtResource("6_01wkb")]
 position = Vector2(78, -143)
