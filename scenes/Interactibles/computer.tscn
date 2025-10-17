@@ -1,11 +1,11 @@
 [gd_scene load_steps=6 format=3 uid="uid://dpqcl8mac4umq"]
 
-[ext_resource type="Texture2D" uid="uid://oxcqpnupnlx" path="res://assets/CN.jpg" id="1_6p6ug"]
 [ext_resource type="Script" uid="uid://c45txcrgkn6u1" path="res://scenes/Interactibles/computer.gd" id="1_fa8wf"]
+[ext_resource type="Texture2D" uid="uid://drdlloci8qhit" path="res://assets/computer_tile.png" id="2_qyx36"]
 [ext_resource type="PackedScene" uid="uid://1xjoinast10v" path="res://scenes/Interactibles/puzzle/puzzle.tscn" id="3_qyx36"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6p6ug"]
-size = Vector2(95, 95)
+size = Vector2(94, 60)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fa8wf"]
 size = Vector2(140, 140)
@@ -16,16 +16,18 @@ collision_mask = 0
 script = ExtResource("1_fa8wf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, 15)
 shape = SubResource("RectangleShape2D_6p6ug")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.175, 0.175)
-texture = ExtResource("1_6p6ug")
+scale = Vector2(5, 5)
+texture = ExtResource("2_qyx36")
 
 [node name="InteractionArea" type="Area2D" parent="."]
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(0, 28)
 shape = SubResource("RectangleShape2D_fa8wf")
 
 [node name="Puzzle" parent="." instance=ExtResource("3_qyx36")]
