@@ -1,10 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://c1ifv8tylxtfi"]
+[gd_scene load_steps=12 format=3 uid="uid://c1ifv8tylxtfi"]
 
 [ext_resource type="Script" uid="uid://cjkwcdthi3lm3" path="res://scenes/Level/room_08.gd" id="1_mfoyn"]
 [ext_resource type="Texture2D" uid="uid://cddhqrsr4qemj" path="res://assets/tileset x1 edited.png" id="2_8nkdu"]
 [ext_resource type="Texture2D" uid="uid://dyl157dut0abj" path="res://assets/Dead Tileset V2.png" id="3_7n5s2"]
 [ext_resource type="PackedScene" uid="uid://cdnbrjfxms0gs" path="res://scenes/Level/Colision_shape.tscn" id="4_7n5s2"]
 [ext_resource type="PackedScene" uid="uid://dpqcl8mac4umq" path="res://scenes/Interactibles/computer.tscn" id="5_1su4i"]
+[ext_resource type="PackedScene" uid="uid://dyy0ia302pg6k" path="res://scenes/light/light.tscn" id="6_01wkb"]
+[ext_resource type="PackedScene" uid="uid://cdcl0ap06i1f1" path="res://scenes/light/light_right.tscn" id="7_sxtoj"]
+[ext_resource type="PackedScene" uid="uid://bkphrc7awb2q" path="res://scenes/light/light_left.tscn" id="8_62ksn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1su4i"]
 texture = ExtResource("2_8nkdu")
@@ -270,3 +273,21 @@ blend_mode = 1
 [node name="Computer" parent="." instance=ExtResource("5_1su4i")]
 position = Vector2(42.999996, -83.99999)
 scale = Vector2(0.2, 0.2)
+
+[node name="Light" parent="." instance=ExtResource("6_01wkb")]
+position = Vector2(208, -46)
+
+[node name="Light2" parent="." instance=ExtResource("7_sxtoj")]
+position = Vector2(32, -52)
+
+[node name="Light3" parent="." instance=ExtResource("6_01wkb")]
+position = Vector2(78, -143)
+
+[node name="Light4" parent="." instance=ExtResource("8_62ksn")]
+position = Vector2(160, 101)
+
+[node name="Light5" parent="." instance=ExtResource("7_sxtoj")]
+position = Vector2(32, 56)
+
+[node name="Light6" parent="." instance=ExtResource("7_sxtoj")]
+position = Vector2(0, 168)

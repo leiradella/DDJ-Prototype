@@ -1,8 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://18gxvhmvuucx"]
+[gd_scene load_steps=9 format=3 uid="uid://18gxvhmvuucx"]
 
 [ext_resource type="Texture2D" uid="uid://cddhqrsr4qemj" path="res://assets/tileset x1 edited.png" id="1_en6dv"]
 [ext_resource type="Script" uid="uid://bsnmwdk4n7e7u" path="res://scenes/Level/corredor_02.gd" id="1_wr2em"]
 [ext_resource type="PackedScene" uid="uid://cdnbrjfxms0gs" path="res://scenes/Level/Colision_shape.tscn" id="3_6jo7j"]
+[ext_resource type="PackedScene" uid="uid://dyy0ia302pg6k" path="res://scenes/light/light.tscn" id="4_8ad1p"]
+[ext_resource type="PackedScene" uid="uid://bkphrc7awb2q" path="res://scenes/light/light_left.tscn" id="5_j2ecg"]
+[ext_resource type="PackedScene" uid="uid://cdcl0ap06i1f1" path="res://scenes/light/light_right.tscn" id="6_msbey"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_en6dv"]
 texture = ExtResource("1_en6dv")
@@ -191,3 +194,25 @@ side = 1
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 energy = 0.95
 blend_mode = 1
+
+[node name="Light" parent="." instance=ExtResource("4_8ad1p")]
+position = Vector2(-112, -301)
+
+[node name="Light2" parent="." instance=ExtResource("4_8ad1p")]
+visibility_layer = 0
+position = Vector2(-48, -206)
+
+[node name="Light3" parent="." instance=ExtResource("5_j2ecg")]
+position = Vector2(64, -253)
+
+[node name="Light4" parent="." instance=ExtResource("4_8ad1p")]
+position = Vector2(112, -174)
+
+[node name="Light5" parent="." instance=ExtResource("6_msbey")]
+position = Vector2(0, -112)
+
+[node name="Light6" parent="." instance=ExtResource("5_j2ecg")]
+position = Vector2(64, -8)
+
+[node name="Light7" parent="." instance=ExtResource("4_8ad1p")]
+position = Vector2(-48, -46)

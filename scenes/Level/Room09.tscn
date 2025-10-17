@@ -1,10 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://vudoq54aiai3"]
+[gd_scene load_steps=13 format=3 uid="uid://vudoq54aiai3"]
 
 [ext_resource type="Script" uid="uid://c8domhmjmjrsh" path="res://scenes/Level/room_09.gd" id="1_phk4n"]
 [ext_resource type="Texture2D" uid="uid://cddhqrsr4qemj" path="res://assets/tileset x1 edited.png" id="2_po047"]
 [ext_resource type="Texture2D" uid="uid://dyl157dut0abj" path="res://assets/Dead Tileset V2.png" id="3_5pvkd"]
 [ext_resource type="Texture2D" uid="uid://dfm5w74p4egok" path="res://assets/Zombie Apocalypse Tileset Reference.png" id="4_k4cbr"]
 [ext_resource type="PackedScene" uid="uid://cdnbrjfxms0gs" path="res://scenes/Level/Colision_shape.tscn" id="5_5pvkd"]
+[ext_resource type="PackedScene" uid="uid://dyy0ia302pg6k" path="res://scenes/light/light.tscn" id="6_vxvhl"]
+[ext_resource type="PackedScene" uid="uid://cdcl0ap06i1f1" path="res://scenes/light/light_right.tscn" id="7_86at1"]
+[ext_resource type="PackedScene" uid="uid://bkphrc7awb2q" path="res://scenes/light/light_left.tscn" id="8_q1a5r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ebmy8"]
 texture = ExtResource("2_po047")
@@ -465,3 +468,37 @@ side = 3
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 energy = 0.95
 blend_mode = 1
+
+[node name="Light" parent="." instance=ExtResource("6_vxvhl")]
+position = Vector2(23, 120)
+
+[node name="Light2" parent="." instance=ExtResource("6_vxvhl")]
+position = Vector2(212, 120)
+
+[node name="Light3" parent="." instance=ExtResource("6_vxvhl")]
+visibility_layer = 0
+position = Vector2(50, 89)
+
+[node name="Light4" parent="." instance=ExtResource("6_vxvhl")]
+visibility_layer = 0
+position = Vector2(184, 89)
+
+[node name="Light5" parent="." instance=ExtResource("7_86at1")]
+position = Vector2(-91, 78)
+
+[node name="Light6" parent="." instance=ExtResource("8_q1a5r")]
+position = Vector2(325, 80)
+
+[node name="Light7" parent="." instance=ExtResource("6_vxvhl")]
+position = Vector2(22, -40)
+
+[node name="Light8" parent="." instance=ExtResource("6_vxvhl")]
+position = Vector2(213, -40)
+
+[node name="Light9" parent="." instance=ExtResource("6_vxvhl")]
+visibility_layer = 0
+position = Vector2(22, 248)
+
+[node name="Light10" parent="." instance=ExtResource("6_vxvhl")]
+visibility_layer = 0
+position = Vector2(213, 248)
