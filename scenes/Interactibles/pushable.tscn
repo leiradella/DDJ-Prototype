@@ -6,15 +6,15 @@
 friction = 0.5
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1y8u8"]
-size = Vector2(64, 64)
+size = Vector2(32, 32)
 
-[node name="Pushable" type="Node"]
+[node name="Pushable" type="Node2D"]
+scale = Vector2(0.5, 0.5)
 
 [node name="Pushable" type="RigidBody2D" parent="."]
-position = Vector2(700, 700)
 collision_layer = 7
 collision_mask = 7
-mass = 0.511
+mass = 10.0
 physics_material_override = SubResource("PhysicsMaterial_1y8u8")
 gravity_scale = 0.0
 linear_damp = 2.0
@@ -23,5 +23,5 @@ linear_damp = 2.0
 shape = SubResource("RectangleShape2D_1y8u8")
 
 [node name="Sprite2D" type="Sprite2D" parent="Pushable"]
-scale = Vector2(0.15, 0.15)
+scale = Vector2(0.075, 0.075)
 texture = ExtResource("1_1y8u8")
