@@ -4,11 +4,11 @@
 [ext_resource type="Script" uid="uid://cd252l2uffbvi" path="res://scenes/addons/menus/options_menu/mini_options_menu_with_reset.gd" id="2_xphcu"]
 [ext_resource type="PackedScene" uid="uid://bsaqsnnrimawi" path="res://scenes/addons/menus/options_menu/game/reset_game_control/reset_game_control.tscn" id="3_kj0d4"]
 
-
 [node name="MiniOptionsMenu" instance=ExtResource("1_d8n2j")]
 script = ExtResource("2_xphcu")
 
 [node name="ResetGameControl" parent="." index="3" instance=ExtResource("3_kj0d4")]
+visible = false
 layout_mode = 2
 
 [connection signal="reset_confirmed" from="ResetGameControl" to="." method="_on_reset_game_control_reset_confirmed"]

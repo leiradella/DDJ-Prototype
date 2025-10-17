@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cianjpankhym"]
+[gd_scene load_steps=10 format=3 uid="uid://cianjpankhym"]
 
 [ext_resource type="Script" uid="uid://b18v6cht0d882" path="res://scenes/Level/room_01.gd" id="1_8xcqc"]
 [ext_resource type="PackedScene" uid="uid://c2rlk6edlojq2" path="res://scenes/Level/room_01.tscn" id="1_rf42j"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://bkphrc7awb2q" path="res://scenes/light/light_left.tscn" id="5_k4u1h"]
 [ext_resource type="PackedScene" uid="uid://cdcl0ap06i1f1" path="res://scenes/light/light_right.tscn" id="6_1vv84"]
 [ext_resource type="PackedScene" uid="uid://dfwinp0dwndj6" path="res://scenes/Interactibles/pushable.tscn" id="7_k4u1h"]
+[ext_resource type="Script" uid="uid://cyh0d64pfygbl" path="res://addons/maaacks_game_template/base/scripts/pause_menu_controller.gd" id="8_5vr56"]
+[ext_resource type="PackedScene" uid="uid://ekw7iwcn3tst" path="res://scenes/addons/overlaid_menus/pause_menu.tscn" id="9_4fxv7"]
 
 [node name="Room01" type="Node2D"]
 script = ExtResource("1_8xcqc")
@@ -52,3 +54,7 @@ position = Vector2(48, -40)
 [node name="Pushable" parent="." instance=ExtResource("7_k4u1h")]
 position = Vector2(0, -64)
 scale = Vector2(1, 1)
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("8_5vr56")
+pause_menu_packed = ExtResource("9_4fxv7")

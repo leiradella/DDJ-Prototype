@@ -9,6 +9,7 @@
 theme = ExtResource("2_n67em")
 script = ExtResource("2_ggfh4")
 options_packed_scene = ExtResource("3_n67em")
+main_menu_scene_path = "uid://we08yeyvnf61"
 
 [node name="RestartButton" parent="MenuPanelContainer/MarginContainer/BoxContainer/MenuButtonsMargin/MenuButtons" index="1"]
 visible = false
