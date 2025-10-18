@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://vyxl4kiny3co"]
+[gd_scene load_steps=13 format=3 uid="uid://vyxl4kiny3co"]
 
 [ext_resource type="Script" uid="uid://b2slqsi37pqd0" path="res://scenes/Level/room_03.gd" id="1_b3f8a"]
 [ext_resource type="Texture2D" uid="uid://cddhqrsr4qemj" path="res://assets/tileset x1 edited.png" id="2_gs1b2"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://bkphrc7awb2q" path="res://scenes/light/light_left.tscn" id="5_t5fwf"]
 [ext_resource type="PackedScene" uid="uid://cdcl0ap06i1f1" path="res://scenes/light/light_right.tscn" id="6_tw4cy"]
 [ext_resource type="PackedScene" uid="uid://dyy0ia302pg6k" path="res://scenes/light/light.tscn" id="7_q306s"]
+[ext_resource type="Script" uid="uid://cyh0d64pfygbl" path="res://addons/maaacks_game_template/base/scripts/pause_menu_controller.gd" id="8_q306s"]
+[ext_resource type="PackedScene" uid="uid://ekw7iwcn3tst" path="res://scenes/addons/overlaid_menus/pause_menu.tscn" id="9_shly2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gs1b2"]
 texture = ExtResource("2_gs1b2")
@@ -271,3 +273,7 @@ position = Vector2(-64, -145)
 
 [node name="Light6" parent="." instance=ExtResource("7_q306s")]
 position = Vector2(16, -176)
+
+[node name="Pausemenu" type="Node" parent="."]
+script = ExtResource("8_q306s")
+pause_menu_packed = ExtResource("9_shly2")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dnp4k2w11maqf"]
+[gd_scene load_steps=9 format=3 uid="uid://dnp4k2w11maqf"]
 
 [ext_resource type="PackedScene" uid="uid://d01ldrf7jtk5r" path="res://scenes/Level/Room02.tscn" id="1_ouxha"]
 [ext_resource type="Script" uid="uid://bs6r41o3i8qfb" path="res://scenes/Level/room_02.gd" id="2_ku1wf"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://bkphrc7awb2q" path="res://scenes/light/light_left.tscn" id="4_d1f7t"]
 [ext_resource type="PackedScene" uid="uid://cdcl0ap06i1f1" path="res://scenes/light/light_right.tscn" id="5_hr3v8"]
 [ext_resource type="PackedScene" uid="uid://dyy0ia302pg6k" path="res://scenes/light/light.tscn" id="6_63n56"]
+[ext_resource type="Script" uid="uid://cyh0d64pfygbl" path="res://addons/maaacks_game_template/base/scripts/pause_menu_controller.gd" id="7_63n56"]
+[ext_resource type="PackedScene" uid="uid://ekw7iwcn3tst" path="res://scenes/addons/overlaid_menus/pause_menu.tscn" id="8_rg4gs"]
 
 [node name="Room2" type="Node2D"]
 position = Vector2(-1, 0)
@@ -42,3 +44,7 @@ position = Vector2(327, 133)
 
 [node name="Light5" parent="." instance=ExtResource("6_63n56")]
 position = Vector2(401, 16)
+
+[node name="Pausemenu" type="Node" parent="."]
+script = ExtResource("7_63n56")
+pause_menu_packed = ExtResource("8_rg4gs")

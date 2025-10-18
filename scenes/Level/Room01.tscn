@@ -55,6 +55,6 @@ position = Vector2(48, -40)
 position = Vector2(0, -64)
 scale = Vector2(1, 1)
 
-[node name="Node" type="Node" parent="."]
+[node name="Pausemenu" type="Node" parent="."]
 script = ExtResource("8_5vr56")
 pause_menu_packed = ExtResource("9_4fxv7")
