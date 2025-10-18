@@ -36,16 +36,14 @@ func _ready() -> void:
 	
 	enemies = get_tree().get_nodes_in_group("EnemyBasic")
 	
-	var players: Array[Node] = get_tree().get_nodes_in_group("Player")
-	if players.size() > 0:
-		player = players[0]
-	else:
-		print("no player found")
-		get_tree().quit()
-	
-
+	scan_for_player()
 
 func _physics_process(delta: float) -> void:
+	if player == null:
+		scan_for_player()
+		return
+	
+	
 	match state:
 		State.IDLE:
 			_idle_update(delta)
@@ -186,3 +184,8 @@ func get_facing_suffix() -> String:
 	if last_facing.y > 0:
 		return "down"
 	return "right"
+
+func scan_for_player() -> void:
+	var players = get_tree().get_nodes_in_group("Player")
+	if players.size() > 0:
+		player = players[0]
