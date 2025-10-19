@@ -140,6 +140,10 @@ func die() -> void:
 	health = 0.0
 	state = State.DEAD
 	set_collision_layer_value(2, false)
+	set_collision_mask_value(2, false)
+	set_collision_mask_value(1, false)
+	set_collision_mask_value(3, false)
+	z_index=-1
 	velocity = Vector2.ZERO
 	sprite.rotation = deg_to_rad(180-rotation)
 
