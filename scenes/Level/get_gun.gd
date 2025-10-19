@@ -9,9 +9,6 @@ func _ready():
 		return
 	connect("body_entered", _on_body_entered)
 
-	
-	connect("body_entered", _on_body_entered)
-
 func _on_body_entered(body: Node):
 	if body.is_in_group("Player"):
 		# mark item as collected
