@@ -386,9 +386,7 @@ script = ExtResource("8_fql2h")
 pause_menu_packed = ExtResource("9_h8r7l")
 
 [node name="BasicEnemy" parent="." instance=ExtResource("10_h8r7l")]
-position = Vector2(-92, -162)
-scale = Vector2(2, 2)
+position = Vector2(-73, -142)
 
 [node name="BasicEnemy2" parent="." instance=ExtResource("10_h8r7l")]
-position = Vector2(-36, -162)
-scale = Vector2(2, 2)
+position = Vector2(-35, -153)
