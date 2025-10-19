@@ -1,5 +1,6 @@
 extends Node2D
 
+@onready var pressed_sound: AudioStreamPlayer = $pressed_sound
 var overlapping_bodies: Array[Node2D] = []
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
@@ -9,8 +10,12 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 			var level_key = get_tree().current_scene.scene_file_path
 			var level_state = GameState.get_level_state(level_key)
 			if level_state:
-				level_state.mark_item_collected("puzzle_corredor2")
-				GlobalState.save()
+				if level_state.is_item_collected("puzzle_corredor2"):
+					pass
+				else:
+					pressed_sound.play()
+					level_state.mark_item_collected("puzzle_corredor2")
+					GlobalState.save()
 		overlapping_bodies.append(body)
 		
 func _on_area_2d_body_exited(body: Node2D) -> void:

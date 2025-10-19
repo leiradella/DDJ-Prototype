@@ -3,6 +3,7 @@ extends Control
 @onready var canvas_layer: CanvasLayer = $CanvasLayer
 @onready var rich_text_label: RichTextLabel = $CanvasLayer/RichTextLabel
 @onready var line_edit: LineEdit = $CanvasLayer/LineEdit
+@onready var correct_sound: AudioStreamPlayer = $correct_sound
 
 var max_text_size: int = 14
 
@@ -21,7 +22,8 @@ func _on_text_edited(_new_text: String) -> void:
 		line_edit.text = line_edit.text.substr(0, max_text_size)
 		line_edit.set_caret_column(line_edit.text.length())
 	
-	if line_edit.text == "corruption":
+	if line_edit.text.to_lower() == "corruption":
+		correct_sound.play()
 		print("solved!!!!")
 		rich_text_label.text = "[color=green]PASSWORD:[/color]"
 		line_edit.editable = false

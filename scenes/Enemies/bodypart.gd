@@ -2,6 +2,7 @@ class_name Bodypart
 extends StaticBody2D
 
 @onready var hitbox: CollisionShape2D = $hitbox
+@onready var take_dmg_sound: AudioStreamPlayer = $take_dmg_sound
 
 @export var main_body: CharacterBody2D
 @export var max_health: float
@@ -14,6 +15,7 @@ func _ready() -> void:
 	health = max_health
 
 func take_damage(dmg: float) -> void:
+	take_dmg_sound.play()
 	health -= dmg - (dmg*(RDR-1))
 	RDR *= RDR_growth_rate
 

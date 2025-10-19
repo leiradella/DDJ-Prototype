@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://1xjoinast10v"]
+[gd_scene load_steps=4 format=3 uid="uid://1xjoinast10v"]
 
 [ext_resource type="Script" uid="uid://cmmka0hwcgexa" path="res://scenes/Interactibles/puzzle/puzzle.gd" id="1_8fyvt"]
 [ext_resource type="Texture2D" uid="uid://doq3kthei4ogx" path="res://assets/computer_screen.png" id="2_ffq3v"]
+[ext_resource type="AudioStream" uid="uid://brmp54u5a1lli" path="res://assets/mixkit-sci-fi-positive-notification-266.wav" id="3_0r6xe"]
 
 [node name="Puzzle" type="Control"]
 layout_mode = 3
@@ -57,3 +58,8 @@ offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 30
+
+[node name="correct_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_0r6xe")
+volume_db = -2.0
+bus = &"SFX"

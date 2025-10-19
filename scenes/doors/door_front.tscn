@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://cai3sy3aoiaye"]
+[gd_scene load_steps=13 format=3 uid="uid://cai3sy3aoiaye"]
 
 [ext_resource type="Script" uid="uid://bu137cduk6mns" path="res://scenes/doors/door_front.gd" id="1_0esw8"]
 [ext_resource type="Texture2D" uid="uid://bailfohna6atg" path="res://assets/door_right.png" id="2_35chf"]
 [ext_resource type="Texture2D" uid="uid://dlibkgq8ek6o2" path="res://assets/door_front.png" id="2_kgauu"]
+[ext_resource type="AudioStream" uid="uid://cwdgsc3whsffy" path="res://assets/mixkit-mechanical-crate-pick-up-3154.wav" id="4_kgauu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8ksyo"]
 atlas = ExtResource("2_kgauu")
@@ -73,3 +74,7 @@ animation = &"moving"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_tcr7x")
+
+[node name="door_open_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_kgauu")
+bus = &"SFX"

@@ -14,6 +14,9 @@ var can_update :int = 1
 @onready var animation_player : AnimationPlayer = $AnimationPlayer
 @onready var sprite : Sprite2D = $Sprite2D 
 @onready var corrupt : CorruptionBar = $CanvasLayer/CorruptionBar
+@onready var get_gun_sound: AudioStreamPlayer = $get_gun_sound
+@onready var heal_sound: AudioStreamPlayer = $heal_sound
+@onready var take_dmg_sound: AudioStreamPlayer = $take_dmg_sound
 func _ready() -> void:
 	#needed so the enemy can have a reference for the player
 	add_to_group("Player")
@@ -91,6 +94,7 @@ func _input(event: InputEvent) -> void:
 func takeDamage(damage: float) -> void:
 	if health <= 0.0:
 		return
+	take_dmg_sound.play()
 	health -= damage
 	updateHealthBar(health)
 	if health <= 0.0:
@@ -99,6 +103,7 @@ func takeDamage(damage: float) -> void:
 func heal(amount: float):
 	health += amount
 	updateHealthBar(health)
+	heal_sound.play()
 	#TODO: add clamp or something
 
 func update_animation(_dir : int) -> void :
@@ -112,6 +117,7 @@ func put_gun_on()->void:
 	gun.visible = true
 	gun.set_process(true)
 	gun.set_physics_process(true)
+	get_gun_sound.play()
 
 func die() -> void:
 	InputManager.set_control_mode(InputManager.ControlMode.DISABLED)
