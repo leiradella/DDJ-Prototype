@@ -12,7 +12,7 @@ var detectionRadius: float = 100.0
 var sightRadius: float = 200.0
 var attackRange: float = 40.0
 var attackWindup: float = 0.5
-var attackActive: float = 0.10
+var attackActive: float = 0.08
 var attackCooldown: float = 0.8
 var damage: float = 12.0
 var RDR: float = 0.0 #repeatedDamageReducion, part of the EATS system
@@ -141,7 +141,10 @@ func die() -> void:
 	health = 0.0
 	state = State.DEAD
 	set_collision_layer_value(2, false)
-	set_collision_layer_value(1, false)
+	set_collision_mask_value(2, false)
+	set_collision_mask_value(1, false)
+	set_collision_mask_value(3, false)
+	z_index=-1
 	velocity = Vector2.ZERO
 	sprite.rotation = deg_to_rad(180-rotation)
 

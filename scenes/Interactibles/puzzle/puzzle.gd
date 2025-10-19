@@ -25,4 +25,9 @@ func _on_text_edited(_new_text: String) -> void:
 		print("solved!!!!")
 		rich_text_label.text = "[color=green]PASSWORD:[/color]"
 		line_edit.editable = false
+		var level_key = get_tree().current_scene.scene_file_path
+		var level_state = GameState.get_level_state(level_key)
+		if level_state:
+			level_state.mark_item_collected("puzzle_room8")
+			GlobalState.save() 
 		EventManager.trigger_puzzle_solved()

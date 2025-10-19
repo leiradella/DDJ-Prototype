@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://cmwnmas0f3yt5"]
+
+[ext_resource type="Texture2D" uid="uid://c8rv4nrrav7x1" path="res://assets/clue.png" id="1_m65my"]
+[ext_resource type="Script" uid="uid://hl1b8hb0jm7o" path="res://scenes/Items/item.gd" id="1_ydofd"]
+
+[resource]
+script = ExtResource("1_ydofd")
+name = "Clue"
+description = "A sheet of paper. It says \"US ALL\""
+icon = ExtResource("1_m65my")
+metadata/_custom_type_script = "uid://hl1b8hb0jm7o"

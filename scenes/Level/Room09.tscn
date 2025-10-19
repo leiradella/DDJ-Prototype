@@ -531,3 +531,8 @@ position = Vector2(119, 82)
 
 [node name="Boss" parent="." instance=ExtResource("13_temni")]
 position = Vector2(-72, 80)
+
+[node name="LevelTransition2" parent="." instance=ExtResource("5_5pvkd")]
+position = Vector2(117, -115)
+level = "uid://cam8okrt1raef"
+side = 2
