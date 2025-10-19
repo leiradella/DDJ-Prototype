@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://vudoq54aiai3"]
+[gd_scene load_steps=19 format=3 uid="uid://vudoq54aiai3"]
 
 [ext_resource type="Script" uid="uid://c8domhmjmjrsh" path="res://scenes/Level/room_09.gd" id="1_phk4n"]
 [ext_resource type="Texture2D" uid="uid://cddhqrsr4qemj" path="res://assets/tileset x1 edited.png" id="2_po047"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://rhcp23adiw5l" path="res://scenes/Enemies/Necromancer/Necromancer.tscn" id="11_8pa1k"]
 [ext_resource type="PackedScene" uid="uid://bwnxnr73iqqf2" path="res://scenes/Enemies/Basic/BasicEnemy.tscn" id="12_temni"]
 [ext_resource type="PackedScene" uid="uid://dekqfv7bvyke4" path="res://scenes/Enemies/Boss/boss.tscn" id="13_temni"]
+[ext_resource type="PackedScene" uid="uid://cai3sy3aoiaye" path="res://scenes/doors/door_front.tscn" id="14_u2cue"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ebmy8"]
 texture = ExtResource("2_po047")
@@ -536,3 +537,6 @@ position = Vector2(-72, 80)
 position = Vector2(117, -115)
 level = "uid://cam8okrt1raef"
 side = 2
+
+[node name="DoorFront" parent="." instance=ExtResource("14_u2cue")]
+position = Vector2(117, -106)
