@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxie0m4cx8cis"]
+
+[ext_resource type="PackedScene" uid="uid://osxulxw2oas3" path="res://addons/maaacks_game_template/base/scenes/credits/scrollable_credits.tscn" id="1_jnbjt"]
+[ext_resource type="Script" uid="uid://b3rskswnpbg48" path="res://scenes/addons/credits/scrollable_credits.gd" id="2_35kdw"]
+[ext_resource type="Theme" uid="uid://dhu35dhth6efp" path="res://theme_menu.tres" id="2_vbo7o"]
+
+[node name="ScrollableCredits" instance=ExtResource("1_jnbjt")]
+theme = ExtResource("2_vbo7o")
+script = ExtResource("2_35kdw")
+
+[node name="CreditsLabel" parent="." index="0"]
+text = "[center] 
+[font_size=40][color=#3755c0]Credits[/color][/font_size] 
+
+[font_size=30][color=d22f95]Our Team[/color][/font_size] 
+Gonçalo Rocha, Lucas Leiradella, Martim Ferreira, Miguel Gomes, Zoé Hombourger 
+
+[font_size=30][color=d22f95]Sources[/color][/font_size] 
+Sprites
+ [url=https://trevor-pupkin.itch.io/tech-dungeon-roguelite]Tech-dungeon roguelite[/url] 
+[url=https://ittaimanero.itch.io/zombie-apocalypse-tileset]Zombie apocalypse tileset[/url] 
+[url=https://penusbmic.itch.io/the-dead-town-tileset]The dead town tileset[/url] 
+Gonçalo Rocha using aseprite 
+
+UI 
+[url=https://godotengine.org/asset-library/asset/2703]Maaack's Game Template[/url]
+
+Sounds 
+[url=mixkit.co]mixkit.co[/url]"

@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://h2lddoemmogd" path="res://scenes/Level/corruption_bar.gd" id="3_fxc31"]
 [ext_resource type="Script" uid="uid://dniexk3m4845a" path="res://scenes/Player/open_help.gd" id="4_fxc31"]
 [ext_resource type="PackedScene" uid="uid://trm68eg1mgq2" path="res://scenes/Inventory/InventoryManager.tscn" id="4_ved6o"]
-[ext_resource type="PackedScene" uid="uid://bj63pdt6kjcxq" path="res://scenes/help_menu.tscn" id="5_puxyr"]
+[ext_resource type="PackedScene" uid="uid://bj63pdt6kjcxq" path="res://scenes/UI/help_menu.tscn" id="5_puxyr"]
 
 [sub_resource type="GDScript" id="GDScript_socpp"]
 script/source = "extends Label

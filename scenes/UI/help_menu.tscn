@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://bj63pdt6kjcxq"]
 
-[ext_resource type="Theme" uid="uid://dhu35dhth6efp" path="res://theme_menu.tres" id="1_g0qdk"]
-[ext_resource type="Script" uid="uid://xfugmpspqbcc" path="res://addons/maaacks_game_template/base/scenes/overlaid_menu/overlaid_menu.gd" id="3_2xk8j"]
-[ext_resource type="Script" uid="uid://7i6emcp2gs18" path="res://scenes/button_exit_help.gd" id="3_nx501"]
+[ext_resource type="Theme" uid="uid://dhu35dhth6efp" path="res://theme_menu.tres" id="1_v7282"]
+[ext_resource type="Script" uid="uid://xfugmpspqbcc" path="res://addons/maaacks_game_template/base/scenes/overlaid_menu/overlaid_menu.gd" id="2_7cm4k"]
+[ext_resource type="Script" uid="uid://7i6emcp2gs18" path="res://scenes/UI/button_exit_help.gd" id="3_cow2m"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 
@@ -14,8 +14,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_g0qdk")
-script = ExtResource("3_2xk8j")
+theme = ExtResource("1_v7282")
+script = ExtResource("2_7cm4k")
 pauses_game = true
 metadata/_custom_type_script = "uid://xfugmpspqbcc"
 
@@ -218,4 +218,4 @@ alignment = 1
 [node name="ButtonExit" type="Button" parent="Control/Panel/VBoxContainer/HBoxContainer9"]
 layout_mode = 2
 text = "Exit"
-script = ExtResource("3_nx501")
+script = ExtResource("3_cow2m")

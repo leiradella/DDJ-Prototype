@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://xlhekgck4702" path="res://scenes/addons/menus/main_menu/main_menu.gd" id="2_ub2bi"]
 [ext_resource type="Theme" uid="uid://dhu35dhth6efp" path="res://theme_menu.tres" id="2_x31ro"]
 [ext_resource type="PackedScene" uid="uid://ctxo5g83ovisu" path="res://scenes/addons/overlaid_menus/master_options_overlaid_menu.tscn" id="3_peecx"]
-[ext_resource type="PackedScene" uid="uid://bmyedvqtratc1" path="res://scenes/addons/overlaid_menus/credits_overlaid_menu.tscn" id="4_0jpat"]
+[ext_resource type="PackedScene" uid="uid://bmyedvqtratc1" path="res://scenes/addons/overlaid_menus/credits_overlaid_menu.tscn" id="5_8xbq7"]
 
 [node name="MainMenu" instance=ExtResource("1_peecx")]
 theme = ExtResource("2_x31ro")
@@ -13,7 +13,7 @@ level_select_packed_scene = null
 confirm_new_game = true
 game_scene_path = "uid://cianjpankhym"
 options_packed_scene = ExtResource("3_peecx")
-credits_packed_scene = ExtResource("4_0jpat")
+credits_packed_scene = ExtResource("5_8xbq7")
 
 [node name="TitleLabel" parent="MenuContainer/TitleMargin/TitleContainer" index="0"]
 text = "DDJ-Prototype"
@@ -38,9 +38,6 @@ text = "Level Select"
 
 [node name="OptionsButton" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer" index="3"]
 action_mode = 0
-
-[node name="CreditsButton" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer" index="4"]
-visible = false
 
 [node name="NewGameConfirmationDialog" type="ConfirmationDialog" parent="." index="5"]
 unique_name_in_owner = true

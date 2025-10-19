@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://xyybic8s0bcm"]
+
+[ext_resource type="Script" uid="uid://5082im4ke0ib" path="res://scenes/UI/credits.gd" id="1_21wcu"]
+[ext_resource type="Theme" uid="uid://dhu35dhth6efp" path="res://theme_menu.tres" id="1_228wp"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_21wcu")
+
+[node name="BackgroundColor" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.12549)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="PanelContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_228wp")

@@ -1,0 +1,91 @@
+[gd_scene load_steps=5 format=3 uid="uid://xyybic8s0bcm"]
+
+[ext_resource type="Script" uid="uid://1nf36h0gms3q" path="res://addons/maaacks_game_template/base/scripts/capture_focus.gd" id="1_2lgad"]
+[ext_resource type="Theme" uid="uid://dhu35dhth6efp" path="res://theme_menu.tres" id="1_228wp"]
+[ext_resource type="Script" uid="uid://droejgtv8bu0s" path="res://addons/maaacks_game_template/base/scenes/overlaid_menu/overlaid_menu_container.gd" id="1_v6dd7"]
+[ext_resource type="Script" uid="uid://begvuks42x71n" path="res://scenes/UI/description_link.gd" id="2_21wcu"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_v6dd7")
+
+[node name="BackgroundColor" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.12549)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="PanelContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_228wp")
+
+[node name="MenuMargin" type="MarginContainer" parent="CanvasLayer/Panel"]
+layout_mode = 2
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="BoxContainer" type="BoxContainer" parent="CanvasLayer/Panel/MenuMargin"]
+layout_mode = 2
+vertical = true
+
+[node name="Title" type="Label" parent="CanvasLayer/Panel/MenuMargin/BoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.21439856, 0.3343002, 0.7511529, 1)
+theme_override_font_sizes/font_size = 40
+text = "Credits"
+horizontal_alignment = 1
+
+[node name="DescriptionMargin" type="MarginContainer" parent="CanvasLayer/Panel/MenuMargin/BoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="DescriptionLabel" type="RichTextLabel" parent="CanvasLayer/Panel/MenuMargin/BoxContainer/DescriptionMargin"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center] [font_size=30][color=#d22f95]Our Team[/color][/font_size] 
+Gonçalo Rocha, Lucas Leiradella, Martim Ferreira, Miguel Gomes, Zoé Hombourger
+
+[font_size=30][color=#d22f95]Sources[/color][/font_size] 
+Sprites 
+[font_size=20][url=https://trevor-pupkin.itch.io/tech-dungeon-roguelite]Tech-dungeon roguelite[/url]  
+[url=https://ittaimanero.itch.io/zombie-apocalypse-tileset]Zombie apocalypse tileset[/url]
+[url=https://penusbmic.itch.io/the-dead-town-tileset]The dead town tileset[/url]
+Gonçalo Rocha using aseprite[/font_size] 
+
+UI
+[font_size=20][url=https://godotengine.org/asset-library/asset/2703]Maaack's Game Template[/url][/font_size] 
+
+Sounds
+[font_size=20]mixkit.co[/font_size] 
+
+
+"
+script = ExtResource("2_21wcu")
+
+[node name="MenuButtonsMargin" type="MarginContainer" parent="CanvasLayer/Panel/MenuMargin/BoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="MenuButtons" type="BoxContainer" parent="CanvasLayer/Panel/MenuMargin/BoxContainer/MenuButtonsMargin"]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 16
+script = ExtResource("1_2lgad")
+
+[node name="CloseButton" type="Button" parent="CanvasLayer/Panel/MenuMargin/BoxContainer/MenuButtonsMargin/MenuButtons"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Back"
