@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://trm68eg1mgq2"]
+[gd_scene load_steps=4 format=3 uid="uid://trm68eg1mgq2"]
 
 [ext_resource type="Script" uid="uid://fyxisoj7lw1q" path="res://scenes/Inventory/inventory_manager.gd" id="1_wipi3"]
 [ext_resource type="PackedScene" uid="uid://dwr38bb7irj6x" path="res://scenes/Inventory/inventory.tscn" id="2_dmd88"]
+[ext_resource type="Script" uid="uid://hl1b8hb0jm7o" path="res://scenes/Items/item.gd" id="3_dmd88"]
 
 [node name="InventoryManager" type="Node"]
 script = ExtResource("1_wipi3")
@@ -9,3 +10,4 @@ script = ExtResource("1_wipi3")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Inventory" parent="CanvasLayer" instance=ExtResource("2_dmd88")]
+starter_items = Array[ExtResource("3_dmd88")]([])

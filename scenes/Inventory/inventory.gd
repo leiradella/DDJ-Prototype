@@ -16,8 +16,12 @@ func _ready ():
 	for item in starter_items:
 		if item.name == "Bullet":
 			on_give_player_item(item, 10)
+		elif item.name == "Medkit":
+			on_give_player_item(item, 2)
+		elif item.name == "Clue":
+			on_give_player_item(item, 1)
 		else:
-			add_item(item)
+			continue
 	
 func _process (_delta):
 	if InputManager.is_mode_gameplay():
