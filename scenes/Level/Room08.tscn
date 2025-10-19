@@ -236,6 +236,7 @@ sources/1 = SubResource("TileSetAtlasSource_bt1mp")
 
 [node name="Room08" type="Node2D"]
 script = ExtResource("1_mfoyn")
+map_position = Vector2(1457, 253)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_hq0mx")

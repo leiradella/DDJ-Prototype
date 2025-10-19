@@ -168,6 +168,7 @@ sources/0 = SubResource("TileSetAtlasSource_en6dv")
 
 [node name="Corredor02" type="Node2D"]
 script = ExtResource("1_wr2em")
+map_position = Vector2(1820, 393)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_wr2em")

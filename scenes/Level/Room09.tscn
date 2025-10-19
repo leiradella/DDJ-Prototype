@@ -450,6 +450,7 @@ sources/2 = SubResource("TileSetAtlasSource_86at1")
 
 [node name="Room09" type="Node2D"]
 script = ExtResource("1_phk4n")
+map_position = Vector2(1530, 62)
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(-155, 6)

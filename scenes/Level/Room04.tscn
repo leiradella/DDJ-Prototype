@@ -234,6 +234,7 @@ sources/1 = SubResource("TileSetAtlasSource_usk4p")
 
 [node name="Room04" type="Node2D"]
 script = ExtResource("1_lhkma")
+map_position = Vector2(1765, 351)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_5bp1j")
