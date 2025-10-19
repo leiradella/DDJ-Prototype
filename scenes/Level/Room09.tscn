@@ -470,6 +470,7 @@ level = "uid://4erecncyk36h"
 side = 3
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+visible = false
 energy = 0.95
 blend_mode = 1
 
@@ -521,12 +522,14 @@ scale = Vector2(2, 2)
 
 [node name="BasicEnemy" parent="." instance=ExtResource("12_temni")]
 position = Vector2(89, 44)
-scale = Vector2(2, 2)
 
 [node name="BasicEnemy2" parent="." instance=ExtResource("12_temni")]
 position = Vector2(136, 44)
-scale = Vector2(2, 2)
 
 [node name="BasicEnemy3" parent="." instance=ExtResource("12_temni")]
 position = Vector2(119, 82)
-scale = Vector2(2, 2)
+
+[node name="LevelTransition2" parent="." instance=ExtResource("5_5pvkd")]
+position = Vector2(117, -115)
+level = "uid://cam8okrt1raef"
+side = 2
