@@ -7,9 +7,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mtbx7"]
 size = Vector2(10, 14.8)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yk3e8"]
-radius = 5.0
-height = 20.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xg24s"]
+size = Vector2(10, 7.5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ogxxn"]
 atlas = ExtResource("2_yk3e8")
@@ -77,8 +76,8 @@ shape = SubResource("RectangleShape2D_mtbx7")
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
-position = Vector2(-10, 0)
-shape = SubResource("CapsuleShape2D_yk3e8")
+position = Vector2(0, -0.25)
+shape = SubResource("RectangleShape2D_xg24s")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_itc2g")

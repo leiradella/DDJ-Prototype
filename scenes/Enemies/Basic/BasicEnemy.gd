@@ -10,7 +10,7 @@ var moveSpeed: float = 30.0
 var detectionRadius: float = 100.0
 var sightRadius: float = 200.0
 var attackRange: float = 40.0
-var attackWindup: float = 0.3
+var attackWindup: float = 0.5
 var attackActive: float = 0.10
 var attackCooldown: float = 0.8
 var damage: float = 25.0
@@ -18,6 +18,7 @@ var RDR: float = 0.0 #repeatedDamageReducion, part of the EATS system
 var RDRGrowthRate: float = 1.3
 var last_facing: Vector2 = Vector2.DOWN
 var facing_deadzone: float = 0.1
+var show_attack: bool = false
 
 #enemy states
 enum State {
@@ -109,7 +110,6 @@ func _attack_update(delta: float) -> void:
 			attackPhase = AttackPhase.COOLDOWN
 			attackTimer = attackCooldown
 		AttackPhase.COOLDOWN: #cooldown ended
-			print("cooldown")
 			state = State.CHASE
 		_:
 			pass
@@ -160,10 +160,14 @@ func aimAttack() -> void:
 	
 	attackArea.global_position = global_position + direction
 	attackArea.rotation = direction.angle()
+	show_attack = true
+	queue_redraw()
 
 func attack() -> void:
 	if player in attackArea.get_overlapping_bodies():
 		player.takeDamage(damage)
+	show_attack = false
+	queue_redraw()
 
 func update_animation() -> void:
 	update_facing()
@@ -209,3 +213,15 @@ func scan_for_player() -> void:
 	var players = get_tree().get_nodes_in_group("Player")
 	if players.size() > 0:
 		player = players[0]
+
+func _draw() -> void:
+	if not show_attack: 
+		return
+	
+	draw_set_transform(attackArea.position, attackArea.rotation, attackArea.scale)
+	if attackShape and attackShape.shape is RectangleShape2D:
+		var extents: Vector2 = (attackShape.shape as RectangleShape2D).extents
+		var rect := Rect2(-extents, extents * 2.0)
+		draw_rect(rect, Color(0.635, 0.0, 0.0, 0.251), true)
+	
+	draw_set_transform(Vector2.ZERO, 0.0, Vector2.ONE)

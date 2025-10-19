@@ -89,6 +89,8 @@ func _input(event: InputEvent) -> void:
 		emit_signal("interact", self)
 
 func takeDamage(damage: float) -> void:
+	if health <= 0.0:
+		return
 	health -= damage
 	updateHealthBar(health)
 	if health <= 0.0:
