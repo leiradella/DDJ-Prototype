@@ -48,6 +48,14 @@ func load_new_level(level_path : String, _target_transition : String, _position_
 	
 	await get_tree().process_frame
 	
+	var new_scene = get_tree().current_scene
+	if new_scene:
+		var new_player = new_scene.get_node_or_null("Player")
+		if new_player:
+			GlobalPlayerManager.player = new_player
+		else:
+			push_warning("⚠️ Could not find Player node in new scene!")
+	
 	get_tree().paused = false
 	
 	await get_tree().process_frame
