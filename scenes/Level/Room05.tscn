@@ -300,3 +300,4 @@ position = Vector2(18, 21)
 position = Vector2(-55, 56)
 type = 3
 quantity = 1
+item_id = "room5_clue2"

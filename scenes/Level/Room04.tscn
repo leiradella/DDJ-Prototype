@@ -283,3 +283,4 @@ pause_menu_packed = ExtResource("8_hum4u")
 position = Vector2(9, 56)
 type = 1
 quantity = 6
+item_id = "room4_bullets"
