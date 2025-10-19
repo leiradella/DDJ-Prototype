@@ -113,7 +113,7 @@ func put_gun_on()->void:
 
 func die() -> void:
 	InputManager.set_control_mode(InputManager.ControlMode.DISABLED)
-	rotate(deg_to_rad(90))
+	animation_player.play("die")
 
 func updateHealthBar(health_value: float):
 	$CanvasLayer/HealthBar.text = "HP:  " + str(health_value)
