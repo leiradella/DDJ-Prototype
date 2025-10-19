@@ -52,4 +52,5 @@ pause_menu_packed = ExtResource("8_rg4gs")
 
 [node name="Pickup" parent="." instance=ExtResource("9_rg4gs")]
 position = Vector2(368, 16)
+type = 2
 quantity = 1

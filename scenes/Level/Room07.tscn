@@ -299,5 +299,5 @@ pause_menu_packed = ExtResource("9_tpiu4")
 
 [node name="Pickup" parent="." instance=ExtResource("10_tpiu4")]
 position = Vector2(184, -55)
-type = 1
-quantity = 6
+type = 4
+quantity = 1

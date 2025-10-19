@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://cianjpankhym"]
 
-[ext_resource type="Script" path="res://scenes/Level/room_01.gd" id="1_8xcqc"]
+[ext_resource type="Script" uid="uid://b18v6cht0d882" path="res://scenes/Level/room_01.gd" id="1_8xcqc"]
 [ext_resource type="PackedScene" uid="uid://c2rlk6edlojq2" path="res://scenes/Level/room_01.tscn" id="1_rf42j"]
 [ext_resource type="PackedScene" uid="uid://cdnbrjfxms0gs" path="res://scenes/Level/Colision_shape.tscn" id="3_eh2bs"]
 [ext_resource type="PackedScene" uid="uid://dyy0ia302pg6k" path="res://scenes/light/light.tscn" id="4_1euig"]
@@ -62,10 +62,4 @@ pause_menu_packed = ExtResource("9_4fxv7")
 
 [node name="Pickup" parent="." instance=ExtResource("10_4fxv7")]
 position = Vector2(-126, -158)
-type = 2
-quantity = 1
-
-[node name="Pickup2" parent="." instance=ExtResource("10_4fxv7")]
-position = Vector2(-94, -158)
-type = 3
 quantity = 1
