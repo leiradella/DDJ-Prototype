@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cmwnmas0f3yt5"]
+
+[ext_resource type="Texture2D" uid="uid://c8rv4nrrav7x1" path="res://assets/clue.png" id="1_iqkra"]
+[ext_resource type="Script" uid="uid://c2xv3me8f3uit" path="res://scenes/Items/clue.gd" id="2_iqkra"]
+
+[resource]
+script = ExtResource("2_iqkra")
+name = "Clue"
+description = "Clue for a puzzle"
+icon = ExtResource("1_iqkra")
+metadata/_custom_type_script = "uid://hl1b8hb0jm7o"

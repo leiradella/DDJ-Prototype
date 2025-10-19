@@ -10,8 +10,8 @@ var owner: Player
 
 func _on_use() -> bool:
 	if consumable:
-		print("%s used by %s" % [name, owner])
+		#print("%s used by %s" % [name, owner])
 		return true
 	else:
-		print("%s activated by %s" % [name, owner])
+		#print("%s activated by %s" % [name, owner])
 		return false

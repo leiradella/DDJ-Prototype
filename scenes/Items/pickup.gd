@@ -6,11 +6,12 @@ extends Node
 @export var quantity: int
 @onready var item: Item
 
-enum ItemType {MEDKIT, BULLET}
+enum ItemType {MEDKIT, BULLET, CLUE}
 
 const ITEM_TYPE := {
 	ItemType.MEDKIT: preload("res://scenes/Items/medkit.tres"),
-	ItemType.BULLET: preload("res://scenes/Items/bullet_item.tres")
+	ItemType.BULLET: preload("res://scenes/Items/bullet_item.tres"),
+	ItemType.CLUE: preload("res://scenes/Items/clue.tres")
 }
 
 func _ready():
