@@ -234,6 +234,7 @@ sources/1 = SubResource("TileSetAtlasSource_usk4p")
 
 [node name="Room04" type="Node2D"]
 script = ExtResource("1_lhkma")
+map_position = Vector2(1765, 351)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_5bp1j")
@@ -283,3 +284,4 @@ pause_menu_packed = ExtResource("8_hum4u")
 position = Vector2(9, 56)
 type = 1
 quantity = 6
+item_id = "room4_bullets"

@@ -233,6 +233,7 @@ sources/1 = SubResource("TileSetAtlasSource_gho4v")
 
 [node name="Corredor04" type="Node2D"]
 script = ExtResource("1_uc31i")
+map_position = Vector2(1481, 361)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_8hmlt")

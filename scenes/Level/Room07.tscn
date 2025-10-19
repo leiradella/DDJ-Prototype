@@ -235,6 +235,7 @@ sources/1 = SubResource("TileSetAtlasSource_wpl4r")
 
 [node name="Room07" type="Node2D"]
 script = ExtResource("1_ajyqx")
+map_position = Vector2(1628, 226)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_sjf1h")
@@ -301,3 +302,4 @@ pause_menu_packed = ExtResource("9_tpiu4")
 position = Vector2(184, -55)
 type = 4
 quantity = 1
+item_id = "room7_clue3"

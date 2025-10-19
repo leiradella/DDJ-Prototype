@@ -241,6 +241,7 @@ height = 10.0
 
 [node name="Room03" type="Node2D"]
 script = ExtResource("1_b3f8a")
+map_position = Vector2(1874, 396)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_kcgkn")
@@ -301,3 +302,4 @@ scale = Vector2(0.2, 0.2)
 position = Vector2(88, -151)
 type = 1
 quantity = 6
+item_id = "room3_bullets"

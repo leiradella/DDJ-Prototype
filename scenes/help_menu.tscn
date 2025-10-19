@@ -1,0 +1,221 @@
+[gd_scene load_steps=4 format=3 uid="uid://bj63pdt6kjcxq"]
+
+[ext_resource type="Theme" uid="uid://dhu35dhth6efp" path="res://theme_menu.tres" id="1_g0qdk"]
+[ext_resource type="Script" uid="uid://xfugmpspqbcc" path="res://addons/maaacks_game_template/base/scenes/overlaid_menu/overlaid_menu.gd" id="3_2xk8j"]
+[ext_resource type="Script" uid="uid://7i6emcp2gs18" path="res://scenes/button_exit_help.gd" id="3_nx501"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_g0qdk")
+script = ExtResource("3_2xk8j")
+pauses_game = true
+metadata/_custom_type_script = "uid://xfugmpspqbcc"
+
+[node name="Panel" type="Panel" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -400.0
+offset_right = 500.0
+offset_bottom = 400.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -375.0
+offset_top = -350.0
+offset_right = 375.0
+offset_bottom = 350.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/Panel/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Control/Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.21439856, 0.3343002, 0.7511529, 1)
+theme_override_font_sizes/font_size = 30
+text = "controls"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="Control/Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label2" type="Label" parent="Control/Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.21439856, 0.3343002, 0.7511529, 1)
+theme_override_font_sizes/font_size = 30
+text = "actions"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/Panel/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Control/Panel/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "wasd"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="Control/Panel/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label2" type="Label" parent="Control/Panel/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "moves"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Control/Panel/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Control/Panel/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "E"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="Control/Panel/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label2" type="Label" parent="Control/Panel/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "interact"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Control/Panel/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Control/Panel/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+text = "I"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="Control/Panel/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label2" type="Label" parent="Control/Panel/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+text = "inventory"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="Control/Panel/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Control/Panel/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+text = "M"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="Control/Panel/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label2" type="Label" parent="Control/Panel/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+text = "map"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="Control/Panel/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Control/Panel/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+text = "R"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="Control/Panel/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label2" type="Label" parent="Control/Panel/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+text = "reload"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="Control/Panel/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Control/Panel/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+text = "left mouse"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="Control/Panel/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label2" type="Label" parent="Control/Panel/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+text = "shoots"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer8" type="HBoxContainer" parent="Control/Panel/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Control/Panel/VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+text = "esc"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="Control/Panel/VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label2" type="Label" parent="Control/Panel/VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+text = "pause menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer9" type="HBoxContainer" parent="Control/Panel/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="ButtonExit" type="Button" parent="Control/Panel/VBoxContainer/HBoxContainer9"]
+layout_mode = 2
+text = "Exit"
+script = ExtResource("3_nx501")

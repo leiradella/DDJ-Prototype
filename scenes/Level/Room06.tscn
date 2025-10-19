@@ -236,6 +236,7 @@ sources/1 = SubResource("TileSetAtlasSource_rnrdo")
 
 [node name="Room06" type="Node2D"]
 script = ExtResource("1_w6i1v")
+map_position = Vector2(1555, 337)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_ps4vw")
@@ -293,3 +294,4 @@ position = Vector2(29, 22)
 [node name="Pickup" parent="." instance=ExtResource("11_c2dfv")]
 position = Vector2(-23, -23)
 quantity = 1
+item_id = "room6_medkit"

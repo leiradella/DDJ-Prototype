@@ -14,3 +14,6 @@ func _on_puzzle_solved() -> void:
 	var tween = create_tween()
 	tween.tween_property(self, "value", new_value, 0.4)
 	print("Puzzle solved → corruption reduce to :", new_value)
+
+func getcorruption_level()->float:
+	return value

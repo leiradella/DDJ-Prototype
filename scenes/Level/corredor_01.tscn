@@ -239,6 +239,7 @@ sources/1 = SubResource("TileSetAtlasSource_riv24")
 
 [node name="Corredor01" type="Node2D"]
 script = ExtResource("1_riv24")
+map_position = Vector2(1655, 368)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_riv24")
