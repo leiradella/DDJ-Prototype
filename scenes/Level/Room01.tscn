@@ -53,7 +53,7 @@ position = Vector2(48, -40)
 
 [node name="Pushable" parent="." instance=ExtResource("7_k4u1h")]
 position = Vector2(0, -64)
-scale = Vector2(1, 1)
+scale = Vector2(2, 2)
 
 [node name="Pausemenu" type="Node" parent="."]
 script = ExtResource("8_5vr56")
