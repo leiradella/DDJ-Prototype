@@ -55,6 +55,18 @@ layout_mode = 2
 [node name="Slot4" parent="Window/SlotGridContainer" instance=ExtResource("2_2a4mo")]
 layout_mode = 2
 
+[node name="Slot5" parent="Window/SlotGridContainer" instance=ExtResource("2_2a4mo")]
+layout_mode = 2
+
+[node name="Slot6" parent="Window/SlotGridContainer" instance=ExtResource("2_2a4mo")]
+layout_mode = 2
+
+[node name="Slot7" parent="Window/SlotGridContainer" instance=ExtResource("2_2a4mo")]
+layout_mode = 2
+
+[node name="Slot8" parent="Window/SlotGridContainer" instance=ExtResource("2_2a4mo")]
+layout_mode = 2
+
 [node name="Info" type="Label" parent="Window"]
 layout_mode = 1
 anchors_preset = 12

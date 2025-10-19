@@ -2,16 +2,20 @@ extends Node
 
 @onready var area = $Area2D
 @onready var sprite = $Sprite2D
-@export var type: ItemType
-@export var quantity: int
 @onready var item: Item
 
-enum ItemType {MEDKIT, BULLET, CLUE}
+@export var type: ItemType
+@export var quantity: int
+
+
+enum ItemType {MEDKIT, BULLET, FIRST_CLUE, SECOND_CLUE, THIRD_CLUE}
 
 const ITEM_TYPE := {
 	ItemType.MEDKIT: preload("res://scenes/Items/medkit.tres"),
 	ItemType.BULLET: preload("res://scenes/Items/bullet_item.tres"),
-	ItemType.CLUE: preload("res://scenes/Items/clue.tres")
+	ItemType.FIRST_CLUE: preload("res://scenes/Items/clueFirst.tres"),
+	ItemType.SECOND_CLUE: preload("res://scenes/Items/clueSecond.tres"),
+	ItemType.THIRD_CLUE: preload("res://scenes/Items/clueThird.tres")
 }
 
 func _ready():
