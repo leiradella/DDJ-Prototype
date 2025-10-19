@@ -301,3 +301,4 @@ scale = Vector2(0.2, 0.2)
 position = Vector2(88, -151)
 type = 1
 quantity = 6
+item_id = "room3_bullets"

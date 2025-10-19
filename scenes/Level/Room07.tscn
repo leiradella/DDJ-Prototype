@@ -301,3 +301,4 @@ pause_menu_packed = ExtResource("9_tpiu4")
 position = Vector2(184, -55)
 type = 4
 quantity = 1
+item_id = "room7_clue3"

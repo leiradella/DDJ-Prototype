@@ -2,6 +2,7 @@ extends Node
 
 signal item_pickedup(item, quantity)
 signal puzzle_solved
+signal boss_dead
 signal pressure_on
 signal pressure_off
 signal level_load_started
@@ -29,6 +30,9 @@ func trigger_pressure_on():
 func trigger_pressure_off():
 	emit_signal("pressure_off")
 
+func trigger_boss_dead() -> void:
+	emit_signal("boss_dead")
+
 func load_new_level(level_path : String, _target_transition : String, _position_offset : Vector2) -> void:
 	get_tree().paused = true
 	target_transition = _target_transition
@@ -43,6 +47,14 @@ func load_new_level(level_path : String, _target_transition : String, _position_
 	get_tree().change_scene_to_file(level_path)
 	
 	await get_tree().process_frame
+	
+	var new_scene = get_tree().current_scene
+	if new_scene:
+		var new_player = new_scene.get_node_or_null("Player")
+		if new_player:
+			GlobalPlayerManager.player = new_player
+		else:
+			push_warning("⚠️ Could not find Player node in new scene!")
 	
 	get_tree().paused = false
 	

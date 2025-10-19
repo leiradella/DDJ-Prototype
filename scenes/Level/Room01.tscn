@@ -63,3 +63,4 @@ pause_menu_packed = ExtResource("9_4fxv7")
 [node name="Pickup" parent="." instance=ExtResource("10_4fxv7")]
 position = Vector2(-126, -158)
 quantity = 1
+item_id = "room1_medkit"

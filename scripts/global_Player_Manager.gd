@@ -18,5 +18,6 @@ func set_as_parent( _p : Node2D) -> void:
 		player.get_parent().remove_child(player)
 	_p.add_child(player)
 
-func set_player_position(_new_pos : Vector2)-> void:
-	player.global_position = _new_pos
+func set_player_position(_new_pos : Vector2) -> void:
+	if is_instance_valid(player):
+		player.global_position = _new_pos
