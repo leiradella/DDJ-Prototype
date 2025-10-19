@@ -1,8 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://bwnxnr73iqqf2"]
+[gd_scene load_steps=14 format=3 uid="uid://dekqfv7bvyke4"]
 
-[ext_resource type="Script" uid="uid://dufyq1jau70ux" path="res://scenes/Enemies/Basic/BasicEnemy.gd" id="1_yk3e8"]
-[ext_resource type="Texture2D" uid="uid://cjlaon87cqyh1" path="res://assets/enemy.png" id="2_yk3e8"]
-[ext_resource type="PackedScene" uid="uid://c8uoc3r1d4p7t" path="res://scenes/Enemies/bodypart.tscn" id="3_ogxxn"]
+[ext_resource type="Script" uid="uid://ca1kbff1jb5qt" path="res://scenes/Enemies/Boss/boss.gd" id="1_i6g3v"]
+[ext_resource type="Texture2D" uid="uid://cjlaon87cqyh1" path="res://assets/enemy.png" id="2_fei3f"]
+[ext_resource type="PackedScene" uid="uid://c8uoc3r1d4p7t" path="res://scenes/Enemies/bodypart.tscn" id="3_fofk3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mtbx7"]
 size = Vector2(10, 14.8)
@@ -11,19 +11,19 @@ size = Vector2(10, 14.8)
 size = Vector2(10, 7.5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ogxxn"]
-atlas = ExtResource("2_yk3e8")
+atlas = ExtResource("2_fei3f")
 region = Rect2(0, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2q6f0"]
-atlas = ExtResource("2_yk3e8")
+atlas = ExtResource("2_fei3f")
 region = Rect2(32, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yk3e8"]
-atlas = ExtResource("2_yk3e8")
+atlas = ExtResource("2_fei3f")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_itc2g"]
-atlas = ExtResource("2_yk3e8")
+atlas = ExtResource("2_fei3f")
 region = Rect2(32, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_itc2g"]
@@ -60,11 +60,11 @@ size = Vector2(10, 5.0000005)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_itc2g"]
 size = Vector2(6, 6.000001)
 
-[node name="BasicEnemy" type="CharacterBody2D"]
+[node name="Boss" type="CharacterBody2D"]
 scale = Vector2(2, 2)
 collision_layer = 2
 collision_mask = 23
-script = ExtResource("1_yk3e8")
+script = ExtResource("1_i6g3v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -83,28 +83,28 @@ shape = SubResource("RectangleShape2D_xg24s")
 sprite_frames = SubResource("SpriteFrames_itc2g")
 animation = &"idle_up"
 
-[node name="Head" parent="." node_paths=PackedStringArray("main_body") instance=ExtResource("3_ogxxn")]
+[node name="Head" parent="." node_paths=PackedStringArray("main_body") instance=ExtResource("3_fofk3")]
 position = Vector2(0, -5)
 main_body = NodePath("..")
-max_health = 0.5
+max_health = 3.0
 
 [node name="hitbox" parent="Head" index="0"]
 scale = Vector2(0.99999976, 0.99999976)
 shape = SubResource("RectangleShape2D_2q6f0")
 
-[node name="Torso" parent="." node_paths=PackedStringArray("main_body") instance=ExtResource("3_ogxxn")]
+[node name="Torso" parent="." node_paths=PackedStringArray("main_body") instance=ExtResource("3_fofk3")]
 position = Vector2(0, -0.5)
 main_body = NodePath("..")
-max_health = 1.0
+max_health = 5.0
 
 [node name="hitbox" parent="Torso" index="0"]
 scale = Vector2(0.99999976, 0.99999976)
 shape = SubResource("RectangleShape2D_ogxxn")
 
-[node name="Legs" parent="." node_paths=PackedStringArray("main_body") instance=ExtResource("3_ogxxn")]
+[node name="Legs" parent="." node_paths=PackedStringArray("main_body") instance=ExtResource("3_fofk3")]
 position = Vector2(0, 5)
 main_body = NodePath("..")
-max_health = 2.0
+max_health = 7.0
 
 [node name="hitbox" parent="Legs" index="0"]
 scale = Vector2(0.99999976, 0.99999976)

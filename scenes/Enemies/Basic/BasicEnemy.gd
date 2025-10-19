@@ -1,3 +1,4 @@
+class_name BasicEnemy
 extends CharacterBody2D
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
@@ -13,7 +14,7 @@ var attackRange: float = 40.0
 var attackWindup: float = 0.5
 var attackActive: float = 0.10
 var attackCooldown: float = 0.8
-var damage: float = 25.0
+var damage: float = 12.0
 var RDR: float = 0.0 #repeatedDamageReducion, part of the EATS system
 var RDRGrowthRate: float = 1.3
 var last_facing: Vector2 = Vector2.DOWN
@@ -140,6 +141,7 @@ func die() -> void:
 	health = 0.0
 	state = State.DEAD
 	set_collision_layer_value(2, false)
+	set_collision_layer_value(1, false)
 	velocity = Vector2.ZERO
 	sprite.rotation = deg_to_rad(180-rotation)
 

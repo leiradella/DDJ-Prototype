@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://vudoq54aiai3"]
+[gd_scene load_steps=18 format=3 uid="uid://vudoq54aiai3"]
 
 [ext_resource type="Script" uid="uid://c8domhmjmjrsh" path="res://scenes/Level/room_09.gd" id="1_phk4n"]
 [ext_resource type="Texture2D" uid="uid://cddhqrsr4qemj" path="res://assets/tileset x1 edited.png" id="2_po047"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://ekw7iwcn3tst" path="res://scenes/addons/overlaid_menus/pause_menu.tscn" id="10_0ho5e"]
 [ext_resource type="PackedScene" uid="uid://rhcp23adiw5l" path="res://scenes/Enemies/Necromancer/Necromancer.tscn" id="11_8pa1k"]
 [ext_resource type="PackedScene" uid="uid://bwnxnr73iqqf2" path="res://scenes/Enemies/Basic/BasicEnemy.tscn" id="12_temni"]
+[ext_resource type="PackedScene" uid="uid://dekqfv7bvyke4" path="res://scenes/Enemies/Boss/boss.tscn" id="13_temni"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ebmy8"]
 texture = ExtResource("2_po047")
@@ -521,12 +522,12 @@ scale = Vector2(2, 2)
 
 [node name="BasicEnemy" parent="." instance=ExtResource("12_temni")]
 position = Vector2(89, 44)
-scale = Vector2(2, 2)
 
 [node name="BasicEnemy2" parent="." instance=ExtResource("12_temni")]
 position = Vector2(136, 44)
-scale = Vector2(2, 2)
 
 [node name="BasicEnemy3" parent="." instance=ExtResource("12_temni")]
 position = Vector2(119, 82)
-scale = Vector2(2, 2)
+
+[node name="Boss" parent="." instance=ExtResource("13_temni")]
+position = Vector2(-72, 80)
