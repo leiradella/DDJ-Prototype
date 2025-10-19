@@ -230,7 +230,7 @@ position = Vector2(120, -160)
 
 [node name="Pressure" parent="." instance=ExtResource("8_5mo38")]
 z_index = -1
-position = Vector2(-111, -271)
+position = Vector2(65, -129)
 
 [node name="Pushable" parent="." instance=ExtResource("9_cxsvr")]
 position = Vector2(32, -15)
