@@ -1,11 +1,11 @@
 extends BasicEnemy
 
 func _ready() -> void:
-	health = 10.0
+	health = 6.0
 	moveSpeed = 20.0
 	detectionRadius = 100000.0
 	sightRadius = detectionRadius
-	damage = 24.0
+	damage = 18.0
 	scale.x = 3.0
 	scale.y = scale.x
 

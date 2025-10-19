@@ -86,7 +86,7 @@ animation = &"idle_up"
 [node name="Head" parent="." node_paths=PackedStringArray("main_body") instance=ExtResource("3_fofk3")]
 position = Vector2(0, -5)
 main_body = NodePath("..")
-max_health = 3.0
+max_health = 1.2
 
 [node name="hitbox" parent="Head" index="0"]
 scale = Vector2(0.99999976, 0.99999976)
@@ -95,7 +95,7 @@ shape = SubResource("RectangleShape2D_2q6f0")
 [node name="Torso" parent="." node_paths=PackedStringArray("main_body") instance=ExtResource("3_fofk3")]
 position = Vector2(0, -0.5)
 main_body = NodePath("..")
-max_health = 5.0
+max_health = 3.0
 
 [node name="hitbox" parent="Torso" index="0"]
 scale = Vector2(0.99999976, 0.99999976)
@@ -104,7 +104,7 @@ shape = SubResource("RectangleShape2D_ogxxn")
 [node name="Legs" parent="." node_paths=PackedStringArray("main_body") instance=ExtResource("3_fofk3")]
 position = Vector2(0, 5)
 main_body = NodePath("..")
-max_health = 7.0
+max_health = 4.0
 
 [node name="hitbox" parent="Legs" index="0"]
 scale = Vector2(0.99999976, 0.99999976)
