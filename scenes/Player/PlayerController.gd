@@ -7,7 +7,7 @@ var player:Player
 var moveSpeed: float = 60.0
 var health: float = 40.0
 var push_force = 5.0
-
+@onready var temp_gun : Node = $Sprite2D/Gun
 @onready var gun: Node = $Sprite2D/Gun
 @onready var inventoryManager = $InventoryManager
 var can_update :int = 1
@@ -19,6 +19,10 @@ func _ready() -> void:
 	add_to_group("Player")
 	motion_mode = CharacterBody2D.MOTION_MODE_FLOATING
 	floor_stop_on_slope = false
+	EventManager.get_gun.connect(put_gun_on)
+	gun.visible = false
+	gun.set_process(false)
+	gun.set_physics_process(false)
 
 func handle_movement_input() -> void:
 	var direction: Vector2 = Input.get_vector("move_left", "move_right", "move_up", "move_down")
@@ -58,7 +62,7 @@ func handle_mouse_button(event: InputEvent) -> void:
 	if event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed:
 			#shoot the gun
-			if gun != null:
+			if gun != null and gun.visible:
 				if not gun.is_reloading:
 					gun.shoot()
 				else:
@@ -99,3 +103,8 @@ func update_animation(_dir : int) -> void :
 	elif _dir == 1 or _dir ==2:
 		animation_player.play("idle_walk")
 	pass
+
+func put_gun_on()->void:
+	gun.visible = true
+	gun.set_process(true)
+	gun.set_physics_process(true)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c1ifv8tylxtfi"]
+[gd_scene load_steps=15 format=3 uid="uid://c1ifv8tylxtfi"]
 
 [ext_resource type="Script" uid="uid://cjkwcdthi3lm3" path="res://scenes/Level/room_08.gd" id="1_mfoyn"]
 [ext_resource type="Texture2D" uid="uid://cddhqrsr4qemj" path="res://assets/tileset x1 edited.png" id="2_8nkdu"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://cdcl0ap06i1f1" path="res://scenes/light/light_right.tscn" id="7_sxtoj"]
 [ext_resource type="PackedScene" uid="uid://bkphrc7awb2q" path="res://scenes/light/light_left.tscn" id="8_62ksn"]
 [ext_resource type="PackedScene" uid="uid://rjiu06xd5p6j" path="res://scenes/doors/door_right.tscn" id="9_sxtoj"]
+[ext_resource type="Script" uid="uid://cyh0d64pfygbl" path="res://addons/maaacks_game_template/base/scripts/pause_menu_controller.gd" id="10_k0nis"]
+[ext_resource type="PackedScene" uid="uid://ekw7iwcn3tst" path="res://scenes/addons/overlaid_menus/pause_menu.tscn" id="11_68xiu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1su4i"]
 texture = ExtResource("2_8nkdu")
@@ -299,3 +301,7 @@ level = "uid://cf4ytyepwv7y3"
 
 [node name="DoorRight" parent="." instance=ExtResource("9_sxtoj")]
 position = Vector2(16, -32)
+
+[node name="Pausemenu" type="Node" parent="."]
+script = ExtResource("10_k0nis")
+pause_menu_packed = ExtResource("11_68xiu")

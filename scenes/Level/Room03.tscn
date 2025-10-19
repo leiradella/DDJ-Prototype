@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://vyxl4kiny3co"]
+[gd_scene load_steps=16 format=3 uid="uid://vyxl4kiny3co"]
 
 [ext_resource type="Script" uid="uid://b2slqsi37pqd0" path="res://scenes/Level/room_03.gd" id="1_b3f8a"]
 [ext_resource type="Texture2D" uid="uid://cddhqrsr4qemj" path="res://assets/tileset x1 edited.png" id="2_gs1b2"]
@@ -7,6 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://bkphrc7awb2q" path="res://scenes/light/light_left.tscn" id="5_t5fwf"]
 [ext_resource type="PackedScene" uid="uid://cdcl0ap06i1f1" path="res://scenes/light/light_right.tscn" id="6_tw4cy"]
 [ext_resource type="PackedScene" uid="uid://dyy0ia302pg6k" path="res://scenes/light/light.tscn" id="7_q306s"]
+[ext_resource type="Script" uid="uid://cyh0d64pfygbl" path="res://addons/maaacks_game_template/base/scripts/pause_menu_controller.gd" id="8_q306s"]
+[ext_resource type="PackedScene" uid="uid://ekw7iwcn3tst" path="res://scenes/addons/overlaid_menus/pause_menu.tscn" id="9_shly2"]
+[ext_resource type="PackedScene" uid="uid://dni2hlbgbqkxm" path="res://scenes/Gun/Gun.tscn" id="10_iq1gy"]
+[ext_resource type="Script" uid="uid://debatmu3wadu2" path="res://scenes/Level/get_gun.gd" id="11_8llkv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gs1b2"]
 texture = ExtResource("2_gs1b2")
@@ -230,6 +234,10 @@ physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_gs1b2")
 sources/1 = SubResource("TileSetAtlasSource_e6yio")
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2kqod"]
+radius = 3.0
+height = 10.0
+
 [node name="Room03" type="Node2D"]
 script = ExtResource("1_b3f8a")
 
@@ -271,3 +279,19 @@ position = Vector2(-64, -145)
 
 [node name="Light6" parent="." instance=ExtResource("7_q306s")]
 position = Vector2(16, -176)
+
+[node name="Pausemenu" type="Node" parent="."]
+script = ExtResource("8_q306s")
+pause_menu_packed = ExtResource("9_shly2")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("11_8llkv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(85, -43)
+shape = SubResource("CapsuleShape2D_2kqod")
+
+[node name="Gun" parent="Area2D" instance=ExtResource("10_iq1gy")]
+position = Vector2(86, -39)
+rotation = 1.5707964
+scale = Vector2(0.2, 0.2)

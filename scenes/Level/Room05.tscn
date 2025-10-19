@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://danrpakqrlep5"]
+[gd_scene load_steps=14 format=3 uid="uid://danrpakqrlep5"]
 
 [ext_resource type="Script" uid="uid://du3nwk4c0csmy" path="res://scenes/Level/room_05.gd" id="1_0ar6a"]
 [ext_resource type="Texture2D" uid="uid://cddhqrsr4qemj" path="res://assets/tileset x1 edited.png" id="2_gxoje"]
@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://dyy0ia302pg6k" path="res://scenes/light/light.tscn" id="5_l2bvy"]
 [ext_resource type="PackedScene" uid="uid://cdcl0ap06i1f1" path="res://scenes/light/light_right.tscn" id="6_mefsh"]
 [ext_resource type="PackedScene" uid="uid://bkphrc7awb2q" path="res://scenes/light/light_left.tscn" id="7_3fbh4"]
+[ext_resource type="Script" uid="uid://cyh0d64pfygbl" path="res://addons/maaacks_game_template/base/scripts/pause_menu_controller.gd" id="8_3fbh4"]
+[ext_resource type="PackedScene" uid="uid://ekw7iwcn3tst" path="res://scenes/addons/overlaid_menus/pause_menu.tscn" id="9_ycd1c"]
+[ext_resource type="PackedScene" uid="uid://bwnxnr73iqqf2" path="res://scenes/Enemies/Basic/BasicEnemy.tscn" id="10_ycd1c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fno1h"]
 texture = ExtResource("2_gxoje")
@@ -284,3 +287,11 @@ position = Vector2(-96, -51)
 
 [node name="Light6" parent="." instance=ExtResource("7_3fbh4")]
 position = Vector2(96, -85)
+
+[node name="Pausemenu" type="Node" parent="."]
+script = ExtResource("8_3fbh4")
+pause_menu_packed = ExtResource("9_ycd1c")
+
+[node name="BasicEnemy" parent="." instance=ExtResource("10_ycd1c")]
+position = Vector2(18, 21)
+scale = Vector2(2, 2)

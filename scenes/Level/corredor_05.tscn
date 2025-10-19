@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://4erecncyk36h"]
+[gd_scene load_steps=15 format=3 uid="uid://4erecncyk36h"]
 
 [ext_resource type="Script" uid="uid://bitmwvwbx8rkg" path="res://scenes/Level/corredor_05.gd" id="1_b80hq"]
 [ext_resource type="Texture2D" uid="uid://cddhqrsr4qemj" path="res://assets/tileset x1 edited.png" id="1_r0vws"]
@@ -7,6 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://dyy0ia302pg6k" path="res://scenes/light/light.tscn" id="5_hpiv8"]
 [ext_resource type="PackedScene" uid="uid://cdcl0ap06i1f1" path="res://scenes/light/light_right.tscn" id="6_s2j83"]
 [ext_resource type="PackedScene" uid="uid://bkphrc7awb2q" path="res://scenes/light/light_left.tscn" id="7_rts34"]
+[ext_resource type="Script" uid="uid://cyh0d64pfygbl" path="res://addons/maaacks_game_template/base/scripts/pause_menu_controller.gd" id="8_rts34"]
+[ext_resource type="PackedScene" uid="uid://ekw7iwcn3tst" path="res://scenes/addons/overlaid_menus/pause_menu.tscn" id="9_x24ua"]
+[ext_resource type="PackedScene" uid="uid://rhcp23adiw5l" path="res://scenes/Enemies/Necromancer/Necromancer.tscn" id="10_1djxf"]
+[ext_resource type="PackedScene" uid="uid://bwnxnr73iqqf2" path="res://scenes/Enemies/Basic/BasicEnemy.tscn" id="11_y15mp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w6gdk"]
 texture = ExtResource("1_r0vws")
@@ -322,3 +326,15 @@ position = Vector2(225, -45)
 
 [node name="Light14" parent="." instance=ExtResource("6_s2j83")]
 position = Vector2(-288, -75)
+
+[node name="Pausemenu" type="Node" parent="."]
+script = ExtResource("8_rts34")
+pause_menu_packed = ExtResource("9_x24ua")
+
+[node name="Necromancer" parent="." instance=ExtResource("10_1djxf")]
+position = Vector2(-23, -103)
+scale = Vector2(2, 2)
+
+[node name="BasicEnemy" parent="." instance=ExtResource("11_y15mp")]
+position = Vector2(4, -86)
+scale = Vector2(2, 2)
