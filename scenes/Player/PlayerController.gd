@@ -23,6 +23,7 @@ func _ready() -> void:
 	gun.visible = false
 	gun.set_process(false)
 	gun.set_physics_process(false)
+	updateHealthBar(health)
 
 func handle_movement_input() -> void:
 	var direction: Vector2 = Input.get_vector("move_left", "move_right", "move_up", "move_down")
@@ -89,14 +90,13 @@ func _input(event: InputEvent) -> void:
 
 func takeDamage(damage: float) -> void:
 	health -= damage
-	print(health)
+	updateHealthBar(health)
 	if health <= 0.0:
 		die()
 
 func heal(amount: float):
-	print(health)
 	health += amount
-	print(health)
+	updateHealthBar(health)
 	#TODO: add clamp or something
 
 func update_animation(_dir : int) -> void :
@@ -114,3 +114,7 @@ func put_gun_on()->void:
 func die() -> void:
 	InputManager.set_control_mode(InputManager.ControlMode.DISABLED)
 	rotate(deg_to_rad(90))
+
+func updateHealthBar(health_value: float):
+	$CanvasLayer/HealthBar.text = "HP:  " + str(health_value)
+	
