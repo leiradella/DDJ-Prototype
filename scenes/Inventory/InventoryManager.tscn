@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://trm68eg1mgq2"]
+[gd_scene load_steps=6 format=3 uid="uid://trm68eg1mgq2"]
 
 [ext_resource type="Script" uid="uid://fyxisoj7lw1q" path="res://scenes/Inventory/inventory_manager.gd" id="1_wipi3"]
 [ext_resource type="PackedScene" uid="uid://dwr38bb7irj6x" path="res://scenes/Inventory/inventory.tscn" id="2_dmd88"]
 [ext_resource type="Script" uid="uid://hl1b8hb0jm7o" path="res://scenes/Items/item.gd" id="3_dmd88"]
+[ext_resource type="AudioStream" uid="uid://brmp54u5a1lli" path="res://assets/mixkit-sci-fi-positive-notification-266.wav" id="4_km5r0"]
+[ext_resource type="AudioStream" uid="uid://cymao5x3b0ci7" path="res://assets/mixkit-handgun-release-1664.wav" id="5_i181i"]
 
 [node name="InventoryManager" type="Node"]
 script = ExtResource("1_wipi3")
@@ -11,3 +13,12 @@ script = ExtResource("1_wipi3")
 
 [node name="Inventory" parent="CanvasLayer" instance=ExtResource("2_dmd88")]
 starter_items = Array[ExtResource("3_dmd88")]([])
+
+[node name="item_pickup_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_km5r0")
+volume_db = -2.0
+bus = &"SFX"
+
+[node name="reload_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_i181i")
+bus = &"SFX"

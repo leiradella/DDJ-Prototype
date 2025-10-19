@@ -8,6 +8,7 @@ var mag: int = 6 # bullets in mag
 var deviation: float = 0.0
 var is_reloading: bool = false
 var reload_interrupted: bool = false
+@onready var shoot_sound: AudioStreamPlayer = $shoot_sound
 
 func shoot() -> void:
 	if is_reloading or mag <= 0:
@@ -28,6 +29,7 @@ func shoot() -> void:
 	bullet.global_position = global_position
 	bullet.direction = bullet_dir
 	get_tree().current_scene.add_child(bullet)
+	shoot_sound.play()
 	print("POW 💥", mag)
 	
 	return

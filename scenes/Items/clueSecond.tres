@@ -6,6 +6,6 @@
 [resource]
 script = ExtResource("1_infvt")
 name = "Clue"
-description = "A sheet of paper. It says \"THAT AFFECTS\""
+description = "A sheet of paper. It says \"THE PASSWORD IS...\"\""
 icon = ExtResource("1_gbxl8")
 metadata/_custom_type_script = "uid://hl1b8hb0jm7o"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://vocw65nwi5x5"]
+[gd_scene load_steps=21 format=3 uid="uid://vocw65nwi5x5"]
 
 [ext_resource type="Script" uid="uid://bxy1voi6dg1ch" path="res://scenes/Player/PlayerController.gd" id="1_v6fml"]
 [ext_resource type="Theme" uid="uid://dhu35dhth6efp" path="res://theme_menu.tres" id="2_socpp"]
@@ -8,6 +8,9 @@
 [ext_resource type="Script" uid="uid://dniexk3m4845a" path="res://scenes/Player/open_help.gd" id="4_fxc31"]
 [ext_resource type="PackedScene" uid="uid://trm68eg1mgq2" path="res://scenes/Inventory/InventoryManager.tscn" id="4_ved6o"]
 [ext_resource type="PackedScene" uid="uid://bj63pdt6kjcxq" path="res://scenes/UI/help_menu.tscn" id="5_puxyr"]
+[ext_resource type="AudioStream" uid="uid://co7q8favcto2o" path="res://assets/mixkit-handgun-click-1660.mp3" id="9_mmokv"]
+[ext_resource type="AudioStream" uid="uid://dtvxhchsopx8t" path="res://assets/mixkit-quick-positive-video-game-notification-interface-265.wav" id="10_dqp0f"]
+[ext_resource type="AudioStream" uid="uid://bui1qgh2qff4v" path="res://assets/mixkit-impact-of-a-blow-2150.mp3" id="11_tl8lu"]
 
 [sub_resource type="GDScript" id="GDScript_socpp"]
 script/source = "extends Label
@@ -178,3 +181,17 @@ libraries = {
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 texture = SubResource("GradientTexture2D_xcisb")
+
+[node name="get_gun_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_mmokv")
+volume_db = -6.0
+bus = &"SFX"
+
+[node name="heal_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_dqp0f")
+volume_db = -3.0
+bus = &"SFX"
+
+[node name="take_dmg_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_tl8lu")
+bus = &"SFX"

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://c4d0a1gdrkmqy"]
+[gd_scene load_steps=5 format=3 uid="uid://c4d0a1gdrkmqy"]
 
 [ext_resource type="Script" uid="uid://v6w3esawwh8m" path="res://scenes/Interactibles/pressure.gd" id="1_juaji"]
 [ext_resource type="Texture2D" uid="uid://cpnm7p4uvtss6" path="res://assets/pressure.png" id="2_4wnvx"]
+[ext_resource type="AudioStream" uid="uid://cwdgsc3whsffy" path="res://assets/mixkit-mechanical-crate-pick-up-3154.wav" id="3_s7qih"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_egx5m"]
 size = Vector2(18, 18)
@@ -21,6 +22,10 @@ collision_layer = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-900, -500)
 shape = SubResource("RectangleShape2D_egx5m")
+
+[node name="pressed_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_s7qih")
+bus = &"SFX"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

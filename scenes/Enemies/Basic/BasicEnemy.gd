@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var attackArea: Area2D = $AttackArea
 @onready var attackShape: CollisionShape2D = $AttackArea/CollisionShape2D
+@onready var take_dmg_sound: AudioStreamPlayer = $take_dmg_sound
 
 #enemy stats
 var health: float = 3.0
