@@ -45,6 +45,7 @@ func handle_movement_input() -> void:
 			can_update = 0
 
 func _physics_process(_delta: float) -> void:
+	
 	if not InputManager.is_mode_gameplay():
 		velocity = Vector2.ZERO
 		move_and_slide()
@@ -89,7 +90,8 @@ func _input(event: InputEvent) -> void:
 func takeDamage(damage: float) -> void:
 	health -= damage
 	print(health)
-	#TODO: die
+	if health <= 0.0:
+		die()
 
 func heal(amount: float):
 	print(health)
@@ -108,3 +110,7 @@ func put_gun_on()->void:
 	gun.visible = true
 	gun.set_process(true)
 	gun.set_physics_process(true)
+
+func die() -> void:
+	InputManager.set_control_mode(InputManager.ControlMode.DISABLED)
+	rotate(deg_to_rad(90))

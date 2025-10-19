@@ -16,12 +16,10 @@ func _open_pause_menu() -> void:
 	var _initial_focus_control = focused_viewport.gui_get_focus_owner()
 	var current_menu = pause_menu_packed.instantiate()
 
-	# ✅ Créer un CanvasLayer qui contiendra le menu
 	pause_layer = CanvasLayer.new()
 	pause_layer.add_child(current_menu)
 	get_tree().root.call_deferred("add_child", pause_layer)
 
-	# ✅ Connecter la fermeture automatique quand on quitte la scène
 	get_tree().current_scene.tree_exiting.connect(_close_pause_menu)
 
 	await current_menu.tree_exited

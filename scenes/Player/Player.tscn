@@ -4,7 +4,7 @@
 [ext_resource type="Theme" uid="uid://dhu35dhth6efp" path="res://theme_menu.tres" id="2_socpp"]
 [ext_resource type="Texture2D" uid="uid://b16ns5ct11bxt" path="res://assets/AnimationSheet_Character.png" id="2_ved6o"]
 [ext_resource type="PackedScene" uid="uid://dni2hlbgbqkxm" path="res://scenes/Gun/Gun.tscn" id="3_bvqhm"]
-[ext_resource type="Script" uid="uid://h2lddoemmogd" path="res://scenes/Level/corruption_bar.gd" id="3_fxc31"]
+[ext_resource type="Script" path="res://scenes/Level/corruption_bar.gd" id="3_fxc31"]
 [ext_resource type="PackedScene" uid="uid://trm68eg1mgq2" path="res://scenes/Inventory/InventoryManager.tscn" id="4_ved6o"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xcisb"]
