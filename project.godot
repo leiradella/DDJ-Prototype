@@ -94,6 +94,7 @@ locale/translations=PackedStringArray("res://addons/maaacks_game_template/base/t
 2d_physics/layer_2="Enemies"
 2d_physics/layer_3="Walls"
 2d_physics/layer_4="steppables"
+2d_physics/layer_7="BODYPARTS"
 
 [maaacks_game_template]
 
