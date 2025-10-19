@@ -13,7 +13,7 @@ var push_force = 5.0
 var can_update :int = 1
 @onready var animation_player : AnimationPlayer = $AnimationPlayer
 @onready var sprite : Sprite2D = $Sprite2D 
-
+@onready var corrupt : CorruptionBar = $CanvasLayer/CorruptionBar
 func _ready() -> void:
 	#needed so the enemy can have a reference for the player
 	add_to_group("Player")
@@ -120,3 +120,6 @@ func die() -> void:
 func updateHealthBar(health_value: float):
 	$CanvasLayer/HealthBar.text = "HP:  " + str(health_value)
 	
+
+func get_player_corruption()->float:
+	return corrupt.getcorruption_level()

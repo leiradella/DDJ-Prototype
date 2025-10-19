@@ -218,6 +218,15 @@ func scan_for_player() -> void:
 	var players = get_tree().get_nodes_in_group("Player")
 	if players.size() > 0:
 		player = players[0]
+		health= 3.0*0.9+(45-player.get_player_corruption())*0.1
+		moveSpeed = 30.0*0.9+(45-player.get_player_corruption())*0.1
+		detectionRadius = 100.0*0.9+(45-player.get_player_corruption())*0.1
+		sightRadius = 200.0*0.9+(45-player.get_player_corruption())*0.1
+		attackRange = 40.0*0.9+(45-player.get_player_corruption())*0.1
+		attackWindup= 0.5*0.9+(45-player.get_player_corruption())*0.01
+		attackActive = 0.08*0.9+(45-player.get_player_corruption())*0.01
+		attackCooldown = 0.8*0.9+(45-player.get_player_corruption())*0.02
+		damage = 12.0*0.9+(45-player.get_player_corruption())*0.1
 
 func _draw() -> void:
 	if not show_attack: 
