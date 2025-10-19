@@ -9,3 +9,6 @@ func mark_item_collected(item_id: String) -> void:
 
 func is_item_collected(item_id: String) -> bool:
 	return collected_items.has(item_id) and collected_items[item_id]
+
+func mark_item_uncollected(item_id: String) -> void:
+	collected_items[item_id] = false

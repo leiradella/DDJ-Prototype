@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://18gxvhmvuucx"]
+[gd_scene load_steps=15 format=3 uid="uid://18gxvhmvuucx"]
 
 [ext_resource type="Texture2D" uid="uid://cddhqrsr4qemj" path="res://assets/tileset x1 edited.png" id="1_en6dv"]
 [ext_resource type="Script" uid="uid://bsnmwdk4n7e7u" path="res://scenes/Level/corredor_02.gd" id="1_wr2em"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c4d0a1gdrkmqy" path="res://scenes/Interactibles/pressure.tscn" id="8_5mo38"]
 [ext_resource type="PackedScene" uid="uid://dfwinp0dwndj6" path="res://scenes/Interactibles/pushable.tscn" id="9_cxsvr"]
 [ext_resource type="Script" uid="uid://cyh0d64pfygbl" path="res://addons/maaacks_game_template/base/scripts/pause_menu_controller.gd" id="10_hatew"]
+[ext_resource type="Script" uid="uid://cvpftmo83o62b" path="res://scenes/Interactibles/pushable.gd" id="10_p8v3a"]
 [ext_resource type="PackedScene" uid="uid://ekw7iwcn3tst" path="res://scenes/addons/overlaid_menus/pause_menu.tscn" id="11_p8v3a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_en6dv"]
@@ -228,13 +229,14 @@ position = Vector2(-176, -256)
 [node name="DoorRight2" parent="." instance=ExtResource("7_j2ecg")]
 position = Vector2(120, -160)
 
-[node name="Pressure" parent="." instance=ExtResource("8_5mo38")]
-z_index = -1
-position = Vector2(65, -129)
-
 [node name="Pushable" parent="." instance=ExtResource("9_cxsvr")]
 position = Vector2(32, -15)
 scale = Vector2(1, 1)
+script = ExtResource("10_p8v3a")
+
+[node name="Pressure" parent="." instance=ExtResource("8_5mo38")]
+z_index = -1
+position = Vector2(65, -129)
 
 [node name="Pausemenu" type="Node" parent="."]
 script = ExtResource("10_hatew")
