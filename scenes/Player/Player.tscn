@@ -1,11 +1,13 @@
-[gd_scene load_steps=16 format=3 uid="uid://vocw65nwi5x5"]
+[gd_scene load_steps=18 format=3 uid="uid://vocw65nwi5x5"]
 
 [ext_resource type="Script" uid="uid://bxy1voi6dg1ch" path="res://scenes/Player/PlayerController.gd" id="1_v6fml"]
 [ext_resource type="Theme" uid="uid://dhu35dhth6efp" path="res://theme_menu.tres" id="2_socpp"]
 [ext_resource type="Texture2D" uid="uid://b16ns5ct11bxt" path="res://assets/AnimationSheet_Character.png" id="2_ved6o"]
 [ext_resource type="PackedScene" uid="uid://dni2hlbgbqkxm" path="res://scenes/Gun/Gun.tscn" id="3_bvqhm"]
 [ext_resource type="Script" uid="uid://h2lddoemmogd" path="res://scenes/Level/corruption_bar.gd" id="3_fxc31"]
+[ext_resource type="Script" uid="uid://dniexk3m4845a" path="res://scenes/Player/open_help.gd" id="4_fxc31"]
 [ext_resource type="PackedScene" uid="uid://trm68eg1mgq2" path="res://scenes/Inventory/InventoryManager.tscn" id="4_ved6o"]
+[ext_resource type="PackedScene" uid="uid://bj63pdt6kjcxq" path="res://scenes/help_menu.tscn" id="5_puxyr"]
 
 [sub_resource type="GDScript" id="GDScript_socpp"]
 script/source = "extends Label
@@ -133,6 +135,20 @@ offset_bottom = 85.0
 theme_override_font_sizes/font_size = 40
 text = "HP: "
 script = SubResource("GDScript_socpp")
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -120.0
+offset_top = 30.0
+offset_right = -20.0
+offset_bottom = 108.0
+grow_horizontal = 0
+theme = ExtResource("2_socpp")
+text = "help"
+script = ExtResource("4_fxc31")
+help_menu_packed = ExtResource("5_puxyr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.2, 0.2)
