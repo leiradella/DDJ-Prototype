@@ -6,6 +6,7 @@ signal pressure_on
 signal pressure_off
 signal level_load_started
 signal level_loaded
+signal get_gun
 var target_transition : String
 var position_offset : Vector2
 
@@ -18,7 +19,10 @@ func trigger_item_pickedup(item, quantity):
 
 func trigger_puzzle_solved() -> void:
 	emit_signal("puzzle_solved")
-	
+
+func trigger_get_gun()->void:
+	emit_signal("get_gun")
+
 func trigger_pressure_on():
 	emit_signal("pressure_on")
 	
