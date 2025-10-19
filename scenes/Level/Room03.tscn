@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://vyxl4kiny3co"]
+[gd_scene load_steps=17 format=3 uid="uid://vyxl4kiny3co"]
 
 [ext_resource type="Script" uid="uid://b2slqsi37pqd0" path="res://scenes/Level/room_03.gd" id="1_b3f8a"]
 [ext_resource type="Texture2D" uid="uid://cddhqrsr4qemj" path="res://assets/tileset x1 edited.png" id="2_gs1b2"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://ekw7iwcn3tst" path="res://scenes/addons/overlaid_menus/pause_menu.tscn" id="9_shly2"]
 [ext_resource type="PackedScene" uid="uid://dni2hlbgbqkxm" path="res://scenes/Gun/Gun.tscn" id="10_iq1gy"]
 [ext_resource type="Script" uid="uid://debatmu3wadu2" path="res://scenes/Level/get_gun.gd" id="11_8llkv"]
+[ext_resource type="PackedScene" uid="uid://db6nti7m0hbk" path="res://scenes/Items/pickup.tscn" id="12_8llkv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gs1b2"]
 texture = ExtResource("2_gs1b2")
@@ -295,3 +296,8 @@ shape = SubResource("CapsuleShape2D_2kqod")
 position = Vector2(86, -39)
 rotation = 1.5707964
 scale = Vector2(0.2, 0.2)
+
+[node name="Pickup" parent="." instance=ExtResource("12_8llkv")]
+position = Vector2(88, -151)
+type = 1
+quantity = 6
