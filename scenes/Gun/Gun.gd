@@ -1,6 +1,7 @@
 extends Node2D
 
 const BULLET: PackedScene = preload("res://scenes/Gun/Bullet.tscn")
+@onready var reload_gun_sound: AudioStreamPlayer = $reload_gun_sound
 
 #weapon stats and flags
 var MAG_SIZE: int = 6 # mag size
@@ -46,6 +47,7 @@ func reload(amount) -> void:
 	
 	is_reloading = true
 	mag += 1
+	reload_gun_sound.play()
 	
 	print(mag)
 	await get_tree().create_timer(0.5).timeout

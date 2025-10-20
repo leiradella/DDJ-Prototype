@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dni2hlbgbqkxm"]
+[gd_scene load_steps=5 format=3 uid="uid://dni2hlbgbqkxm"]
 
 [ext_resource type="Script" uid="uid://e4m7jj717pi7" path="res://scenes/Gun/Gun.gd" id="1_sss3y"]
 [ext_resource type="Texture2D" uid="uid://j1htqsg6mkmr" path="res://assets/colt_saa.png" id="2_32ulv"]
 [ext_resource type="AudioStream" uid="uid://ij1pir1e3leo" path="res://assets/mixkit-game-gun-shot-1662.mp3" id="3_rhixa"]
+[ext_resource type="AudioStream" uid="uid://co7q8favcto2o" path="res://assets/mixkit-handgun-click-1660.mp3" id="4_p1hn6"]
 
 [node name="Gun" type="Node2D"]
 script = ExtResource("1_sss3y")
@@ -14,3 +15,8 @@ texture = ExtResource("2_32ulv")
 [node name="shoot_sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_rhixa")
 volume_db = -6.0
+
+[node name="reload_gun_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_p1hn6")
+volume_db = -6.0
+bus = &"SFX"

@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dveotnylnyxiu" path="res://scenes/Level/corredor_01.tscn" id="8_3t2oh"]
 [ext_resource type="PackedScene" uid="uid://d01ldrf7jtk5r" path="res://scenes/Level/Room02.tscn" id="9_7tmcs"]
 [ext_resource type="Theme" uid="uid://dhu35dhth6efp" path="res://theme_menu.tres" id="9_l55me"]
-[ext_resource type="Script" uid="uid://h2lddoemmogd" path="res://scenes/Level/corruption_bar.gd" id="10_l55me"]
+[ext_resource type="Script" path="res://scenes/Level/corruption_bar.gd" id="10_l55me"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_ga6q8")
@@ -17,12 +17,10 @@ script = ExtResource("1_ga6q8")
 [node name="BasicEnemy" parent="." instance=ExtResource("3_f0xsc")]
 position = Vector2(1662, 38)
 scale = Vector2(1, 1)
-collision_mask = 23
 
 [node name="BasicEnemy2" parent="." instance=ExtResource("3_f0xsc")]
 position = Vector2(1463.9999, -158.99994)
 scale = Vector2(1, 1)
-collision_mask = 23
 
 [node name="Necromancer" parent="." instance=ExtResource("4_wrmb8")]
 position = Vector2(905, 288)
