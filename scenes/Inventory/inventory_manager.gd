@@ -14,6 +14,8 @@ func _ready():
 func _on_receive_item(item, quantity):
 	item.owner = player
 	inventory.on_give_player_item(item, quantity)
+	if item.name == "Bullet":
+		EventManager.trigger_ammo_change(-1, inventory.get_number_of_item(bullet_item))
 	item_pickup_sound.play()
 	
 func reload_gun(amount) -> int:
@@ -22,9 +24,11 @@ func reload_gun(amount) -> int:
 	if current > 0:
 		if current >= amount:
 			inventory.on_remove_player_item(bullet_item, amount)
+			EventManager.trigger_ammo_change(-1, current-amount)
 			return amount
 		else:
 			inventory.on_remove_player_item(bullet_item, current)
+			EventManager.trigger_ammo_change(-1, 0)
 			return current
 	else:
 		return 0

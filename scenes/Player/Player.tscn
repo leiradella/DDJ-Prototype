@@ -139,6 +139,14 @@ theme = ExtResource("2_socpp")
 text = "HP: "
 script = SubResource("GDScript_socpp")
 
+[node name="AmmoBar" type="Label" parent="CanvasLayer"]
+offset_left = 811.0
+offset_top = 17.0
+offset_right = 1175.0
+offset_bottom = 87.0
+theme = ExtResource("2_socpp")
+text = "HP: "
+
 [node name="Button" type="Button" parent="CanvasLayer"]
 anchors_preset = 1
 anchor_left = 1.0

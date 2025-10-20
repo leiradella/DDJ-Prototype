@@ -8,6 +8,7 @@ signal pressure_off
 signal level_load_started
 signal level_loaded
 signal get_gun
+signal ammo_change(mag, reserve)
 var target_transition : String
 var position_offset : Vector2
 
@@ -32,6 +33,9 @@ func trigger_pressure_off():
 
 func trigger_boss_dead() -> void:
 	emit_signal("boss_dead")
+	
+func trigger_ammo_change(mag: int, reserve: int):
+	emit_signal("ammo_change", mag, reserve)
 
 func load_new_level(level_path : String, _target_transition : String, _position_offset : Vector2) -> void:
 	get_tree().paused = true

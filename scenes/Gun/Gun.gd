@@ -15,7 +15,7 @@ func shoot() -> void:
 	if is_reloading or mag <= 0:
 		return
 	mag -= 1
-	
+	EventManager.trigger_ammo_change(mag, -1)
 	## step 1: get the bullet direction
 	var cursor_pos: Vector2 = get_global_mouse_position()
 	var bullet_dir: Vector2 = global_position.direction_to(cursor_pos)
@@ -47,9 +47,11 @@ func reload(amount) -> void:
 	
 	is_reloading = true
 	mag += 1
-	reload_gun_sound.play()
 	
+	reload_gun_sound.play()
+	EventManager.trigger_ammo_change(mag, -1)
 	print(mag)
+
 	await get_tree().create_timer(0.5).timeout
 	
 	if reload_interrupted:

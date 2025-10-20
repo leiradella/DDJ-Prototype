@@ -17,12 +17,17 @@ var can_update :int = 1
 @onready var get_gun_sound: AudioStreamPlayer = $get_gun_sound
 @onready var heal_sound: AudioStreamPlayer = $heal_sound
 @onready var take_dmg_sound: AudioStreamPlayer = $take_dmg_sound
+var _last_reserve: int
+var _last_mag: int
+
 func _ready() -> void:
 	#needed so the enemy can have a reference for the player
 	add_to_group("Player")
 	motion_mode = CharacterBody2D.MOTION_MODE_FLOATING
 	floor_stop_on_slope = false
 	EventManager.get_gun.connect(put_gun_on)
+	EventManager.ammo_change.connect(updateAmmoBar)
+	updateAmmoBar(0,0)
 	gun.visible = false
 	gun.set_process(false)
 	gun.set_physics_process(false)
@@ -118,6 +123,7 @@ func put_gun_on()->void:
 	gun.set_process(true)
 	gun.set_physics_process(true)
 	get_gun_sound.play()
+	updateAmmoBar(6, -1)
 
 func die() -> void:
 	InputManager.set_control_mode(InputManager.ControlMode.DISABLED)
@@ -125,7 +131,14 @@ func die() -> void:
 
 func updateHealthBar(health_value: float):
 	$CanvasLayer/HealthBar.text = "HP:  " + str(health_value)
-	
+
+func updateAmmoBar(mag, reserve):
+	print("caught" + str(mag) + str(reserve))
+	if mag == -1: mag = _last_mag
+	else: _last_mag = mag
+	if reserve == -1: reserve = _last_reserve
+	else: _last_reserve = reserve
+	$CanvasLayer/AmmoBar.text = "Ammo: " + str(mag) + "/" + str(reserve)	
 
 func get_player_corruption()->float:
 	return corrupt.getcorruption_level()
